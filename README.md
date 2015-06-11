@@ -1,4 +1,4 @@
-# Hisune coder tool
+# Node-webkit Hisune Coder Tool
 
 include tools:
 
