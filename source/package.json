@@ -1,0 +1,11 @@
+{
+  "name": "Hisune Coder Tools",
+  "main": "index.html",
+  "js-flags": "--expose-gc",
+  "dependencies": {
+    "superagent": "^0.20.0"
+  },
+  "window": {
+      "toolbar": false
+  }
+}
