@@ -1,5 +1,7 @@
 # Node-webkit Hisune Coder Tool
 
+Only support windows.
+
 include tools:
 
 ```
@@ -24,6 +26,10 @@ to use this project, you should:
 or
 
 you can run: `copy /b nw.exe+hct.nw app.exe` to save this project as a exe
+
+or
+
+you can download hct_last.zip directly.
 
 ## About Author
 Code by Hisune(http://hisune.com), for more detail, go to http://www.hisune.com/view/5/scroll-fixed-top-jquery-plugin
