@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 <head>
     <meta charset="utf-8">
     <title>HCT(Hisune Coder Tools) - by Hisune.com</title>
@@ -8,7 +8,7 @@
     <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <script src="bootstrap3-typeahead.min.js"></script>
 </head>
-<body style="margin: 8px;">
+<body style="padding-top: 10px; height: 100%;">
 <!-- Nav tabs -->
 <ul id="tabs" class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#tabs-1" role="tab" data-toggle="tab">shadowSocks</a></li>
@@ -19,11 +19,12 @@
     <li><a href="#tabs-6" role="tab" data-toggle="tab">翻译</a></li>
     <li><a href="#tabs-7" role="tab" data-toggle="tab">压缩美化</a></li>
     <li><a href="#tabs-8" role="tab" data-toggle="tab">手册及工具</a></li>
+    <li><a href="#tabs-9" role="tab" data-toggle="tab">Markdown</a></li>
 </ul>
 
 <!-- Tab panes -->
-<div class="tab-content" id="tab-content"  style="height: 100%;">
-    <div class="tab-pane active" id="tabs-1" style="height: 100%; padding: 12px;">
+<div class="tab-content" id="tab-content" style="padding: 10px; position:absolute; top: 52px; width: 100%; bottom: 0;">
+    <div class="tab-pane active" id="tabs-1" style="padding: 12px;">
         <div id="divError" class="alert alert-danger my_hide">
             Please fill in the blanks and click Save.
         </div>
@@ -125,19 +126,20 @@
         <iframe src="asset/jsoneditor/index.html" name="left" width="100%" height="100%" frameborder="0" scrolling="auto"
                 marginheight="0"></iframe>
     </div>
-    <div class="tab-pane" id="tabs-3" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-3" style="height: 100%;padding: 12px;">
         <iframe src="http://jsfiddle.net/" name="left" width="100%" height="100%" frameborder="0" scrolling="auto"
                 marginheight="0"></iframe>
     </div>
-    <div class="tab-pane" id="tabs-4" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-4" style="padding: 12px;">
         <input class="bootbox-input bootbox-input-text form-control" id="ip-search" autocomplete="off" type="text" style="display: inline-block; width: 350px;">
         <label><input type="radio" name="ip-raido" value="area" checked/>归属地</label>
         <label><input type="radio" name="ip-raido" value="ping" />PING</label>
         <label><input type="radio" name="ip-raido" value="tracert" />TRACE</label>
         <button type="button" class="btn btn-primary" id="ip-search-submit">查询</button>
+        <a href="http://ping.chinaz.com" target="_blank" class="btn btn-info">超级ping</a>
         <div id="ip-search-result"></div>
     </div>
-    <div class="tab-pane" id="tabs-5" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-5" style="padding: 12px;">
         <div class="form-horizontal" id="decode-form" role="form">
             <div class="form-group" style="margin: 6px 0;">
                 <label class="col-sm-2 control-label">random</label>
@@ -212,12 +214,12 @@
             </div>
         </div>
     </div>
-    <div class="tab-pane" id="tabs-6" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-6" style="padding: 12px;">
         <textarea id="trans" class="form-control" rows="5"></textarea>
         <button type="button" id="trans-submit" class="btn btn-primary" style="margin-top: 12px;">翻译</button>
         <div id="trans-result"></div>
     </div>
-    <div class="tab-pane" id="tabs-7" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-7" style="padding: 12px;">
         <script type="text/javascript" src="asset/compress/base.js"></script>
         <script type="text/javascript" src="asset/compress/js.js"></script>
         <script type="text/javascript" src="asset/compress/html.js"></script>
@@ -276,7 +278,7 @@
             <button class="btn btn-info" onclick="CSS($('#css-format'), 'pack')">压缩</button>
         </div>
     </div>
-    <div class="tab-pane" id="tabs-8" style="height: 100%; padding: 12px;">
+    <div class="tab-pane" id="tabs-8" style="padding: 12px;">
         <div style="margin: 6px;">
             <button class="btn btn-primary open-file" data-file="manual\php_manual_zh_review.chm">PHP中文手册</button>
             <button class="btn btn-primary open-file" data-file="manual\jQuery1.8.0_20120829.chm">jQuery中文手册</button>
@@ -286,8 +288,12 @@
             <button class="btn btn-info open-sys" data-file="C:\Windows\System32\cmd.exe">CMD</button>
         </div>
     </div>
+    <div class="tab-pane" id="tabs-9" style="height: 100%">
+        <iframe src="asset/markdown/index.html" name="left" width="100%" height="100%" frameborder="0" scrolling="auto"
+                marginheight="0"></iframe>
+    </div>
 
-    <div class="text-right">
+    <div class="text-right" style="position: fixed; bottom: 10px; right: 10px">
         <div class="btn-group">
             <button data-toggle="modal" data-target="#about-hisune" class="btn btn-default" title="About"><i class="glyphicon glyphicon-info-sign"></i></button>
             <button id="buttonConsole" class="btn btn-default" title="Debug"><i class="glyphicon glyphicon-wrench"></i></button>
@@ -310,7 +316,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-3 text-right" style="padding-right: 0;">version:</div>
-                        <div class="col-xs-9 text-left">0.0.4</div>
+                        <div class="col-xs-9 text-left">0.0.5</div>
                     </div>
                     <div class="row">
                         <div class="col-xs-3 text-right" style="padding-right: 0;">description:</div>
@@ -328,12 +334,24 @@
                         <div class="col-xs-3 text-right" style="padding-right: 0;">Site:</div>
                         <div class="col-xs-9 text-left"><a style="cursor: pointer" id="open-site" target="_blank">hisune.com</a></div>
                     </div>
+                    <div class="row">
+                        <div class="col-xs-3 text-right" style="padding-right: 0;">GitHub:</div>
+                        <div class="col-xs-9 text-left"><a style="cursor: pointer" id="open-github" target="_blank">https://github.com/hisune/hisune-coder-tools</a></div>
+                    </div>
                 </div>
                 <div class="clearfix"></div>
                 <div style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-xs-3 text-right" style="padding-right: 0;"><b>更新历史</b></div>
                         <div class="col-xs-9">&nbsp;</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 6px;">
+                        <div class="col-xs-3 text-right" style="padding-right: 0;">2015-06-12<br />v0.0.5</div>
+                        <div class="col-xs-9 text-left">
+                            1. 加密与时间戳工具加入保留历史记录；<br />
+                            2. 调整最大高度自适应；<br />
+                            3. 加入markdown编辑器
+                        </div>
                     </div>
                     <div class="row" style="margin-bottom: 6px;">
                         <div class="col-xs-3 text-right" style="padding-right: 0;">2014-11-24<br />v0.0.4</div>

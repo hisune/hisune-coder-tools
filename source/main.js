@@ -318,11 +318,12 @@
                         case 'random':
                             var length = new Number($('#random-length').val());
                             var html = utility.randomString(length, input);
+                            input = null;
                             break;
                         default:
                             var html = '';
                     }
-                    $(this).next('div').html('<div style="color: #3c763d;">' + html + '</div>');
+                    $(this).next('div').append('<span style="display: inline-block; border-right: solid 1px #5e5e5e; margin-right: 15px; padding-right: 15px;">'+ (input ? (input + ': ') : '') + ' <font color="#3c763d">' + html + '</font></span>');
                 }
             });
         });
@@ -381,6 +382,9 @@
         };
         $('#open-site').on('click', function(){
             return gui.Shell.openExternal('http://hisune.com');
+        });
+        $('#open-github').on('click', function(){
+            return gui.Shell.openExternal('https://github.com/hisune/hisune-coder-tools');
         });
         $('.open-file').on('click', function(){
             return gui.Shell.openItem(process.execPath + '/../' + $(this).data('file'));
