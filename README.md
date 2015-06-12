@@ -25,7 +25,7 @@ to use this project, you should:
 
 or
 
-you can run: `copy /b nw.exe+hct.nw app.exe` to save this project as a exe
+you can run: `copy /b nw.exe+hct.nw htc.exe` to save this project as a exe
 
 or
 
