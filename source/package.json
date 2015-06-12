@@ -6,6 +6,8 @@
     "superagent": "^0.20.0"
   },
   "window": {
-      "toolbar": false
+      "toolbar": false,
+      "min_width": 900,
+      "min_height": 535
   }
 }
