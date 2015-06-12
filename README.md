@@ -29,7 +29,7 @@ you can run: `copy /b nw.exe+hct.nw htc.exe` to save this project as a exe
 
 or
 
-you can download hct_last.zip directly.
+you can download `hct_last.zip` directly.
 
 ## About Author
 Code by Hisune(http://hisune.com), for more detail, go to http://www.hisune.com/view/5/scroll-fixed-top-jquery-plugin
