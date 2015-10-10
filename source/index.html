@@ -210,6 +210,7 @@
 
                 <div class="col-sm-9">
                     <button type="button" class="btn btn-primary" id="decode-submit">查询</button>
+                    <button type="button" class="btn btn-danger" onclick="EmptyTab5();">清空</button>
                 </div>
             </div>
         </div>
@@ -256,6 +257,9 @@
         }
         function GetFocus() {
             document.getElementById('content').focus();
+        }
+        function EmptyTab5(){
+            $('#decode-form .form-group').children('div').children('div').empty();
         }
         </script>
         <div><b>HTML / JS: </b></div>
@@ -344,6 +348,12 @@
                     <div class="row">
                         <div class="col-xs-3 text-right" style="padding-right: 0;"><b>更新历史</b></div>
                         <div class="col-xs-9">&nbsp;</div>
+                    </div>
+                    <div class="row" style="margin-bottom: 6px;">
+                        <div class="col-xs-3 text-right" style="padding-right: 0;">2015-10-10<br />v0.0.6</div>
+                        <div class="col-xs-9 text-left">
+                            加密与时间戳中加入清除功能
+                        </div>
                     </div>
                     <div class="row" style="margin-bottom: 6px;">
                         <div class="col-xs-3 text-right" style="padding-right: 0;">2015-06-12<br />v0.0.5</div>
