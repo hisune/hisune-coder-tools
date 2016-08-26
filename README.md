@@ -1,35 +1,45 @@
-# Node-webkit Hisune Coder Tool
+# Hisune Coder Tool
+* 集成N种web开发人员常用工具
+* 工具离线化，不联网也能用
+* 跨平台工具，支持mac和windows
 
-Only support windows.
+## 获取最新版本
+* [Windows x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
+* [MacOS x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
 
-include tools:
+## 包含以下工具
+###网络工具
+* Shadowsocks
+* Postman
+* IP域名查询
 
-```
-1. shadowsocks
-2. json editor
-3. jsfiddle
-4. IP address, ping and windows trace
-5. md5, base64 and unixtimestamp tool
-6. EN <-> zh-CN translation
-7. js and css compress and pretty
-8. php and jquery manual and other system tool
-```
+###工具函数
+* 普通函数
+* 压缩解压
+* 颜色选择权
 
-## Usage:
+###手册查询
+* 正则表达式
+* jquery手册
+* nodejs手册（在线）
+* bootstrap手册（在线）
+* ASCII
+* Content Type
+* Html转义
+* 状态码
 
-first step, you should download node-webkit from this link: https://github.com/nwjs/nw.js/
+###其他工具
+* Markdown
+* 程序启动器
+* 发周报
+* 计算器
+* CMD
 
-to use this project, you should:
+## 应用截图
+![](https://raw.githubusercontent.com/hisune/images/master/screen-hct.jpg)
 
-`drag the source folder to nw.exe`
-
-or
-
-you can run: `copy /b nw.exe+hct.nw htc.exe` to save this project as a exe
-
-or
-
-you can download `hct_last.zip` directly.
+## TODO
+* 自动更新
 
 ## About Author
-Code by Hisune(http://hisune.com), for more detail, go to http://www.hisune.com/view/5/scroll-fixed-top-jquery-plugin
+Code by Hisune(http://hisune.com)
