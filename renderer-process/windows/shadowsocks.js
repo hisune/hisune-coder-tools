@@ -51,8 +51,9 @@ $('#ss-save').click(() => {
                 encryption: encryption,
                 timeout: timeout
             };
-            storage.set('shadowsocks', data);
-            initSs();
+            storage.set('shadowsocks', data, (error) => {
+                initSs();
+            });
         })
     }
 });
@@ -64,8 +65,9 @@ $('#ss-delete').click(() => {
         if(val == data.default){
             data.default = 'add';
         }
-        storage.set('shadowsocks', data);
-        initSs();
+        storage.set('shadowsocks', data, (error) => {
+            initSs();
+        });
     });
 });
 
@@ -82,8 +84,9 @@ var initSs = function()
     storage.get('shadowsocks', (error, data) => {
         if(Object.keys(data).length < 1){
             data = {default: 'add', ss: {}};
-            storage.set('shadowsocks', data);
-            $('#add-a-new-ip').show();
+            storage.set('shadowsocks', data, () => {
+                $('#add-a-new-ip').show();
+            });
         }
         ss = data;
         let sssip = $('#ss-server-ip');
