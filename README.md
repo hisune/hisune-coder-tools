@@ -3,10 +3,6 @@
 * 工具离线化，不联网也能用
 * 跨平台工具，支持mac和windows
 
-## 获取最新版本
-* [Windows x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
-* [MacOS x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
-
 ## 包含以下工具
 ###网络工具
 * Shadowsocks
@@ -16,7 +12,7 @@
 ###工具函数
 * 普通函数
 * 压缩解压
-* 颜色选择权
+* 颜色选择器
 
 ###手册查询
 * 正则表达式
