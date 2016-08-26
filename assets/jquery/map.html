@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>map(callback)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="map">
+    <h2><span>返回值:jQuery</span>map(callback)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>将一组元素转换成其他数组（不论是否是元素数组）</p>
+      <div class="longdesc">
+        <p>你可以用这个函数来建立一个列表，不论是值、属性还是CSS样式，或者其他特别形式。这都可以用'$.map()'来方便的建立。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>callback</strong><span>Function</span><em>V1.2</em></h4>
+      <p>给每个元素执行的函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>把form中的每个input元素的值建立一个列表。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;&lt;b&gt;Values: &lt;/b&gt;&lt;/p&gt;
+&lt;form&gt;
+  &lt;input type="text" name="name" value="John"/&gt;
+  &lt;input type="text" name="password" value="password"/&gt;
+  &lt;input type="text" name="url" value="http://ejohn.org/"/&gt;
+&lt;/form&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").append( $("input").map(function(){
+  return $(this).val();
+}).get().join(", ") );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;John, password, http://ejohn.org/&lt;/p&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>andSelf()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="andSelf">
+    <h2><span>返回值:jQuery</span>andSelf()</h2>
+    <h3><em>V1.2</em>概述</h3>
+    <div class="desc">
+      <p>加入先前所选的加入当前元素中</p>
+      <div class="longdesc">
+        <p>对于筛选或查找后的元素，要加入先前所选元素时将会很有用。</p>
+        <p class="outmoded">从jQuery1.8开始，.andSelf()方法已经被标注过时，在jQuery1.8和更高版本中应使用.addBack()。</p>
+        <p>我们认为对于&ldquo;添加并返回&rdquo;以前的结果集合这是一个更好的名字。新方法可以接受一个可选的选择器，该选择器可以用来过滤之前集合，将它添加到当前集合并返回。$(&ldquo;section, aside&rdquo;).children(&ldquo;ul&rdquo;).addBack(&ldquo;aside&rdquo;) 会根据他们在文档中的顺序，得到section与aside下所有ul子元素，外加所有aside元素。虽然.addSelf()在1.9中仍然可以使用，我们建议您尽快修改名称。如果使用.addSelf()，jQuery Migrate插件会提出警告。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>选取所有div以及内部的p，并加上border类</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div&gt;&lt;p&gt;First Paragraph&lt;/p&gt;&lt;p&gt;Second Paragraph&lt;/p&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").find("p").andSelf().addClass("border");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;div class="border"&gt;
+    &lt;p class="border"&gt;First Paragraph&lt;/p&gt;
+    &lt;p class="border"&gt;Second Paragraph&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

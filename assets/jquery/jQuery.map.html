@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.map(arr|obj,callback)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.map">
+    <h2><span>返回值:Array</span>jQuery.map(arr|obj,callback)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>将一个数组中的元素转换到另一个数组中。</p>
+      <div class="longdesc">
+        <p>作为参数的转换函数会为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。转换函数可以返回转换后的值、null（删除数组中的项目）或一个包含值的数组，并扩展至原始数组中。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>array,callback</strong><span>Array,Function</span><em>V1.0</em></h4>
+      <p><strong>array</strong>:待转换数组。</p>
+      <p><strong>callback</strong><span>Array</span>:为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。函数可返回任何值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为&ldquo;lambda-form&rdquo;（缩写形式？），其中 a 代表数组元素。如&ldquo;a * a&rdquo;代表&ldquo;function(a){ return a * a; }&rdquo;。</p>
+      <h4><strong>arrayOrObject,callback</strong><span>Array/Object,Function</span><em>V1.6</em></h4>
+      <p><strong>arrayOrObject</strong>:数组或者对象。</p>
+      <p>为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。函数可返回任何值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为“lambda-form”（缩写形式？），其中 a 代表数组元素。如“a * a”代表“function(a){ return a * a; }”。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>将原数组中每个元素加 4 转换为一个新数组。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.map( [0,1,2], function(n){
+  return n + 4;
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[4, 5, 6]</code></pre>
+      <h4>描述:</h4>
+      <p>原数组中大于 0 的元素加 1 ，否则删除。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.map( [0,1,2], function(n){
+  return n &gt; 0 ? n + 1 : null;
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[2, 3]</code></pre>
+      <h4>描述:</h4>
+      <p>原数组中每个元素扩展为一个包含其本身和其值加 1 的数组，并转换为一个新数组。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.map( [0,1,2], function(n){
+  return [ n, n + 1 ];
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[0, 1, 1, 2, 2, 3]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

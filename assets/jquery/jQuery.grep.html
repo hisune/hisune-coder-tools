@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.grep(array,callback,[invert])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.grep">
+    <h2><span>返回值:Array</span>jQuery.grep(array, callback, <em class="optional">[invert]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>使用过滤函数过滤数组元素。</p>
+      <div class="longdesc">
+        <p>此函数至少传递两个参数：待过滤数组和过滤函数。过滤函数必须返回 true 以保留元素或 false 以删除元素。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>array,callback,[invert]</strong><span>Array,Function,Boolean</span><em>V1.0</em></h4>
+      <p><strong>array</strong>:待过滤数组。</p>
+      <p><strong>callback</strong>:此函数将处理数组每个元素。第一个参数为当前元素，第二个参数而元素索引值。此函数应返回一个布尔值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为&ldquo;lambda-form&rdquo;（缩写形式？），其中 a 代表数组元素，i 代表元素索引值。如&ldquo;a &gt; 0&rdquo;代表&ldquo;function(a){ return a &gt; 0; }&rdquo;。</p>
+      <p><strong>invert</strong>:如果 &quot;invert&quot; 为 false 或为设置，则函数返回数组中由过滤函数返回 true 的元素，当&quot;invert&quot; 为 true，则返回过滤函数中返回 false 的元素集。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>过滤数组中小于 0 的元素。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.grep( [0,1,2], function(n,i){
+  return n &gt; 0;
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[1, 2]</code></pre>
+      <h4>描述:</h4>
+      <p>排除数组中大于 0 的元素，使用第三个参数进行排除。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.grep( [0,1,2], function(n,i){
+  return n &gt; 0;
+}, true);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[0]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

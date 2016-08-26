@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>one(type,[data],fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="one">
+    <h2><span>返回值:jQuery</span>one(type,[data],fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>为每一个匹配元素的特定事件（像click）绑定一个一次性的事件处理函数。</p>
+      <div class="longdesc">
+        <p>在每个对象上，这个事件处理函数只会被执行一次。其他规则与bind()函数相同。这个事件处理函数会接收到一个事件对象，可以通过它来阻止（浏览器）默认的行为。如果既想取消默认的行为，又想阻止事件起泡，这个事件处理函数必须返回false。</p>
+        <p>多数情况下，可以把事件处理函数定义为匿名函数（见示例一）。在不可能定义匿名函数的情况下，可以传递一个可选的数据对象作为第二个参数（而事件处理函数则作为第三个参数），见示例二。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type,[data],fn</strong><span>String,Object,Function</span><em>V1.1</em></h4>
+      <p><strong>type:</strong>添加到元素的一个或多个事件。由空格分隔多个事件。必须是有效的事件。</p>
+      <p><strong>data:</strong>将要传递给事件处理函数的数据映射</p>
+      <p><strong>fn:</strong>每当事件触发时执行的函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>当所有段落被第一次点击的时候，显示所有其文本。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").one("click", function(){
+  alert( $(this).text() );
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

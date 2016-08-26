@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>addBack()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="addBack">
+    <h2><span>返回值:jQuery</span>addBack()</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>添加堆栈中元素集合到当前集合，一个选择性的过滤选择器。</p>
+      <div class="longdesc">
+        <p>如上所述在讨论中的.end()， jQuery对象维护一个堆栈内部来跟踪匹配的元素集合的变化。当一个DOM遍历方法被调用时，新的元素集合推入到堆栈中。 如果还需要包含先前的元素集合，.addBack() 可以提供帮助。</p>
+        <p>考虑一个页面，一个简单的列表就可以了：</p>
+        <pre><div><div>&lt;ul&gt;</div></div><div><div>   &lt;li&gt;list item 1&lt;/li&gt;</div></div><div><div>   &lt;li&gt;list item 2&lt;/li&gt;</div></div><div><div>   &lt;li class=&quot;third-item&quot;&gt;list item 3&lt;/li&gt;</div></div><div><div>   &lt;li&gt;list item 4&lt;/li&gt;</div></div><div><div>   &lt;li&gt;list item 5&lt;/li&gt;</div></div><div><div>&lt;/ul&gt;</div></div>
+        </pre>
+        <p>下面的代码的返回结果是后面3，4和5项是一个红色的背景：</p>
+        <pre><div><div>$('li.third-item').nextAll().addBack()</div></div><div><div>  .css('background-color', 'red');</div></div>
+        </pre>
+        <p>首先，初始选择位于第3项，初始化堆栈集合只包含这项。调用.nextAll() 后将第4和第5项推入堆栈。最后，调用.addBack() 合并这两个组元素在一起，创建一个jQuery对象，指向所有三个项元素（按照文档中的顺序）：{[&lt;li.third-item&gt;,&lt;li&gt;,&lt;li&gt; ]}</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>[selector ]<em> </em></strong><span></span><em>V1.8</em></h4>
+      <p>一个字符串，其中包含一个选择器表达式，匹配当前元素集合不包括在内的元素</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>.addBack()方法导致前一组遍历堆栈中的DOM元素被添加到当前组。  在第一个例子中，堆栈包含组的结果来自.find("p")。 在第二个例子中，.addBack()将之前组的元素添加到堆栈中 - 在这种情况下（$("div.after-addback") - 到当前集合， 选择了两个div和其封闭的段落。      </p>
+      <pre><div><div>&lt;!DOCTYPE html&gt;</div></div><div><div>&lt;html&gt;</div></div><div><div>&lt;head&gt;</div></div><div><div>  &lt;style&gt; </div></div><div><div>p, div { margin:5px; padding:5px; }</div></div><div><div>.border { border: 2px solid red; }</div></div><div><div>.background { background:yellow; }</div></div><div><div>.left, .right { width: 45%; float: left;}</div></div><div><div>.right { margin-left:3%; }</div></div><div><div>    &lt;/style&gt;</div></div><div><div>  &lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt; &lt;/script&gt;</div></div><div><div>&lt;/head&gt;</div></div><div><div>&lt;body&gt;</div></div><div><div> </div></div><div><div>&lt;div class=&quot;left&quot;&gt;</div></div><div><div>  &lt;p&gt;&lt;strong&gt;Before &lt;code&gt;addBack()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;</div></div><div><div>  &lt;div class=&quot;before-addback&quot;&gt;</div></div><div><div>    &lt;p&gt;First Paragraph&lt;/p&gt;</div></div><div><div>    &lt;p&gt;Second Paragraph&lt;/p&gt;</div></div><div><div>  &lt;/div&gt;</div></div><div><div>&lt;/div&gt;</div></div><div><div>&lt;div class=&quot;right&quot;&gt;</div></div><div><div>  &lt;p&gt;&lt;strong&gt;After &lt;code&gt;addBack()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;</div></div><div><div>  &lt;div class=&quot;after-addback&quot;&gt;</div></div><div><div>    &lt;p&gt;First Paragraph&lt;/p&gt;</div></div><div><div>    &lt;p&gt;Second Paragraph&lt;/p&gt;</div></div><div><div>  &lt;/div&gt;</div></div><div><div>&lt;/div&gt;</div></div><div><div> </div></div><div><div>&lt;script&gt; </div></div><div><div>$(&quot;div.left, div.right&quot;).find(&quot;div, div &gt; p&quot;).addClass(&quot;border&quot;);</div></div><div><div> </div></div><div><div>// First Example</div></div><div><div>$(&quot;div.before-addback&quot;).find(&quot;p&quot;).addClass(&quot;background&quot;);</div></div><div><div> </div></div><div><div>// Second Example</div></div><div><div>$(&quot;div.after-addback&quot;).find(&quot;p&quot;).addBack().addClass(&quot;background&quot;);</div></div><div><div>&lt;/script&gt;</div></div><div><div> </div></div><div><div>&lt;/body&gt;</div></div><div><div>&lt;/html&gt;</div></div>
+      </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

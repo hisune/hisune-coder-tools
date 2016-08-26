@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.then(doneFilter [, failFilter ] [, progressFilter ])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.then">
+    <h2><span>返回值:Deferred Object</span>deferred.then(doneFilter [, failFilter ] [, progressFilter ])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>添加处理程序被调用时，递延对象得到解决或者拒绝。</p>
+      <div class="longdesc">
+        <p> 所有三个参数（包括progressCallbacks ，在jQuery的1.7 ）可以是一个单独的函数或一个函数的数组。 其中一个参数，也可以为空，如果没有该类型的回调是需要的。或者，使用.done()或.fail()仅设置doneCallbacks或failCallbacks。当递延解决，doneCallbacks被调用。若递延代替拒绝，failCallbacks被调用。回调按他们添加的顺序执行。一旦deferred.then返回延迟对象，延迟对象的其它方法也可以链接到了这里，包括增加.then()方法。有关详细信息，请参阅文件<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+		<h4><strong>doneFilter [, failFilter ] [, progressFilter ] </strong><span>String</span><em>V1.8</em></h4>
+      <p><strong>doneFilter</strong>: 当Deferred（延迟）对象得到解决时被调用的一个函数。</p>
+      <p><strong>failFilter</strong>: [可选]当Deferred（延迟）对象拒绝时被调用的一个函数。</p>
+      <p><strong>progressFilter</strong>:[可选]当Deferred（延迟）对象生成进度通知时被调用的一个函数。</p> 
+      <h4><strong>doneCallbacks,failCallbacks</strong><span>String</span><em>V1.5</em></h4>
+      <p><strong>doneCallbacks</strong>: 一个函数或函数数组，当延迟成功时调用。 </p>
+      <p><strong>failCallbacks</strong>: 一个函数或函数数组，当延迟失败时调用。 </p>
+      <h4><strong>doneCallbacks, failCallbacks [, progressCallbacks]</strong><span>String</span><em>V1.7</em></h4>
+      <p><strong>doneCallbacks</strong>: 一个函数或函数数组，当延迟解决时调用。</p>
+      <p><strong>failCallbacks</strong>: 一个函数或函数数组，当延迟拒绝时调用。</p>
+      <p><strong>progressCallbacks:</strong> 一个可选的函数，当延迟对象通知进度（progress）时被调用。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>一旦jQuery.get方法返回一个来自延迟的对象的jqXHR对象，我们可以附加一个成功回调使用.then方法。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php").then(
+    function(){ alert("$.get succeeded"); },
+    function(){ alert("$.get failed!"); }
+);</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>not(expr|ele|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="not">
+    <h2><span>返回值:jQuery</span>not(expr|ele|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>删除与指定表达式匹配的元素</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr</strong><span>String</span><em>V1.0</em></h4>
+      <p>一个选择器字符串。</p>
+      <h4><strong>element</strong><span>DOMElement</span><em>V1.0</em></h4>
+      <p>一个DOM元素</p>
+      <h4><strong>function(index)</strong><span>Function</span><em>V1.4</em></h4>
+      <p>一个用来检查集合中每个元素的函数。this是当前的元素。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>从p元素中删除带有 select 的ID的元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p id="selected"&gt;Hello Again&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").not( $("#selected")[0] )</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello&lt;/p&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

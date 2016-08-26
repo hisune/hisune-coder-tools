@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:only-child</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="onlyChild">
+    <h2><span>返回值:Array&lt;Element(s)&gt;</span>:only-child</h2>
+    <h3><em>V1.1.4</em>概述</h3>
+    <div class="desc">
+      <p>如果某个元素是父元素中唯一的子元素，那将会被匹配</p>
+      <div class="longdesc">
+        <p>如果父元素中含有其他元素，那将不会被匹配。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>在 ul 中查找是唯一子元素的 li</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;John&lt;/li&gt;
+  &lt;li&gt;Karl&lt;/li&gt;
+  &lt;li&gt;Brandon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li&gt;Glen&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("ul li:only-child")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;li&gt;Glen&lt;/li&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

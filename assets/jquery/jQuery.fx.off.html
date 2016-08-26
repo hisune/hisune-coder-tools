@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.fx.off</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.fx.off">
+    <h2><span>返回值:Boolean</span>jQuery.fx.off</h2>
+    <h3><em>V1.3</em>概述</h3>
+    <div class="desc">
+      <p>关闭页面上所有的动画。</p>
+      <div class="longdesc">
+        <p>把这个属性设置为true可以立即关闭所有动画(所有效果会立即执行完毕)。有些情况下可能需要这样，比如：</p>
+        <p>* 你在配置比较低的电脑上使用jQuery。</p>
+        <p>* 你的一些用户由于动画效果而遇到了 <a href="http://www.jdeegan.phlegethon.org/turn_off_animation.html">可访问性问题</a></p>
+        <p>当把这个属性设成false之后，可以重新开启所有动画。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>执行一个禁用的动画</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>  jQuery.fx.off = true;
+  $("input").click(function(){
+      $("div").toggle("slow");
+  });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

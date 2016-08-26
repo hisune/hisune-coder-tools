@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.post(url,[data],[callback],[type])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.post">
+    <h2><span>返回值:XMLHttpRequest</span>jQuery.post(url, <em class="optional">[data]</em>, <em class="optional">[callback]</em>, <em class="optional">[type]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>通过远程 HTTP POST 请求载入信息。</p>
+      <div class="longdesc">
+        <p>这是一个简单的 POST 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>url,[data],[callback],[type]</strong><span>String,Map,Function,String</span><em>V1.0</em></h4>
+      <p><strong>url</strong>:发送请求地址。</p>
+      <p><strong>data</strong>:待发送 Key/value 参数。</p>
+      <p><strong>callback</strong>:发送成功时回调函数。</p>
+      <p><strong>type</strong>:返回内容格式，xml, html, script, json, text, _default。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>1描述:</h4>
+      <p>请求 test.php 网页，忽略返回值：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php");</code></pre>
+      <h4>2描述:</h4>
+      <p>请求 test.php 页面，并一起发送一些额外的数据（同时仍然忽略返回值）：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", { name: "John", time: "2pm" } );</code></pre>
+      <h4>3描述:</h4>
+      <p>向服务器传递数据数组（同时仍然忽略返回值）：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", { 'choices[]': ["Jon", "Susan"] });</code></pre>
+      <h4>4描述:</h4>
+      <p>使用 ajax 请求发送表单数据：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", $("#testform").serialize());</code></pre>
+      <h4>5描述:</h4>
+      <p>输出来自请求页面 test.php 的结果（HTML 或 XML，取决于所返回的内容）：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", function(data){
+   alert("Data Loaded: " + data);
+ });</code></pre>
+      <h4>6描述:</h4>
+      <p>向页面 test.php 发送数据，并输出结果（HTML 或 XML，取决于所返回的内容）：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", { name: "John", time: "2pm" },
+   function(data){
+     alert("Data Loaded: " + data);
+   });</code></pre>
+      <h4>7描述:</h4>
+      <p>获得 test.php 页面的内容，并存储为 XMLHttpResponse 对象，并通过 process() 这个 JavaScript 函数进行处理：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", { name: "John", time: "2pm" },
+   function(data){
+     process(data);
+   }, "xml");</code></pre>
+      <h4>8描述:</h4>
+      <p>获得 test.php 页面返回的 json 格式的内容：：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.post("test.php", { "func": "getNameAndTime" },
+   function(data){
+     alert(data.name); // John
+     console.log(data.time); //  2pm
+   }, "json");</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

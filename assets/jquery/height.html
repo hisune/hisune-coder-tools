@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>height([val|fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content"  class="a2">
+  <div rel="height">
+    <h2><span>返回值:Integer</span>height([val|fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>取得匹配元素当前计算的高度值（px）。</p>
+      <div class="longdesc">
+        <p>在 jQuery 1.2 以后可以用来获取 window 和 document 的高</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>val</strong><span>String, Number, Function</span><em>V1.0</em></h4>
+      <p>设定CSS中 'height' 的值，可以是字符串或者数字，还可以是一个函数，返回要设置的数值。函数接受两个参数，第一个参数是元素在原先集合中的索引位置，第二个参数为原先的高度。</p>
+      <h4><strong>function(index, height)</strong><span>String, Number, Function</span><em>V1.4.1</em></h4>
+      <p>返回用于设置高度的一个函数。接收元素的索引位置和元素旧的高度值作为参数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数描述:</h4>
+      <p>获取第一段的高</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").height();</code></pre>
+      <h4>参数val 描述:</h4>
+      <p>把所有段落的高设为 20:</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").height(20);</code></pre>
+      <h4>参数function(index, height) 描述:</h4>
+      <p>以 10 像素的幅度增加 p 元素的高度</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>  $("button").click(function(){
+    $("p").height(function(n,c){
+    return c+10;
+    });
+  });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

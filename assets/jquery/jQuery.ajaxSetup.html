@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.ajaxSetup([options])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.ajaxSetup">
+    <h2><span>返回值:jQuery</span>jQuery.ajaxSetup(<em class="optional">[options]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>设置全局 AJAX 默认选项。</p>
+      <div class="longdesc">
+        <p>参数见 '$.ajax' 说明。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>options<em> </em></strong><span>Object</span><em>V1.1</em></h4>
+      <p>选项设置。所有设置项均为可选设置。.</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>设置 AJAX 请求默认地址为 "/xmlhttp/"，禁止触发全局 AJAX 事件，用 POST 代替默认 GET 方法。其后的 AJAX 请求不再设置任何选项参数。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.ajaxSetup({
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+});
+$.ajax({ data: myData });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

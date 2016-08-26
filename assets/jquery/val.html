@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>val([val|fn|arr])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="val">
+    <h2><span>返回值:String,Array</span>val([val|fn|arr])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>获得匹配元素的当前值。</p>
+      <div class="longdesc">
+        <p>在 jQuery 1.2 中,可以返回任意元素的值了。包括select。如果多选，将返回一个数组，其包含所选的值。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>val</strong><span>String</span><em>V1.0</em></h4>
+      <p>要设置的值。</p>
+      <h4><strong>function(index, value)</strong><span>Function</span><em>V1.4</em></h4>
+      <p>此函数返回一个要设置的值。接受两个参数，index为元素在集合中的索引位置，text为原先的text值。</p>
+      <h4><strong>array</strong><span>Array&lt;String&gt;</span><em>V1.0</em></h4>
+      <p>用于 check/select 的值</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数 描述:</h4>
+      <p>获取文本框中的值</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input").val();</code></pre>
+      <h4>参数val 描述:</h4>
+      <p>设定文本框的值</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input").val("hello world!");</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>设定文本框的值</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('input:text.items').val(function() {
+  return this.value + ' ' + this.className;
+});</code></pre>
+      <h4>参数array 描述:</h4>
+      <p>设定一个select和一个多选的select的值</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;select id="single"&gt;
+  &lt;option&gt;Single&lt;/option&gt;
+  &lt;option&gt;Single2&lt;/option&gt;
+&lt;/select&gt;
+&lt;select id="multiple" multiple="multiple"&gt;
+  &lt;option selected="selected"&gt;Multiple&lt;/option&gt;
+  &lt;option&gt;Multiple2&lt;/option&gt;
+  &lt;option selected="selected"&gt;Multiple3&lt;/option&gt;
+&lt;/select&gt;&lt;br/&gt;
+&lt;input type="checkbox" value="check1"/&gt; check1
+&lt;input type="checkbox" value="check2"/&gt; check2
+&lt;input type="radio" value="radio1"/&gt; radio1
+&lt;input type="radio" value="radio2"/&gt; radio2</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#single").val("Single2");
+$("#multiple").val(["Multiple2", "Multiple3"]);
+$("input").val(["check2", "radio1"]);</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>filter(expr|obj|ele|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="filter">
+    <h2><span>返回值:jQuery</span>filter(expr|obj|ele|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>筛选出与指定表达式匹配的元素集合。</p>
+      <div class="longdesc">
+        <p>这个方法用于缩小匹配的范围。用逗号分隔多个表达式</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr</strong><span>String</span><em>V1.0</em></h4>
+      <p>字符串值，包含供匹配当前元素集合的选择器表达式。</p>
+      <h4><strong>jQuery object</strong><span>object</span><em>V1.0</em></h4>
+      <p> 现有的jQuery对象，以匹配当前的元素。</p>
+      <h4><strong>element </strong><span>Expression</span><em>V1.4</em></h4>
+      <p> 一个用于匹配元素的DOM元素。 </p>
+      <h4><strong>function(index) </strong><span>Function</span><em>V1.4</em></h4>
+      <p>一个函数用来作为测试元素的集合。它接受一个参数index，这是元素在jQuery集合的索引。在函数， this指的是当前的DOM元素。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>参数selector描述:</h4>
+      <p>保留带有select类的元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;p class="selected"&gt;And Again&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").filter(".selected")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p class="selected"&gt;And Again&lt;/p&gt; ]</code></pre>
+      <h4>参数selector描述:</h4>
+      <p>保留第一个以及带有select类的元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;p class="selected"&gt;And Again&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").filter(".selected, :first")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello&lt;/p&gt;, &lt;p class="selected"&gt;And Again&lt;/p&gt; ]</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>保留子元素中不含有ol的元素。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;&lt;ol&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;&lt;p&gt;How are you?&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").filter(function(index) {
+  return $("ol", this).length == 0;
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;How are you?&lt;/p&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

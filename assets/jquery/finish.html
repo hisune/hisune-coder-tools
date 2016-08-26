@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>finish( [queue ] )</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="finish">
+    <h2><span>返回值:jQuery</span>finish( [queue ] )</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>停止当前正在运行的动画，删除所有排队的动画，并完成匹配元素所有的动画。</p>
+      <div class="longdesc">
+        <p>当.finish()在一个元素上被调用，立即停止当前正在运行的动画和所有排队的动画（如果有的话），并且他们的CSS属性设置为它们的目标值（所有动画的目标值）。所有排队的动画将被删除。</p>
+        <p>如果第一个参数提供，该字符串表示的队列中的动画将被停止。</p>
+        <p>.finish()方法和.stop(true, true)很相似，.stop(true, true)将清除队列，并且目前的动画跳转到其最终值。但是，不同的是，.finish() 会导致所有排队的动画的CSS属性跳转到他们的最终值。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>queue</strong><span>String</span><em>V1.0</em></h4>
+      <p>停止动画队列中的名称。</p>
+
+    </div>
+    <div class="example">
+      <h3>示例      </h3>
+      <p>停止当前正在运行的动画      </p>
+      <pre>$(&quot;#complete&quot;).click(function(){<br />  $(&quot;div&quot;).finish();<br />});</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/nativize.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/section.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="stylesheet" href="assets/css/github.css">
+  <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/markdown/editor.css" />
+
+  <script type="text/javascript" src="assets/markdown/editor.js"></script>
+  <script type="text/javascript" src="assets/markdown/marked.js"></script>
+
+  <link rel="import" href="sections/about.html">
+  <link rel="import" href="sections/windows/shadowsocks.html">
+  <link rel="import" href="sections/windows/postman.html">
+  <link rel="import" href="sections/windows/ip-search.html">
+  <link rel="import" href="sections/menus/function.html">
+  <link rel="import" href="sections/menus/compress.html">
+  <link rel="import" href="sections/menus/color.html">
+  <link rel="import" href="sections/native-ui/regular.html">
+  <link rel="import" href="sections/native-ui/jquery.html">
+  <link rel="import" href="sections/native-ui/nodejs.html">
+  <link rel="import" href="sections/native-ui/bootstrap.html">
+  <link rel="import" href="sections/native-ui/ascii.html">
+  <link rel="import" href="sections/native-ui/content.html">
+  <link rel="import" href="sections/native-ui/html.html">
+  <link rel="import" href="sections/native-ui/code.html">
+  <link rel="import" href="sections/system/markdown.html">
+  <link rel="import" href="sections/system/startup.html">
+  <link rel="import" href="sections/system/email.html">
+</head>
+<body>
+
+  <nav class="nav js-nav">
+    <header class="nav-header">
+      <h1 class="nav-title" style="text-align: center">H <strong>C T</strong></h1>
+    </header>
+
+    <div class="nav-item u-category-windows">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+        网络相关
+      </h5>
+      <button type="button" id="button-shadowsocks" data-section="shadowsocks" class="nav-button">Shadowsocks</button>
+      <button type="button" id="button-postman" data-section="postman" class="nav-button">Postman</button>
+      <button type="button" id="button-ip" data-section="ip-search" class="nav-button">IP域名查询</button>
+    </div>
+
+    <div class="nav-item u-category-menu">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+        工具函数
+      </h5>
+      <button type="button" id="button-function" data-section="function" class="nav-button">普通函数</button>
+      <button type="button" id="button-compress" data-section="compress" class="nav-button">压缩解压</button>
+      <button type="button" id="button-color" data-section="color" class="nav-button">颜色选择器</button>
+    </div>
+
+    <div class="nav-item u-category-native-ui">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
+        手册查询</h5>
+      <button type="button" id="button-regular" data-section="regular" class="nav-button">正则表达式</button>
+      <button type="button" id="button-jquery" data-section="jquery" class="nav-button">jquery手册</button>
+      <button type="button" id="button-nodejs" data-section="nodejs" class="nav-button">nodejs手册</button>
+      <button type="button" id="button-bootstrap" data-section="bootstrap" class="nav-button">bootstrap手册</button>
+      <button type="button" id="button-ascii" data-section="ascii" class="nav-button">ASCII</button>
+      <button type="button" id="button-content" data-section="content" class="nav-button">Content Type</button>
+      <button type="button" id="button-html" data-section="html" class="nav-button">Html转义</button>
+      <button type="button" id="button-code" data-section="code" class="nav-button">状态码</button>
+    </div>
+
+    <div class="nav-item u-category-communication">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
+        其他工具
+      </h5>
+      <button type="button" id="button-markdown" data-section="markdown" class="nav-button">Markdown</button>
+      <button type="button" id="button-startup" data-section="startup" class="nav-button">程序启动器</button>
+      <button type="button" id="button-email" data-section="email" class="nav-button">发周报</button>
+      <button type="button" class="nav-button open-item" data-win="C:\Windows\System32\calc.exe" data-mac="/Applications/Calculator.app/Contents/MacOS/Calculator">计算器</button>
+      <button type="button" class="nav-button open-item" data-win="C:\Windows\System32\cmd.exe" data-mac="/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal">CMD</button>
+    </div>
+
+    <footer class="nav-footer">
+      <div>
+        <i id="window-search-btn" class="nav-footer-button">Search</i>
+        <input placeholder="输入关键词回车搜索" class="nav-footer-button" id="window-search"/>
+      </div>
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+    </footer>
+  </nav>
+
+  <main class="content js-content"></main>
+
+  <script>
+    window.$ = window.jQuery = require('./assets/plugins/jquery-3.1.0.min')
+    require('./assets/plugins/qrcode.min')
+    require('./assets/imports')
+    require('./assets/ex-links')
+    require('./assets/nav')
+    require('./assets/demo-btns')
+    require('./assets/normalize-shortcuts')
+  </script>
+</body>
+</html>

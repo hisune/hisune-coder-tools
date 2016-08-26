@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>offset([coordinates])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="offset">
+    <h2><span>返回值:Object</span>offset([coordinates])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>获取匹配元素在当前视口的相对偏移。</p>
+      <div class="longdesc">
+        <p>返回的对象包含两个整型属性：top 和 left，以像素计。此方法只对可见元素有效。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>coordinates{top,left}</strong><span>Object</span><em>V1.4</em></h4>
+      <p>必需。规定以像素计的 top 和 left 坐标。</p>
+      <p>可能的值：</p>
+      <ul>
+        <li>值对，比如 {top:100,left:0}</li>
+        <li>带有 top 和 left 属性的对象</li>
+      </ul>
+      <h4><strong>function(index,coords)</strong><span>function</span><em>V1.4</em></h4>
+      <p>规定返回被选元素新偏移坐标的函数。</p>
+      <ul>
+        <li>index - 可选。接受选择器的 index 位置</li>
+        <li>oldvalue - 可选。接受选择器的当前坐标</li>
+      </ul>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数描述:</h4>
+      <p>获取第二段的偏移</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;2nd Paragraph&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var p = $("p:last");
+var offset = p.offset();
+p.html( "left: " + offset.left + ", top: " + offset.top );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;left: 0, top: 35&lt;/p&gt;</code></pre>
+      <h4>参数coordinates 描述:</h4>
+      <p>获取第二段的偏移</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;2nd Paragraph&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p:last").offset({ top: 10, left: 30 });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>callbacks.disable()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="callbacks.disable">
+    <h2><span>返回值:undefined</span>callbacks.disable()</h2>
+    <h3><em>V1.7</em>概述</h3>
+    <div class="desc">
+      <p>禁用回调列表中的回调 </p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>使用 callbacks.disable() 禁用回调列表：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>// a sample logging function to be added to a callbacks list
+var foo = function( value ){
+    console.log( value );
+}
+
+var callbacks = $.Callbacks();
+
+// add the above function to the list
+callbacks.add( foo );
+
+// fire the items on the list
+callbacks.fire( 'foo' ); // outputs: foo
+
+// disable further calls being possible
+callbacks.disable();
+
+// attempt to fire with 'foobar' as an argument
+callbacks.fire( 'foobar' ); // foobar isn't output</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>next([expr])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="next">
+    <h2><span>返回值:jQuery</span>next(<em class="optional">[expr]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>取得一个包含匹配的元素集合中每一个元素紧邻的后面同辈元素的元素集合。</p>
+      <div class="longdesc">
+        <p>这个函数只返回后面那个紧邻的同辈元素，而不是后面所有的同辈元素（可以使用nextAll）。可以用一个可选的表达式进行筛选。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>用于筛选的表达式</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>找到每个段落的后面紧邻的同辈元素。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").next()</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello Again&lt;/p&gt;, &lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt; ]</code></pre>
+      <h4>描述:</h4>
+      <p>找到每个段落的后面紧邻的同辈元素中类名为selected的元素。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").next(".selected")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p class="selected"&gt;Hello Again&lt;/p&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

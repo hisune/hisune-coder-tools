@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$.fn.jquery</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jquery">
+    <h2><span>返回值:String</span>$.fn.jquery</h2>
+    <h3><em>V1.0</em>概述</h3>
+    <div class="desc">
+      <p>代表 jQuery 版本号的字符串。</p>
+      <div class="longdesc">
+        <p>.jquery 属性是通过 jQuery 原型赋值的，通过使用它的别名 $.fn 进行引用。它是一个含有 jQuery 版本号的字符串，例如 &quot;1.5.0&quot; 或 &quot;1.4.4&quot;.</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>判断一个对象是否是 jQuery 对象。</p>
+      <h5>jQuery 代码:</h5>
+      <pre>var a = { what: &quot;A regular JS object&quot; },
+      b = $('body');
+         if ( a.jquery ) { // falsy, since it's undefined
+      alert(' a is a jQuery object! ');
+      }    if ( b.jquery ) { // truthy, since it's a string
+      alert(' b is a jQuery object! ');
+  }</pre>
+ <h4>描述:</h4>
+      <p>取得页面上当前使用的 jQuery 的版本号。</p>
+      <h5>jQuery 代码:</h5>
+      <pre>alert( 'You are running jQuery version: ' + $.fn.jquery );</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

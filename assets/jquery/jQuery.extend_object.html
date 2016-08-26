@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.extend(object)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.extend_object">
+    <h2><span>返回值:jQuery</span>jQuery.extend(object)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>扩展jQuery对象本身。</p>
+      <div class="longdesc">
+        <p>用来在jQuery命名空间上增加新函数。 查看 'jQuery.fn.extend' 获取更多添加<a href="http://docs.jquery.com/Plugins/Authoring" title="Plugins/Authoring">插件</a>的信息。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>object</strong><span>Object</span><em>V1.0</em></h4>
+      <p>用以扩展 jQuery 对象</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>在jQuery命名空间上增加两个函数。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.extend({
+  min: function(a, b) { return a &lt; b ? a : b; },
+  max: function(a, b) { return a &gt; b ? a : b; }
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>jQuery.min(2,3); // =&gt; 2
+jQuery.max(4,5); // =&gt; 5</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

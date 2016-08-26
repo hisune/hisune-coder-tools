@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:last-child</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="lastChild">
+    <h2><span>返回值:Array&lt;Element(s)&gt;</span>:last-child</h2>
+    <h3><em>V1.1.4</em>概述</h3>
+    <div class="desc">
+      <p>匹配最后一个子元素</p>
+      <div class="longdesc">
+        <p>':last'只匹配一个元素，而此选择符将为每个父元素匹配一个子元素</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>在每个 ul 中查找最后一个 li</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;John&lt;/li&gt;
+  &lt;li&gt;Karl&lt;/li&gt;
+  &lt;li&gt;Brandon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li&gt;Glen&lt;/li&gt;
+  &lt;li&gt;Tane&lt;/li&gt;
+  &lt;li&gt;Ralph&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("ul li:last-child")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;li&gt;Brandon&lt;/li&gt;, &lt;li&gt;Ralph&lt;/li&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

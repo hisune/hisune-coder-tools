@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>prop(name|properties|key,value|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="prop">
+    <h2><span>返回值:jQuery</span>prop(name|properties|key,value|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>获取匹配的元素集中第一个元素的属性（property）值或设置每一个匹配元素的一个或多个属性。</p>
+      <div class="longdesc">
+        <p>随着一些内置属性的DOM元素或window对象，如果试图将删除该属性，浏览器可能会产生错误。jQuery第一次分配undefined值的属性，而忽略了浏览器生成的任何错误</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>name<em> </em></strong><span>String</span><em>V1.6</em></h4>
+      <p>属性名称</p>
+      <h4><strong>properties<em> </em></strong><span>Map</span><em>V1.6</em></h4>
+      <p>作为属性的“名/值对”对象</p>
+      <h4><strong>key,value<em> </em></strong><span>String,Object</span><em>V1.6</em></h4>
+      <p>属性名称，属性值</p>
+      <h4><strong>key,function(index, attr)<em> </em></strong><span>String,Function</span><em>V1.6</em></h4>
+      <p>1:属性名称。</p>
+      <p>2:返回属性值的函数,第一个参数为当前元素的索引值，第二个参数为原先的属性值。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <h4>参数name 描述:</h4>
+      <p>选中复选框为true，没选中为false</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[type='checkbox']").prop("checked");</code></pre>
+      <h4>参数properties 描述:</h4>
+      <p>禁用页面上的所有复选框。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[type='checkbox']").prop({
+  disabled: true
+});</code></pre>
+      <h4>参数key,value 描述:</h4>
+      <p>禁用和选中所有页面上的复选框。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[type='checkbox']").prop("disabled", false);
+$("input[type='checkbox']").prop("checked", true);</code></pre>
+      <h4>参数key,回调函数 描述:</h4>
+      <p>通过函数来设置所有页面上的复选框被选中。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[type='checkbox']").prop("checked", function( i, val ) {
+  return !val;
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<script>
+    var closeFunction = function(obj)
+    {
+        obj.nextAll().remove();
+        obj.parent().parent().removeClass('is-open');
+    }
+</script>
+<template class="task-template">
+    <section id="function-section" class="section js-section u-category-menu">
+        <div class="demo" id="function">
+            <div class="demo-wrapper">
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-random">random</button>
+                        <input class="demo-input demo-left-input" id="func-random-length" placeholder="Random string length." value="16">
+                        <input class="demo-input" id="func-random-string" placeholder="Random string character." value="123456789abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ!@#$%^&*()_+=-[],.~">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-hash">hash</button>
+                        <select class="demo-select demo-left-input" id="func-hash-type">
+                            <option value="md5">md5</option>
+                            <option value="sha1">sha1</option>
+                            <option value="sha224">sha224</option>
+                            <option value="sha256">sha256</option>
+                            <option value="sha384">sha384</option>
+                            <option value="sha512">sha512</option>
+                        </select>
+                        <input class="demo-input" id="func-hash-string" placeholder="">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button style="align-self: auto;" class="demo-button demo-left-bottom" id="func-base64">base64</button>
+                        <select class="demo-select demo-left-input" id="func-base64-type">
+                            <option value="encode">encode</option>
+                            <option value="decode">decode</option>
+                        </select>
+                        <textarea rows="3" class="demo-input" id="func-base64-string" placeholder=""></textarea>
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-url">url</button>
+                        <select class="demo-select demo-left-input" id="func-url-type">
+                            <option value="encode">encode</option>
+                            <option value="decode">decode</option>
+                        </select>
+                        <input class="demo-input" id="func-url-string" placeholder="">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-unix2str">unix2str</button>
+                        <input class="demo-input" id="func-unix2str-string" placeholder="eg. 1471363200">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-str2unix">str2unix</button>
+                        <input class="demo-input" id="func-str2unix-string" placeholder="eg. 2016-08-18 12:13:15">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-qrcode">qrcode</button>
+                        <input class="demo-input" id="func-qrcode-string" placeholder="">
+                    </div>
+                    <div class="demo-box is-selectable" id="qrcode-result">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-en-cn">en-cn</button>
+                        <textarea rows="3" class="demo-input" id="func-en-cn-string" placeholder="中英文翻译"></textarea>
+                    </div>
+                    <div class="demo-box is-selectable" id="en-cn-result">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-translate">translate</button>
+                        <select class="demo-select demo-left-input" id="func-translate-target">
+                            <option value="en">目标语言</option>
+                            <option value="zh">中文</option>
+                            <option value="en">英语</option>
+                            <option value="cht">繁体</option>
+                            <option value="yue">粤语</option>
+                            <option value="wyw">文言文</option>
+                            <option value="th">泰语</option>
+                            <option value="jp">日语</option>
+                            <option value="kor">韩语</option>
+                            <option value="fra">法语</option>
+                            <option value="ru">俄语</option>
+                            <option value="de">德语</option>
+                        </select>
+                        <textarea rows="3" class="demo-input" id="func-translate-string" placeholder="多语言翻译"></textarea>
+                    </div>
+                    <div class="demo-box is-selectable" id="translate-result">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            require('./renderer-process/menus/function')
+        </script>
+
+    </section>
+</template>

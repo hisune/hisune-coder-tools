@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>position()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="position">
+    <h2><span>返回值:Object{top,left}</span>position()</h2>
+    <h3><em>V1.2</em>概述</h3>
+    <div class="desc">
+      <p>获取匹配元素相对父元素的偏移。</p>
+      <div class="longdesc">
+        <p>返回的对象包含两个整型属性：top 和 left。为精确计算结果，请在补白、边框和填充属性上使用像素单位。此方法只对可见元素有效。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>获取第一段的偏移</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;2nd Paragraph&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var p = $("p:first");
+var position = p.position();
+$("p:last").html( "left: " + position.left + ", top: " + position.top );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;left: 15, top: 15&lt;/p&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

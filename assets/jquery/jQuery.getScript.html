@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.getScript(url,[callback])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.getScript">
+    <h2><span>返回值:XMLHttpRequest</span>jQuery.getScript(url, <em class="optional">[callback]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>通过 HTTP GET 请求载入并执行一个 JavaScript 文件。</p>
+      <div class="longdesc">
+        <p>jQuery 1.2 版本之前，getScript 只能调用同域 JS 文件。 1.2中，您可以跨域调用 JavaScript 文件。注意：Safari 2 或更早的版本不能在全局作用域中同步执行脚本。如果通过 getScript 加入脚本，请加入延时函数。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>url,[callback]</strong><span>String,Function</span><em>V1.0</em></h4>
+      <p><strong>url</strong>:待载入 JS 文件地址。</p>
+      <p><strong>callback</strong>:成功载入后回调函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>载入 &lt;a title="http://jquery.com/plugins/project/color" class="external text" href="http://jquery.com/plugins/project/color"&gt;jQuery 官方颜色动画插件&lt;/a&gt; 成功后绑定颜色变化动画。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button id="go"&gt;&#187; Run&lt;/button&gt;
+&lt;div class="block"&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.getScript("http://dev.jquery.com/view/trunk/plugins/color/jquery.color.js", function(){
+  $("#go").click(function(){
+    $(".block").animate( { backgroundColor: 'pink' }, 1000)
+      .animate( { backgroundColor: 'blue' }, 1000);
+  });
+});</code></pre>
+      <h4>描述:</h4>
+      <p>加载并执行 test.js。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.getScript("test.js");</code></pre>
+      <h4>描述:</h4>
+      <p>加载并执行 test.js ，成功后显示信息。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.getScript("test.js", function(){
+  alert("Script loaded and executed.");
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

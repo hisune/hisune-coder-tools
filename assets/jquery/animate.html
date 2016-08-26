@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animate(params, [duration], [easing], [callback])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="animate">
+    <h2><span>返回值:jQuery</span>animate(params,[speed],[easing],[fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>用于创建自定义动画的函数。</p>
+      <div class="longdesc">
+        <p>这个函数的关键在于指定动画形式及结果样式属性对象。这个对象中每个属性都表示一个可以变化的样式属性（如“height”、“top”或“opacity”）。注意：所有指定的属性必须用骆驼形式，比如用marginLeft代替margin-left. </p>
+        <p>而每个属性的值表示这个样式属性到多少时动画结束。如果是一个数值，样式属性就会从当前的值渐变到指定的值。如果使用的是“hide”、“show”或“toggle”这样的字符串值，则会为该属性调用默认的动画形式。</p>
+        <p>在 jQuery 1.2 中，你可以使用 em 和 % 单位。另外，在 jQuery 1.2 中，你可以通过在属性值前面指定 "&lt;em&gt;+=&lt;/em&gt;" 或 "&lt;em&gt;-=&lt;/em&gt;" 来让元素做相对运动。</p>
+        <p>jQuery 1.3中，如果duration设为0则直接完成动画。而在以前版本中则会执行默认动画。</p>
+        <p>jQuery 1.8中，当你使用CSS属性在<a href="css.html">css()</a>或<a href="animate.html">animate()</a>中，我们将根据浏览器自动加上前缀(在适当的时候)，比如("user-select", "none"); 在Chrome/Safari浏览器中我们将设置为"-webkit-user-select", Firefox会使用"-moz-user-select", IE10将使用"-ms-user-select".</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>params,[speed],[easing],[fn]</strong><span>Options,Number/String,String,Function</span><em>V1.0</em></h4>
+      <p><strong>params</strong>:一组包含作为动画属性和终值的样式属性和及其值的集合</p>
+      <p><strong>speed</strong>:三种预定速度之一的字符串(&quot;slow&quot;,&quot;normal&quot;, or &quot;fast&quot;)或表示动画时长的毫秒数值(如：1000)</p>
+      <p><strong>easing</strong>:要使用的擦除效果的名称(需要插件支持).默认jQuery提供&quot;linear&quot; 和 &quot;swing&quot;.</p>
+      <p><strong>fn</strong>:在动画完成时执行的函数，每个元素执行一次。</p>
+      <h4><strong>params,options</strong><span>String,String</span><em>V1.0</em></h4>
+      <p><strong>params</strong>::一组包含作为动画属性和终值的样式属性和及其值的集合</p>
+      <p><strong>options</strong>:动画的额外选项。如：speed - 设置动画的速度,easing - 规定要使用的 easing 函数,callback - 规定动画完成之后要执行的函数,step - 规定动画的每一步完成之后要执行的函数,queue - 布尔值。指示是否在效果队列中放置动画。如果为 false，则动画将立即开始,specialEasing - 来自 <em>styles</em> 参数的一个或多个 CSS 属性的映射，以及它们的对应 easing 函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>点击按钮后div元素的几个不同属性一同变化</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button id="go"&gt; Run&lt;/button&gt;
+&lt;div id="block"&gt;Hello!&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>// 在一个动画中同时应用三种类型的效果
+$("#go").click(function(){
+  $("#block").animate({ 
+    width: "90%",
+    height: "100%", 
+    fontSize: "10em", 
+    borderWidth: 10
+  }, 1000 );
+});</code></pre>
+      <h4>描述:</h4>
+      <p>让指定元素左右移动</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button id="left"&gt;&#171;&lt;/button&gt; &lt;button id="right"&gt;&#187;&lt;/button&gt;
+&lt;div class="block"&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#right").click(function(){
+  $(".block").animate({left: '+50px'}, "slow");
+});
+
+$("#left").click(function(){
+  $(".block").animate({left: '-50px'}, "slow");
+});</code></pre>
+      <h4>描述:</h4>
+      <p>在600毫秒内切换段落的高度和透明度</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").animate({
+   height: 'toggle', opacity: 'toggle'
+ }, "slow");</code></pre>
+      <h4>描述:</h4>
+      <p>用500毫秒将段落移到left为50的地方并且完全清晰显示出来（透明度为1）</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").animate({
+   left: 50, opacity: 'show'
+ }, 500);</code></pre>
+      <h4>描述:</h4>
+      <p>一个使用“easein”函数提供不同动画样式的例子。只有使用了插件来提供这个“easein”函数，这个参数才起作用。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").animate({
+   opacity: 'show'
+ }, "slow", "easein");</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

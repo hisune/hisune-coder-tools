@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.state()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.state">
+    <h2><span>返回值:Deferred Object</span>deferred.state()</h2>
+    <h3><em>V1.7</em>概述</h3>
+    <div class="desc">
+      <p><span id="result_box" lang="zh-CN" xml:lang="zh-CN">确定一个Deferred对象的当前状态</span>。</p>
+      <div class="longdesc">
+        <p><span id="result_box2" lang="zh-CN" xml:lang="zh-CN">deferred.state（）方法返回一个字符串，代表Deferred对象的当前状态。 Deferred对象可以在三种状态之一：</span></p>
+        <ul>
+          <li> <strong>pending</strong>:   Deferred对象是尚未完成状态 (不是 &quot;rejected&quot; 或 &quot;resolved&quot;). </li>
+          <li> <strong>resolved</strong>:   &nbsp;Deferred对象是在解决状态，这意味着，<a href="http://api.jquery.com/deferred.resolve/">deferred.resolve()</a>&nbsp;或者&nbsp;<a href="http://api.jquery.com/deferred.resolveWith/">deferred.resolveWith()</a>被对象访问和doneCallbacks被访问（或在被调用的过程中） 。 </li>
+          <li> <strong>rejected</strong>:   Deferred对象是在被拒绝的状态，这意味着，<a href="http://api.jquery.com/deferred.reject/">deferred.reject()</a>&nbsp;或者&nbsp;<a href="http://api.jquery.com/deferred.rejectWith/">deferred.rejectWith()</a>&nbsp;被对象访问和failCallbacks被访问（或在被调用的过程中） 。 </li>
+        </ul>
+        <p> 这种方法主要是有用的调试，以确定的，例如，递延是否已经得到解决，即使你打算拒绝它的内部代码。 </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

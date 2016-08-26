@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.getJSON(url,[data],[callback])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.getJSON">
+    <h2><span>返回值:XMLHttpRequest</span>jQuery.getJSON(url, <em class="optional">[data]</em>, <em class="optional">[callback]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>通过 HTTP GET 请求载入 JSON 数据。</p>
+      <div class="longdesc">
+        <p>在 jQuery 1.2 中，您可以通过使用<a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/" class="external text" title="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a>形式的回调函数来加载其他网域的JSON数据，如 "myurl?callback=?"。jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。  注意：此行以后的代码将在这个回调函数执行前执行。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>url,[data],[callback]</strong><span>String,Map,Function</span><em>V1.0</em></h4>
+      <p><strong>url</strong>:发送请求地址。</p>
+      <p><strong>data</strong>:待发送 Key/value 参数。</p>
+      <p><strong>callback</strong>:载入成功时回调函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>从 Flickr JSONP API 载入 4 张最新的关于猫的图片。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div id="images"&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&amp;tagmode=any&amp;format
+=json&amp;jsoncallback=?", function(data){
+  $.each(data.items, function(i,item){
+    $("&lt;img/&gt;").attr("src", item.media.m).appendTo("#images");
+    if ( i == 3 ) return false;
+  });
+});</code></pre>
+      <h4>描述:</h4>
+      <p>从 test.js 载入 JSON 数据并显示 JSON 数据中一个 name 字段数据。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.getJSON("test.js", function(json){
+  alert("JSON Data: " + json.users[3].name);
+});</code></pre>
+      <h4>描述:</h4>
+      <p>从 test.js 载入 JSON 数据，附加参数，显示 JSON 数据中一个 name 字段数据。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.getJSON("test.js", { name: "John", time: "2pm" }, function(json){
+  alert("JSON Data: " + json.users[3].name);
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

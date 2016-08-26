@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.fn.extend(object)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.fn.extend">
+    <h2><span>返回值:jQuery</span>jQuery.fn.extend(object)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>扩展 jQuery 元素集来提供新的方法（通常用来制作插件）。</p>
+      <div class="longdesc">
+        <p>查看这里&lt;a href="http://docs.jquery.com/Plugins/Authoring" title="Plugins/Authoring"&gt;Plugins/Authoring&lt;/a&gt;可以获取更多信息。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>object</strong><span>Object</span><em>V1.0</em></h4>
+      <p>用来扩充 jQuery 对象。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>增加两个插件方法。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.fn.extend({
+  check: function() {
+    return this.each(function() { this.checked = true; });
+  },
+  uncheck: function() {
+    return this.each(function() { this.checked = false; });
+  }
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>$("input[type=checkbox]").check();
+$("input[type=radio]").uncheck();</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

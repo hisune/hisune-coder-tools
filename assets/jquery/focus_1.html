@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:focus</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="focus_1">
+    <h2><span>返回值:jQuery</span>:focus</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>匹配当前获取焦点的元素。</p>
+      <div class="longdesc">
+        <p> 如同其他伪类选择器（那些以":"开始），建议:focus前面用标记名称或其他选择;否则，通用选择("*")是不言而喻的。换句话说，$(':focus')等同为$('*:focus')。如果你正在寻找当前的焦点元素，$( document.activeElement )将检索，而不必搜索整个DOM树。 </p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>添加一个"focused"的类名给那些有focus方法的元素</p>
+      <h5>css 代码:</h5>
+      <pre>.focused {<br />&nbsp; &nbsp; background: #abcdef;<br />}</pre>
+      <h5>html 代码:</h5>
+      <pre>
+&lt;div id=&quot;content&quot;&gt;<br />&nbsp; &nbsp; &lt;input tabIndex=&quot;1&quot;&gt;<br />&nbsp; &nbsp; &lt;input tabIndex=&quot;2&quot;&gt;<br />&nbsp; &nbsp; &lt;select tabIndex=&quot;3&quot;&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;select menu&lt;/option&gt;<br />&nbsp; &nbsp; &lt;/select&gt;<br />&nbsp; &nbsp; &lt;div tabIndex=&quot;4&quot;&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; a div<br />&nbsp; &nbsp; &lt;/div&gt;<br />&lt;/div&gt;</pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$( "#content" ).delegate( "*", "focus blur", function( event ) {
+    var elem = $( this );
+    setTimeout(function() {
+       elem.toggleClass( "focused", elem.is( ":focus" ) );
+    }, 0);
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

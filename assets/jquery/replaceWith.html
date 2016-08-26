@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>replaceWith(content|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="replaceWith">
+    <h2><span>返回值:jQuery</span>replaceWith(content|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>将所有匹配的元素替换成指定的HTML或DOM元素。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>content</strong><span>String, Element, jQuery, Function</span><em>V1.2</em></h4>
+      <p>用于将匹配元素替换掉的内容。如果这里传递一个函数进来的话，函数返回值必须是HTML字符串。</p>
+      <h4><strong>fn</strong><span>Function</span><em>V1.4</em></h4>
+      <p>返回THML字符串，用来替换的内容。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>把所有的段落标记替换成加粗的标记。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;cruel&lt;/p&gt;&lt;p&gt;World&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").replaceWith("&lt;b&gt;Paragraph. &lt;/b&gt;");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;b&gt;Paragraph. &lt;/b&gt;&lt;b&gt;Paragraph. &lt;/b&gt;&lt;b&gt;Paragraph. &lt;/b&gt;</code></pre>
+      <h4>描述:</h4>
+      <p>用第一段替换第三段，你可以发现他是移动到目标位置来替换，而不是复制一份来替换。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="inner first"&gt;Hello&lt;/div&gt;
+  &lt;div class="inner second"&gt;And&lt;/div&gt;
+  &lt;div class="inner third"&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('.third').replaceWith($('.first'));</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="inner second"&gt;And&lt;/div&gt;
+  &lt;div class="inner first"&gt;Hello&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

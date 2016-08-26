@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.pipe([doneFilter],[failFilter],[progressFilter] )</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.pipe">
+    <h2><span>返回值:Deferred Object</span>deferred.pipe([doneFilter],[failFilter],[progressFilter])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>筛选器和/或链Deferreds的实用程序方法。</p>
+      <div class="longdesc">
+        <p>deferred.pipe()方法返回一个新的promise，该过滤器通过一个函数有关的递延状态和价值。该doneFilter和failFilter原递延过滤功能的解决/拒绝的状态和价值。这些过滤器函数可以返回一个新的值被传递给管道承诺的done()或fail()的回调，或者他们可以返回另一个观察对象（推迟，承诺等），将通过它的解决/拒绝状态和价值，以保证管道的回调。如果使用的是过滤功能null ，或不指定，则管道的承诺将得到解决或原驳回值具有相同。</p>
+        <p class="outmoded">注意：从 jQuery 1.8 开始，deferred.pipe() 方法过时. 应该使用deferred.then() 代替它。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>doneFilter,failFilter</strong><em>V1.6</em></h4>
+      <p><strong>doneFilter</strong>:可选函数，当递延得到解决时调用。</p>
+      <p><strong>failFilter</strong>:可选函数，当递延得被拒绝时调用。 </p>
+      <h4><strong>doneFilter,failFilter,progressFilter</strong><em>V1.7</em></h4>
+      <p><strong>doneFilter</strong>:可选函数，当递延得到解决时调用。</p>
+      <p><strong>failFilter</strong>:可选函数，当递延得被拒绝时调用。 </p>
+      <p><strong>progressFilter</strong>:一个可选的函数会在延迟调用被拒绝时被调用</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>过滤解决值:</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var defer = $.Deferred(),
+    filtered = defer.pipe(function( value ) {
+      return value * 2;
+    });
+
+defer.resolve( 5 );
+filtered.done(function( value ) {
+  alert( "Value is ( 2*5 = ) 10: " + value );
+});</code></pre>
+      <h4>描述:</h4>
+      <p>过滤器拒值:</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var defer = $.Deferred(),
+    filtered = defer.pipe( null, function( value ) {
+      return value * 3;
+    });
+
+defer.reject( 6 );
+filtered.fail(function( value ) {
+  alert( "Value is ( 3*6 = ) 18: " + value );
+});;</code></pre>
+      <h4>描述:</h4>
+      <p>链任务:</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var request = $.ajax( url, { dataType: "json" } ),
+    chained = request.pipe(function( data ) {
+      return $.ajax( url2, { data: { user: data.userId } } );
+    });
+
+chained.done(function( data ) {
+  // data retrieved from url2 as provided by the first request
+});
+</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

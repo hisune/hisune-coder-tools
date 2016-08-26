@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>clone([Even[,deepEven]])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="clone">
+    <h2><span>返回值:jQuery</span>clone([Even[,deepEven]])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>克隆匹配的DOM元素并且选中这些克隆的副本。</p>
+      <div class="longdesc">
+        <p>在想把DOM文档中元素的副本添加到其他位置时这个函数非常有用。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>Events</strong><span>Boolean</span><em>V1.0</em></h4>
+      <p>一个布尔值（true 或者 false）指示事件处理函数是否会被复制。V1.5以上版本默认值是：false</p>
+      <h4><strong>Events[,deepEvents]</strong><span>Boolean,Boolean</span><em>V1.5</em></h4>
+      <p>1:一个布尔值（true 或者 false）指示事件处理函数是否会被复制。</p>
+      <p>2:一个布尔值，指示是否对事件处理程序和克隆的元素的所有子元素的数据应该被复制。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>克隆所有b元素（并选中这些克隆的副本），然后将它们前置到所有段落中。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;, how are you?&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("b").clone().prependTo("p");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;, how are you?&lt;/p&gt;</code></pre>
+      <h4>描述:</h4>
+      <p>创建一个按钮，他可以复制自己，并且他的副本也有同样功能。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button&gt;Clone Me!&lt;/button&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("button").click(function(){
+  $(this).clone(true).insertAfter(this);
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

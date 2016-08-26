@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>serialize()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="serialize">
+    <h2><span>返回值:String</span>serialize()</h2>
+    <h3><em>V1.0</em>概述</h3>
+    <div class="desc">
+      <p>序列表表格内容为字符串。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>序列表表格内容为字符串，用于 Ajax 请求。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p id="results"&gt;&lt;b&gt;Results: &lt;/b&gt; &lt;/p&gt;
+&lt;form&gt;
+  &lt;select name="single"&gt;
+    &lt;option&gt;Single&lt;/option&gt;
+    &lt;option&gt;Single2&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select name="multiple" multiple="multiple"&gt;
+    &lt;option selected="selected"&gt;Multiple&lt;/option&gt;
+    &lt;option&gt;Multiple2&lt;/option&gt;
+    &lt;option selected="selected"&gt;Multiple3&lt;/option&gt;
+  &lt;/select&gt;&lt;br/&gt;
+  &lt;input type="checkbox" name="check" value="check1"/&gt; check1
+  &lt;input type="checkbox" name="check" value="check2" checked="checked"/&gt; check2
+  &lt;input type="radio" name="radio" value="radio1" checked="checked"/&gt; radio1
+  &lt;input type="radio" name="radio" value="radio2"/&gt; radio2
+&lt;/form&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#results").append( "&lt;tt&gt;" + $("form").serialize() + "&lt;/tt&gt;" );</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.always(alwaysCallbacks,[alwaysCallbacks])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.always">
+    <h2><span>返回值:Deferred Object</span>deferred.always(alwaysCallbacks,[alwaysCallbacks])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>当递延对象是解决或拒绝时被调用添加处理程序。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>alwaysCallbacks</strong><em>V1.6</em></h4>
+      <p>一个函数，或者函数数组，当递延对象是解决或拒绝时被调用。 </p>
+      <h4><strong>alwaysCallbacks</strong><em>V1.6</em></h4>
+      <p>附加可选的一个函数，或者函数数组，当递延对象是解决或拒绝时被调用。 </p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>jQuery.get（）方法返回一个来自一个延迟的对象的jqXHR对象，我们可以附加一个成功和错误使用deferred.always（）方法的回调。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php").always( function() { 
+  alert("$.get completed with success or error callback arguments"); 
+} );</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery([selector,[context]])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery_selector_context">
+    <h2><span>返回值:jQuery</span>jQuery([selector,[context]])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>这个函数接收一个包含 CSS 选择器的字符串，然后用这个字符串去匹配一组元素。</p>
+      <div class="longdesc">
+        <p>jQuery 的核心功能都是通过这个函数实现的。 jQuery中的一切都基于这个函数，或者说都是在以某种方式使用这个函数。这个函数最基本的用法就是向它传递一个表达式（通常由 CSS 选择器组成），然后根据这个表达式来查找所有匹配的元素。</p>
+        <p>默认情况下, 如果没有指定context参数，$()将在当前的 HTML document中查找 DOM 元素；如果指定了 context 参数，如一个 DOM 元素集或 jQuery 对象，那就会在这个 context 中查找。在jQuery 1.3.2以后，其返回的元素顺序等同于在context中出现的先后顺序。</p>
+        <p>参考文档中 选择器 部分获取更多用于 expression 参数的 CSS 语法的信息。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>selector,[context]</strong><span>String,Element,/jQuery</span><em>V1.0</em></h4>
+      <p><strong>selector</strong>:用来查找的字符串</p>
+      <p><strong>context</strong>:作为待查找的 DOM 元素集、文档或 jQuery 对象。</p>
+      <h4><strong>element</strong><span>Element</span><em>V1.0</em></h4>
+      <p>一个用于封装成jQuery对象的DOM元素</p>
+      <h4><strong>object</strong><span>object</span><em>V1.0</em></h4>
+      <p>一个用于封装成jQuery对象</p>
+      <h4><strong>elementArray</strong><span>Element</span><em>V1.0</em></h4>
+      <p>一个用于封装成jQuery对象的DOM元素数组。</p>
+      <h4><strong>jQuery object</strong><span>object</span><em>V1.0</em></h4>
+      <p>一个用于克隆的jQuery对象。</p>
+      <h4><strong>jQuery()</strong><span></span><em>V1.4</em></h4>
+      <p>返回一个空的jQuery对象。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>找到所有 p 元素，并且这些元素都必须是 div 元素的子元素。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div &gt; p");</code></pre>
+      <h4>描述:</h4>
+      <p>设置页面背景色。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$(document.body).css( "background", "black" );</code></pre>
+      <h4>描述:</h4>
+      <p>隐藏一个表单中所有元素。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$(myForm.elements).hide()</code></pre>
+      <h4>描述:</h4>
+      <p>在文档的第一个表单中，查找所有的单选按钮(即: type 值为 radio 的 input 元素)。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input:radio", document.forms[0]);</code></pre>
+      <h4>描述:</h4>
+      <p>在一个由 AJAX 返回的 XML 文档中，查找所有的 div 元素。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div", xml.responseXML);</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

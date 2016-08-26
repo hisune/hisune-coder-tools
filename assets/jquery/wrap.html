@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wrap(html|ele|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="wrap">
+    <h2><span>返回值:jQuery</span>wrap(html|element|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>把所有匹配的元素用其他元素的结构化标记包裹起来。</p>
+      <div class="longdesc">
+        <p>这种包装对于在文档中插入额外的结构化标记最有用，而且它不会破坏原始文档的语义品质。这个函数的原理是检查提供的第一个元素（它是由所提供的HTML标记代码动态生成的），并在它的代码结构中找到最上层的祖先元素－－这个祖先元素就是包裹元素。当HTML标记代码中的元素包含文本时无法使用这个函数。因此，如果要添加文本应该在包裹完成之后再行添加。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>html</strong><span>String</span><em>V1.0</em></h4>
+      <p>HTML标记代码字符串，用于动态生成元素并包裹目标元素</p>
+      <h4><strong>element</strong><span>Element</span><em>V1.0</em></h4>
+      <p>用于包装目标元素的DOM元素</p>
+      <h4><strong>fn</strong><span>Function</span><em>V1.4</em></h4>
+      <p>生成包裹结构的一个函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>html参数描述:</h4>
+      <p>把所有的段落用一个新创建的div包裹起来</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").wrap("&lt;div class='wrap'&gt;&lt;/div&gt;");</code></pre>
+      <h4>elem参数描述:</h4>
+      <p>用ID是"content"的div将每一个段落包裹起来</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").wrap(document.getElementById('content'));</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>用原先div的内容作为新div的class，并将每一个元素包裹起来</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="inner"&gt;Hello&lt;/div&gt;
+  &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('.inner').wrap(function() {
+  return '&lt;div class="' + $(this).text() + '" /&gt;';
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="Hello"&gt;
+    &lt;div class="inner"&gt;Hello&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="Goodbye"&gt;
+    &lt;div class="inner"&gt;Goodbye&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

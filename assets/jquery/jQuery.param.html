@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.param(obj,[traditional])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.param">
+    <h2><span>返回值:String</span>jQuery.param(obj,<em class="optional">[traditional]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>将表单元素数组或者对象序列化。是.serialize()的核心方法。</p>
+      <div class="longdesc">
+        <p>在jQuery 1.3中，如果传递的参数是一个函数，那么用.param()会得到这个函数的返回值，而不是把这个函数作为一个字符串来返回。</p>
+        <p>在jQuery 1.4中，.param()会深度递归一个对象来满足现在脚本语言和框架，比如PHP， Ruby on Rails等。你可以通过jQuery.ajaxSettings.traditional = true; 来全局得禁用这个功能。</p>
+        <p>注意：因为有些框架在解析序列化数字的时候能力有限，所以当传递一些含有嵌套对象、数组的对象作为参数时，请务必小心！</p>
+        <p>在jQuery 1.4中，HTML5的input元素也会被序列化。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>obj</strong><span>Array&lt;Elements&gt;/jQuery/Object</span><em>V1.2</em></h4>
+      <p>数组或jQuery对象会按照name/value对进行序列化，普通对象按照key/value对进行序列化。</p>
+      <h4><strong>obj,[traditional]</strong><span>Array&lt;Elements&gt;/jQuery/Object,Boolean</span><em>V1.4</em></h4>
+      <p><strong>obj</strong>:数组或jQuery对象会按照name/value对进行序列化，普通对象按照key/value对进行序列化。</p>
+      <p><strong>traditional</strong>:是否使用传统的方式浅层序列化。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>按照key/value对序列化普通对象。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>
+    var params = { width:1680, height:1050 };
+    var str = jQuery.param(params);
+    $("#results").text(str);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>width=1680&amp;height=1050</code></pre>
+      <h4>描述:</h4>
+      <p>对比两种序列化方式</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var myObject = {
+  a: {
+    one: 1, 
+    two: 2, 
+    three: 3
+  }, 
+  b: [1,2,3]
+};
+var recursiveEncoded = $.param(myObject);
+var recursiveDecoded = decodeURIComponent($.param(myObject));
+
+alert(recursiveEncoded);
+alert(recursiveDecoded);
+//a%5Bone%5D=1&amp;a%5Btwo%5D=2&amp;a%5Bthree%5D=3&amp;b%5B%5D=1&amp;b%5B%5D=2&amp;b%5B%5D=3
+//a[one]=1&amp;a[two]=2&amp;a[three]=3&amp;b[]=1&amp;b[]=2&amp;b[]=3
+
+var shallowEncoded = $.param(myObject, true);
+var shallowDecoded = decodeURIComponent(shallowEncoded);
+
+alert(shallowEncoded);
+alert(shallowDecoded);
+//a=%5Bobject+Object%5D&amp;b=1&amp;b=2&amp;b=3
+//a=[object+Object]&amp;b=1&amp;b=2&amp;b=3
+</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

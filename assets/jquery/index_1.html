@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>index([selector|element])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="index_1">
+    <h2><span>返回值:Number</span>index([selector|element])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>搜索匹配的元素，并返回相应元素的索引值，从0开始计数。</p>
+      <div class="longdesc">
+        <p>如果不给 .index() 方法传递参数，那么返回值就是这个jQuery对象集合中第一个元素相对于其同辈元素的位置。<br />
+          &nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果参数是一组DOM元素或者jQuery对象，那么返回值就是传递的元素相对于原先集合的位置。<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果参数是一个选择器，那么返回值就是原先元素相对于选择器匹配元素中的位置。如果找不到匹配的元素，则返回-1。
+          
+          具体请参考示例。 </p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>index()</strong><em>V1.4</em></h4>
+      <h4><strong>selector</strong><span>Selector</span><em>V14</em></h4>
+      <p>一个选择器，代表一个jQuery对象，将会从这个对象中查找元素。</p>
+      <h4><strong>element</strong><span>Element</span><em>V1.0</em></h4>
+      <p>获得 index 位置的元素。可以是 DOM 元素或 jQuery 选择器。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查找元素的索引值</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+  &lt;li id="foo"&gt;foo&lt;/li&gt;
+  &lt;li id="bar"&gt;bar&lt;/li&gt;
+  &lt;li id="baz"&gt;baz&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('li').index(document.getElementById('bar')); //1，传递一个DOM对象，返回这个对象在原先集合中的索引位置
+$('li').index($('#bar')); //1，传递一个jQuery对象
+$('li').index($('li:gt(0)')); //1，传递一组jQuery对象，返回这个对象中第一个元素在原先集合中的索引位置
+$('#bar').index('li'); //1，传递一个选择器，返回#bar在所有li中的做引位置
+$('#bar').index(); //1，不传递参数，返回这个元素在同辈中的索引位置。  </code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

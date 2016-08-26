@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.relatedTarget</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.relatedTarget">
+    <h2><span>返回值: Element</span>event.relatedTarget</h2>
+    <h3><em>V1.1.4</em>概述</h3>
+    <div class="desc">
+      <p>在事件中涉及的其它任何DOM元素。</p>
+      <div class="longdesc">
+        <p>对于 mouseout 事件，它指向被进入的元素；对于 mousein 事件，它指向被离开的元素。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>On mouseout of anchors, alert the element type being entered.</p>
+      <h5>jQuery 代码: </h5>
+      <pre>$(&quot;a&quot;).mouseout(function(event) {
+    alert(event.relatedTarget.nodeName); // &quot;DIV&quot;
+  });  </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

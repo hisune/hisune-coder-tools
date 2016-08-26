@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>callbacks.fire(arguments)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="callbacks.fire">
+    <h2><span>返回值:undefined</span>callbacks.fire(arguments)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>禁用回调列表中的回调 </p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>arguments</strong><em>V1.7</em></h4>
+      <p>这个参数或参数列表传回给回调列表。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p> 使用&nbsp;callbacks.fire()&nbsp;用任何已传递的参数调用列表中的回调: </p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>// a sample logging function to be added to a callbacks list
+var foo = function( value ){
+    console.log( 'foo:' + value );
+}
+
+var callbacks = $.Callbacks();
+
+// add the function 'foo' to the list
+callbacks.add( foo );
+
+// fire the items on the list
+callbacks.fire( 'hello' ); // outputs: 'foo: hello'
+callbacks.fire( 'world '); // outputs: 'foo: world'
+
+// add another function to the list
+var bar = function( value ){
+    console.log( 'bar:' + value );
+} 
+
+// add this function to the list
+callbacks.add( bar );
+
+// fire the items on the list again
+callbacks.fire( 'hello again' );
+// outputs:
+// 'foo: hello again'
+// 'bar: hello again'</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

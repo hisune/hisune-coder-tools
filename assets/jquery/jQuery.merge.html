@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.merge(first,second)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.merge">
+    <h2><span>返回值:Array</span>jQuery.merge(first,second)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>合并两个数组</p>
+      <div class="longdesc">
+        <p>返回的结果会修改第一个数组的内容&#8212;&#8212;第一个数组的元素后面跟着第二个数组的元素。要去除重复项，请使用$.unique()</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>first,second</strong><span>Array,Array</span><em>V1.0</em></h4>
+      <p><strong>first</strong>:第一个待处理数组，会改变其中的元素。</p>
+      <p><strong>second</strong>:第二个待处理数组，不会改变其中的元素。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>合并两个数组到第一个数组上。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.merge( [0,1,2], [2,3,4] )</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[0,1,2,2,3,4]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>queue(element,[queueName])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="queue">
+    <h2><span>返回值:Array/jQuery</span>queue(element,[queueName])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>显示或操作在匹配元素上执行的函数队列</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>element,[queueName]</strong><span>Element,String</span><em>V1.3</em></h4>
+      <p><strong>element</strong>:检查附加列队的DOM元素</p>
+      <p><strong>queueName</strong>:字符串值，包含序列的名称。默认是 fx, 标准的效果序列。</p>
+      <h4><strong>element,queueName,newQueue </strong><span>Element,String,Array </span><em>V1.3</em></h4>
+      <p><strong>element</strong>:检查附加列队的DOM元素</p>
+      <p><strong>queueName</strong>:字符串值，包含序列的名称。默认是 fx, 标准的效果序列。</p>
+      <p><strong>newQueue</strong>:替换当前函数列队内容的数组</p>
+      <h4><strong>element,queueName,callback()</strong><span>Element,String</span><em>V1.3</em></h4>
+      <p><strong>element</strong>:检查附加列队的DOM元素</p>
+      <p><strong>queueName</strong>:字符串值，包含序列的名称。默认是 fx, 标准的效果序列。</p>
+      <p><strong>callback()</strong>:要添加进队列的函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>显示队列长度</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;style&gt;
+  div { margin:3px; width:40px; height:40px;
+        position:absolute; left:0px; top:30px; 
+        background:green; display:none; }
+  div.newcolor { background:blue; }
+  span { color:red; }
+&lt;/style&gt;
+&lt;button id="show"&gt;Show Length of Queue&lt;/button&gt;
+&lt;span&gt;&lt;/span&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#show").click(function () {
+      var n = $("div").queue("fx");
+      $("span").text("Queue length is: " + n.length);
+});
+function runIt() {
+      $("div").show("slow");
+      $("div").animate({left:'+=200'},2000);
+      $("div").slideToggle(1000);
+      $("div").slideToggle("fast");
+      $("div").animate({left:'-=200'},1500);
+      $("div").hide("slow");
+      $("div").show(1200);
+      $("div").slideUp("normal", runIt);
+}
+runIt();</code></pre>
+      <h4>描述:</h4>
+      <p>通过设定队列数组来删除动画队列</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;style&gt;
+  div { margin:3px; width:40px; height:40px;
+        position:absolute; left:0px; top:30px; 
+        background:green; display:none; }
+  div.newcolor { background:blue; }
+  &lt;/style&gt;
+
+  &lt;button id="start"&gt;Start&lt;/button&gt;
+  &lt;button id="stop"&gt;Stop&lt;/button&gt;
+  &lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#start").click(function () {
+      $("div").show("slow");
+      $("div").animate({left:'+=200'},5000);
+      $("div").queue(function () {
+          $(this).addClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").animate({left:'-=200'},1500);
+      $("div").queue(function () {
+          $(this).removeClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").slideUp();
+  });
+  $("#stop").click(function () {
+      $("div").queue("fx", []);
+      $("div").stop();
+  });</code></pre>
+      <h4>描述:</h4>
+      <p>插入一个自定义函数
+        如果函数执行后要继续队列，则执行 jQuery(this).dequeue();</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;style&gt;
+  div { margin:3px; width:40px; height:40px;
+        position:absolute; left:0px; top:30px; 
+        background:green; display:none; }
+  div.newcolor { background:blue; }
+  &lt;/style&gt;
+  Click here...
+  &lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$(document.body).click(function () {
+      $("div").show("slow");
+      $("div").animate({left:'+=200'},2000);
+      $("div").queue(function () {
+          $(this).addClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").animate({left:'-=200'},500);
+      $("div").queue(function () {
+          $(this).removeClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").slideUp();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

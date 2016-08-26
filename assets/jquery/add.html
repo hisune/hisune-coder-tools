@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>add(expr|ele|html|obj[,con])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/" />
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/" />
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="add">
+    <h2><span>返回值:jQuery</span>add(expr|ele|html|obj<em class="optional">[,con]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>把与表达式匹配的元素添加到jQuery对象中。这个函数可以用于连接分别与两个表达式匹配的元素结果集。</p>
+      <div class="longdesc">
+        <p>jQuery 1.4 中， .add()方法返回的结果将始终以元素在HTML文档中出现的顺序来排序，而不再是简单的添加。</p>
+        <p>jQuery 1.9 中， .add()方法返回的结果总是按照节点在document（文档）中的顺序排列。在1.9之前，如果上下文或输入的集合中任何一个以脱离文档的节点（未在文档中）开始，使用.add()方法节点不会按照document（文档）中的顺序排序。现在，返回的节点按照文档中的顺序排序，并且脱离文档的节点被放置在集合的末尾。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>一个用于匹配元素的选择器字符串。</p>
+      <h4><strong>elements<em> </em></strong><span>DOMElement</span><em>V1.0</em></h4>
+      <p>DOM元素。</p>
+      <h4><strong>html<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>HTML片段添加到匹配的元素。</p>
+      <h4><strong>jQuery object<em> </em></strong><span>object</span><em>V1.3.2</em></h4>
+      <p>一个jqeruy对象增加到匹配的元素</p>
+      <h4><strong>expr,context<em> </em></strong><span>Element, jQuery</span><em>V1.4</em></h4>
+      <p><strong>expr</strong>:用于匹配元素并添加的表达式字符串，或者用于动态生成的HTML代码，如果是一个字符串数组则返回多个元素 </p>
+      <p><strong>context</strong>:作为待查找的 DOM 元素集、文档或 jQuery 对象。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>添加一个新元素到一组匹配的元素中，并且这个新元素能匹配给定的表达式。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;Hello Again&lt;/span&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").add("span")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Hello Again&lt;/span&gt; ]</code></pre>
+      <h4>描述:</h4>
+      <p>动态生成一个元素并添加至匹配的元素中</p>
+      <h5>HTML 代码:</h5> 
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").add("&lt;span&gt;Again&lt;/span&gt;")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Hello Again&lt;/span&gt; ]</code></pre>
+      <h4>描述:</h4>
+      <p>为匹配的元素添加一个或者多个元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;&lt;span id="a"&gt;Hello Again&lt;/span&gt;&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").add(document.getElementById("a"))</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p&gt;Hello&lt;/p&gt;, &lt;p&gt;&lt;span id="a"&gt;Hello Again&lt;/span&gt;&lt;/p&gt;, &lt;span id="a"&gt;Hello Again&lt;/span&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

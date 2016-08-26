@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.support</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.support">
+    <h2><span>返回值:Object</span>jQuery.support</h2>
+    <h3><em>V1.3</em>概述</h3>
+    <div class="desc">
+      <p>jQuery 1.3 新增。一组用于展示不同浏览器各自特性和bug的属性集合。</p>
+      <div class="longdesc">
+        <p>jQuery提供了一系列属性，你也可以自由增加你自己的属性。其中许多属性是很低级的，所以很难说他们能否在日新月异的发展中一直保持有效，但这这些主要用于插件和内核开发者。
+        <p>所有这些支持的属性值都通过特性检测来实现，而不是用任何浏览器检测。以下有一些非常棒的资源用于解释这些特性检测是如何工作的：</p>
+        <ul>
+          <li>http://peter.michaux.ca/articles/feature-detection-state-of-the-art-browser-scripting</li>
+          <li>http://yura.thinkweb2.com/cft/</li>
+          <li>http://www.jibbering.com/faq/faq_notes/not_browser_detect.html</li>
+        </ul>
+        <p>jQuery.support主要包括以下测试：</p>
+        <p><strong>boxModel</strong>: 如果这个页面和浏览器是以W3C CSS盒式模型来渲染的，则等于true。通常在IE 6和IE 7的怪癖模式中这个值是false。在document准备就绪前，这个值是null。</p>
+        <p><strong>cssFloat</strong>: 如果用cssFloat来访问CSS的float的值，则返回true。目前在IE中会返回false,他用styleFloat代替。</p>
+        <p><strong>hrefNormalized</strong>: 如果浏览器从getAttribute("href")返回的是原封不动的结果，则返回true。在IE中会返回false，因为他的URLs已经常规化了。</p>
+        <p><strong>htmlSerialize</strong>: 如果浏览器通过innerHTML插入链接元素的时候会序列化这些链接，则返回true，目前IE中返回false。</p>
+        <p><strong>leadingWhitespace</strong>: 如果在使用innerHTML的时候浏览器会保持前导空白字符，则返回true，目前在IE 6-8中返回false。</p>
+        <p><strong>noCloneEvent</strong>: 如果浏览器在克隆元素的时候不会连同事件处理函数一起复制，则返回true，目前在IE中返回false。</p>
+        <p><strong>objectAll</strong>: 如果在某个元素对象上执行getElementsByTagName("*")会返回所有子孙元素，则为true，目前在IE 7中为false。</p>
+        <p><strong>opacity</strong>: 如果浏览器能适当解释透明度样式属性，则返回true，目前在IE中返回false，因为他用alpha滤镜代替。</p>
+        <p><strong>scriptEval</strong>: 使用 appendChild/createTextNode 方法插入脚本代码时，浏览器是否执行脚本，目前在IE中返回false，IE使用 .text 方法插入脚本代码以执行。</p>
+        <p><strong>style</strong>: 如果getAttribute("style")返回元素的行内样式，则为true。目前IE中为false，因为他用cssText代替。</p>
+        <p><strong>tbody</strong>: 如果浏览器允许table元素不包含tbody元素，则返回true。目前在IE中会返回false，他会自动插入缺失的tbody。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>检测浏览器是否支持盒式模型</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.support.boxModel</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

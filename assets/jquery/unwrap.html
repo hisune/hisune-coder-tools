@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unwrap()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="unwrap">
+    <h2><span>返回值:jQuery</span>unwrap()</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>这个方法将移出元素的父元素。这能快速取消 .wrap()方法的效果。匹配的元素（以及他们的同辈元素）会在DOM结构上替换他们的父元素。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>用ID是"content"的div将每一个段落包裹起来</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+    &lt;p&gt;cruel&lt;/p&gt;
+    &lt;p&gt;World&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code> $("p").unwrap()</code></pre>
+      <h5>结果:</h5>
+      <pre><code>    &lt;p&gt;Hello&lt;/p&gt;
+    &lt;p&gt;cruel&lt;/p&gt;
+    &lt;p&gt;World&lt;/p&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

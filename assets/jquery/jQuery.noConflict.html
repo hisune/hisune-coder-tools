@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.noConflict([extreme])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.noConflict">
+    <h2><span>返回值:jQuery</span>jQuery.noConflict([extreme])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>运行这个函数将变量$的控制权让渡给第一个实现它的那个库。</p>
+      <div class="longdesc">
+        <p>这有助于确保jQuery不会与其他库的$对象发生冲突。
+          
+          在运行这个函数后，就只能使用jQuery变量访问jQuery对象。例如，在要用到$("div p")的地方，就必须换成jQuery("div p")。
+          
+          '''注意:'''这个函数必须在你导入jQuery文件之后，并且在导入另一个导致冲突的库'''之前'''使用。当然也应当在其他冲突的库被使用之前，除非jQuery是最后一个导入的。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>extreme</strong><span>Boolean</span><em>V1.0</em></h4>
+      <p>传入 true 来允许彻底将jQuery变量还原</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>将$引用的对象映射回原始的对象。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.noConflict();
+// 使用 jQuery
+jQuery("div p").hide();
+// 使用其他库的 $()
+$("content").style.display = 'none';</code></pre>
+      <h4>描述:</h4>
+      <p>恢复使用别名$，然后创建并执行一个函数，在这个函数的作用域中仍然将$作为jQuery的别名来使用。在这个函数中，原来的$对象是无效的。这个函数对于大多数不依赖于其他库的插件都十分有效。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>jQuery.noConflict();
+(function($) { 
+  $(function() {
+    // 使用 $ 作为 jQuery 别名的代码
+  });
+})(jQuery);
+// 其他用 $ 作为别名的库的代码</code></pre>
+      <h4>描述:</h4>
+      <p>创建一个新的别名用以在接下来的库中使用jQuery对象。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var j = jQuery.noConflict();
+// 基于 jQuery 的代码
+j("div p").hide();
+// 基于其他库的 $() 代码
+$("content").style.display = 'none';</code></pre>
+      <h4>描述:</h4>
+      <p>完全将 jQuery 移到一个新的命名空间。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var dom = {};
+dom.query = jQuery.noConflict(true);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>// 新 jQuery 的代码
+dom.query("div p").hide();
+// 另一个库 $() 的代码
+$("content").style.display = 'none';
+// 另一个版本 jQuery 的代码
+jQuery("div &gt; p").hide();</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

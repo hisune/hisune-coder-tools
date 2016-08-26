@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unbind(type,[data|fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="unbind">
+    <h2><span>返回值:jQuery</span>unbind(type,[data|fn]])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>bind()的反向操作，从每一个匹配的元素中删除绑定的事件。</p>
+      <div class="longdesc">
+        <p>如果没有参数，则删除所有绑定的事件。</p>
+        <p>你可以将你用bind()注册的自定义事件取消绑定。</p>
+        <p>如果提供了事件类型作为参数，则只删除该类型的绑定事件。</p>
+        <p>如果把在绑定时传递的处理函数作为第二个参数，则只有这个特定的事件处理函数会被删除。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type,[fn]</strong><span>String,Function</span><em>V1.0</em></h4>
+      <p><strong>type:</strong>删除元素的一个或多个事件,由空格分隔多个事件值。</p>
+      <p><strong>fn:</strong>要从每个匹配元素的事件中反绑定的事件处理函数</p>
+      <h4><strong>type,false</strong><span>String,bool</span><em>V1.4.3</em></h4>
+      <p><strong>type:</strong>删除元素的一个或多个事件,由空格分隔多个事件值</p>
+      <p><strong>false:</strong>设置为false会使默认的动作失效。 </p>
+      <h4><strong>eventObj</strong><span>String</span><em>V1.0</em></h4>
+      <p>事件对象。这个 eventObj 参数来自事件绑定函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4 xmlns="">描述:</h4>
+      <p xmlns="">把所有段落的所有事件取消绑定</p>
+      <h5 xmlns="">jQuery 代码:</h5>
+      <pre xmlns=""><code>$("p").unbind()</code></pre>
+      <h4 xmlns="">描述:</h4>
+      <p xmlns="">将段落的click事件取消绑定</p>
+      <h5 xmlns="">jQuery 代码:</h5>
+      <pre xmlns=""><code>$("p").unbind( "click" )</code></pre>
+      <h4 xmlns="">描述:</h4>
+      <p xmlns="">删除特定函数的绑定，将函数作为第二个参数传入</p>
+      <h5 xmlns="">jQuery 代码:</h5>
+      <pre xmlns=""><code>var foo = function () {
+  // 处理某个事件的代码
+};
+
+$("p").bind("click", foo); // ... 当点击段落的时候会触发 foo 
+
+$("p").unbind("click", foo); // ... 再也不会被触发 foo</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

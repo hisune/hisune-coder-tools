@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:not(selector)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="not_1">
+    <h2><span>返回值:Array&lt;Element(s)&gt;</span>:not(selector)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>去除所有与给定选择器匹配的元素</p>
+      <div class="longdesc">
+        <p>在jQuery 1.3中，已经支持复杂选择器了（例如:not(div a) 和 :not(div,a)）</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>selector</strong><span>Selector</span><em>V1.0</em></h4>
+      <p>用于筛选的选择器</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查找所有未选中的 input 元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;input name="apple" /&gt;
+&lt;input name="flower" checked="checked" /&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input:not(:checked)")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;input name="apple" /&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

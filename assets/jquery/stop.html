@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>stop([clearQueue],[jumpToEnd])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="stop">
+    <h2><span>返回值:jQuery</span>stop([clearQueue],[jumpToEnd])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>停止所有在指定元素上正在运行的动画。</p>
+      <div class="longdesc">
+        <p>如果队列中有等待执行的动画(并且clearQueue没有设为true)，他们将被马上执行</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>[clearQueue],[gotoEnd]<em> </em></strong><span>Boolean,Boolean</span><em>V1.2</em></h4>
+      <p><strong>clearQueue</strong>:如果设置成true，则清空队列。可以立即结束动画。</p>
+      <p><strong>gotoEnd</strong>:让当前正在执行的动画立即完成，并且重设show和hide的原始样式，调用回调函数等。</p>
+      <h4><strong>[queue],[clearQueue],[jumpToEnd]</strong><span>Boolean</span><em>V1.7</em></h4>
+      <p><strong>queue</strong>:用来停止动画的队列名称</p>
+      <p><strong>clearQueue</strong>:如果设置成true，则清空队列。可以立即结束动画。</p>
+      <p><strong>jumpToEnd</strong>:如果设置成true，则完成队列。可以立即完成动画。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>停止当前正在运行的动画：</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>$("#stop").click(function(){
+  $("#box").stop();
+});</code></pre>
+      <h4>描述:</h4>
+      <p>点击Go之后开始动画,点Stop之后会在当前位置停下来</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button id="go"&gt;Go&lt;/button&gt; &lt;button id="stop"&gt;STOP!&lt;/button&gt;
+&lt;div class="block"&gt;&lt;/div&gt;&lt;button id="go"&gt;Go&lt;/button&gt; &lt;button id="stop"&gt;STOP!&lt;/button&gt;
+&lt;div class="block"&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>// 开始动画
+$("#go").click(function(){
+  $(".block").animate({left: '+200px'}, 5000);
+});
+
+// 当点击按钮后停止动画
+$("#stop").click(function(){
+  $(".block").stop();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

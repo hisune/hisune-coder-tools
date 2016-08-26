@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.isNumeric(value)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.isNumeric">
+    <h2><span>返回值:Boolean</span>jQuery.isNumeric(value)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>确定它的参数是否是一个数字。</p>
+      <div class="longdesc">
+        <p>$.isNumeric() 方法检查它的参数是否代表一个数值。如果是这样，它返回 true。否则，它返回false。该参数可以是任何类型的</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>value</strong><em>V1.7</em></h4>
+      <p> 用于测试的值。 </p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>Sample return values of $.isNumeric with various inputs.</p>
+      <p>jQuery 代码:</p>
+      <PRE><CODE class="example demo-code">$.isNumeric("-10");  // true
+$.isNumeric(16);     // true
+$.isNumeric(0xFF);   // true
+$.isNumeric("0xFF"); // true
+$.isNumeric("8e5");  // true (exponential notation string)
+$.isNumeric(3.1415); // true
+$.isNumeric(+10);    // true
+$.isNumeric(0144);   // true (octal integer literal)
+$.isNumeric("");     // false
+$.isNumeric({});     // false (empty object)
+$.isNumeric(NaN);    // false
+$.isNumeric(null);   // false
+$.isNumeric(true);   // false
+$.isNumeric(Infinity); // false
+$.isNumeric(undefined); // false</CODE></PRE>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>context</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="context">
+    <h2><span>返回值:Element</span>context</h2>
+    <h3><em>V1.3</em>概述</h3>
+    <div class="desc">
+      <p>返回传给jQuery()的原始的DOM节点内容，即jQuery()的第二个参数。如果没有指定，那么context指向当前的文档(document)。</p>
+      <div class="longdesc">
+        <p>可以与<span title="Core/selector">selector</span>一起使用，用于精确检测选择器查询情况。这两个属性对插件开发人员很有用。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>检测使用的文档内容</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("ul")
+  .append("&lt;li&gt;" + $("ul").context + "&lt;/li&gt;")
+  .append("&lt;li&gt;" + $("ul", document.body).context.nodeName + "&lt;/li&gt;");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[object HTMLDocument]  //如果是IE浏览器，则返回[object]
+BODY</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

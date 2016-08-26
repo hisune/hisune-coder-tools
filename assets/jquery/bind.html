@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bind(type,[data],fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="bind">
+    <h2><span>返回值:jQuery</span>bind(type,[data],fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>为每个匹配元素的特定事件绑定事件处理函数。</p>
+      <div class="longdesc"> </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type,[data],function(eventObject)</strong><span>String,Object,Function</span><em>V1.0</em></h4>
+      <p><strong>type:</strong> 含有一个或多个事件类型的字符串，由空格分隔多个事件。比如"click"或"submit"，还可以是自定义事件名。</p>
+      <p><strong>data:</strong>作为event.data属性值传递给事件对象的额外数据对象</p>
+      <p><strong>fn:</strong>绑定到每个匹配元素的事件上面的处理函数</p>
+      <h4><strong>type,[data],false </strong><span>String,Object,bool</span><em>V1.4.3</em></h4>
+      <p><strong>type:</strong>含有一个或多个事件类型的字符串，由空格分隔多个事件。比如"click"或"submit"，还可以是自定义事件名。</p>
+      <p><strong>data:</strong>作为event.data属性值传递给事件对象的额外数据对象</p>
+      <p><strong>false:</strong> 将第三个参数设置为false会使默认的动作失效。 </p>
+      <h4><strong>events</strong><span>String</span><em>V1.4</em></h4>
+      <p>一个或多个事件类型的字符串和函数的数据映射来执行他们。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>当每个段落被点击的时候，弹出其文本。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").bind("click", function(){
+  alert( $(this).text() );
+});</code></pre>
+      <h4>描述:</h4>
+      <p>同时绑定多个事件类型</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('#foo').bind('mouseenter mouseleave', function() {
+  $(this).toggleClass('entered');
+});</code></pre>
+      <h4>描述:</h4>
+      <p>同时绑定多个事件类型/处理程序</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("button").bind({
+  click:function(){$("p").slideToggle();},
+  mouseover:function(){$("body").css("background-color","red");},  
+  mouseout:function(){$("body").css("background-color","#FFFFFF");}  
+});</code></pre>
+      <h4>描述:</h4>
+      <p>你可以在事件处理之前传递一些附加的数据。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>function handler(event) {
+  alert(event.data.foo);
+}
+$("p").bind("click", {foo: "bar"}, handler)</code></pre>
+      <h4>描述:</h4>
+      <p>通过返回false来取消默认的行为并阻止事件起泡。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("form").bind("submit", function() { return false; })</code></pre>
+      <h4>描述:</h4>
+      <p>通过使用 preventDefault() 方法只取消默认的行为。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("form").bind("submit", function(event){
+  event.preventDefault();
+});</code></pre>
+      <h4>描述:</h4>
+      <p>通过使用 stopPropagation() 方法只阻止一个事件起泡。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("form").bind("submit", function(event){
+  event.stopPropagation();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

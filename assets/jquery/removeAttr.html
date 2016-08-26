@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>removeAttr(name)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="removeAttr">
+    <h2><span>返回值:jQuery</span>removeAttr(name)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>从每一个匹配的元素中删除一个属性</p>
+      <div class="longdesc">
+        <p>1.6以下版本在IE6使用JQuery的removeAttr方法删除disabled是无效的。解决的方法就是使用$("XX").prop("disabled",false);<br />
+          1.7版本在IE6下已支持删除disabled。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>name</strong><span>String</span><em>V1.0</em></h4>
+      <p>要删除的属性名</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>将文档中图像的src属性删除</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;img src="test.jpg"/&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").removeAttr("src");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;img /&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

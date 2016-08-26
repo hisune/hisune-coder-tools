@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>live(type,[data],fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="live">
+    <h2><span>返回值:jQuery</span>live(type, <em class="optional">[data]</em>, fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>jQuery 给所有匹配的元素附加一个事件处理函数，即使这个元素是以后再添加进来的也有效。</p>
+      <div class="longdesc">
+        <p>这个方法是基本是的 .bind() 方法的一个变体。使用 .bind() 时，选择器匹配的元素会附加一个事件处理函数，而以后再添加的元素则不会有。为此需要再使用一次 .bind() 才行。比如说</p>
+        <pre>&lt;body&gt;
+  &lt;div class="clickme"&gt;Click here&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+        <p>可以给这个元素绑定一个简单的click事件：</p>
+        <pre>
+$('.clickme').bind('click', function() {
+  alert("Bound handler called.");
+});</pre>
+        <p>当点击了元素，就会弹出一个警告框。然后，想象一下这之后有另一个元素添加进来了。</p>
+        <pre>$('body').append('&lt;div class="clickme"&gt;Another target&lt;/div&gt;');</pre>
+        <p>尽管这个新的元素也能够匹配选择器 ".clickme" ，但是由于这个元素是在调用 .bind() 之后添加的，所以点击这个元素不会有任何效果。</p>
+        <p>.live() 就提供了对应这种情况的方法。如果我们是这样绑定click事件的：</p>
+        <pre>$('.clickme').live('click', function() {
+  alert("Live handler called."); 
+});</pre>
+        <p>然后再添加一个新元素：</p>
+        <pre>
+$('body').append('&lt;div class="clickme"&gt;Another target&lt;/div&gt;');
+</pre>
+        <p>然后再点击新增的元素，他依然能够触发事件处理函数。</p>
+        <p><strong>事件委托</strong></p>
+        <p>.live() 方法能对一个还没有添加进DOM的元素有效，是由于使用了事件委托：绑定在祖先元素上的事件处理函数可以对在后代上触发的事件作出回应。传递给 .live() 的事件处理函数不会绑定在元素上，而是把他作为一个特殊的事件处理函数，绑定在 DOM 树的根节点上。在我们的例子中，当点击新的元素后，会依次发生下列步骤：</p>
+        <ol>
+          <li>生成一个click事件传递给
+            
+            来处理 </li>
+          <li>由于没有事件处理函数直接绑定在 &lt;divgt; 上，所以事件冒泡到DOM树上</li>
+          <li>事件不断冒泡一直到DOM树的根节点，默认情况下上面绑定了这个特殊的事件处理函数。</li>
+          <li>执行由 .live() 绑定的特殊的 click 事件处理函数。</li>
+          <li>这个事件处理函数首先检测事件对象的 target 来确定是不是需要继续。这个测试是通过检测 $(event.target).closest('.clickme') 能否找到匹配的元素来实现的。</li>
+          <li>如果找到了匹配的元素，那么调用原始的事件处理函数。</li>
+        </ol>
+        <p>由于只有在事件发生时才会在上面的第五步里做测试，因此在任何时候添加的元素都能够响应这个事件。</p>
+        <p><strong>附加说明</strong></p>
+        <p>.live() 虽然很有用，但由于其特殊的实现方式，所以不能简单的在任何情况下替换 .bind()。主要的不同有：</p>
+        <ul>
+          <li>在jQuery 1.4中，.live()方法支持自定义事件，也支持所有的 JavaScript 事件。在jQuery 1.4.1中，甚至也支持 focus 和 blue 事件了（映射到更合适，并且可以冒泡的focusin和focusout上）。另外，在jQuery 1.4.1中，也能支持hover（映射到"mouseenter mouseleave"）。然而在jQuery 1.3.x中，只支持支持的JavaScript事件和自定义事件：click, dblclick, keydown, keypress, keyup, mousedown, mousemove, mouseout, mouseover, 和 mouseup.</li>
+          <li>.live() 并不完全支持通过DOM遍历的方法找到的元素。取而代之的是，应当总是在一个选择器后面直接使用 .live() 方法，正如前面例子里提到的。</li>
+          <li>当一个事件处理函数用 .live() 绑定后，要停止执行其他的事件处理函数，那么这个函数必须返回 false。 仅仅调用 .stopPropagation() 无法实现这个目的。</li>
+        </ul>
+        <p>参考 .bind() 方法可以获得更多关于事件绑定的信息。</p>
+        <p>在jQuery 1.4.1 中，.live() 能接受多个，用空间分隔事件，在提供类似.bind()的功能 。例如，我们可以“live ” 同时绑定mouseover和mouseout事件,像这样： </p>
+        <pre>
+$('.hoverme').live('mouseover mouseout', function(event) {
+  if (event.type == 'mouseover') {
+    // do something on mouseover
+  } else {
+    // do something on mouseout
+  }
+});</pre>
+        <p>在jQuery 1.4.3中:你可以绑定一个或多个事件类型的字符串和函数的数据映射来执行他们</p>
+        <pre>
+$("a").live({
+  click: function() {
+    // do something on click
+  },
+  mouseover: function() {
+    // do something on mouseover
+  }
+});</pre>
+        <p>在jQuery 1.4 中，data参数可以用于把附加信息传递给事件处理函数。一个很好的用处是应付由闭包导致的问题。可以参考 .bind() 的讨论来获得更多信息。 </p>
+        <p>在jQuery 1.4 中， live事件可以绑定到“context”DOM元素，而不是默认的文档的根。要设置此背景下，我们通过在一个单一的DOM元素(而不是一个jQuery集合或选择器)使用jQuery() function's second argument。</p>
+        <pre>
+$('div.clickme', $('#container')[0]).live('click', function() {
+  // Live handler called.
+});</pre>
+<p class="outmoded"><strong>从 jQuery 1.7 开始</strong>，不再建议使用 .live() 方法。请使用 <a href="on.html"> .on()</a> 来添加事件处理。使用旧版本的用户，应该优先使用 <a href="delegate.html"> .delegate()</a> 来替代 .live()。 </p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type,[fn]</strong><span>String,Function</span><em>V1.3</em></h4>
+      <p><strong>type:</strong>一个或多个事件类型，由空格分隔多个事件。</p>
+      <p><strong>fn:</strong>要从每个匹配元素的事件中反绑定的事件处理函数</p>
+      <h4><strong>type,[data],false</strong><span>String,Array,bool</span><em>V1.4</em></h4>
+      <p><strong>type:</strong>一个或多个事件类型，由空格分隔多个事件。</p>
+      <p><strong>data:</strong>传递给事件处理函数的附加参数</p>
+      <p><strong>false:</strong>设置为false会使默认的动作失效。 </p>
+      <h4><strong>event</strong><span>String</span><em>V1.4.3</em></h4>
+      <p>一个或多个事件类型的字符串和函数的数据映射来执行他们</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>点击生成的p依然据有同样的功能。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Click me!&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").live("click", function(){
+    $(this).after("&lt;p&gt;Another paragraph!&lt;/p&gt;");
+});</code></pre>
+      <h4>描述:</h4>
+      <p>阻止默认事件行为和事件冒泡，返回 false </p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("a").live("click", function() { return false; });</code></pre>
+      <h4>描述:</h4>
+      <p>仅仅阻止默认事件行为</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("a").live("click", function(event){
+  event.preventDefault();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

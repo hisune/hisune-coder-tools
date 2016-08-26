@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.target</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.target">
+    <h2><span>返回值: Element</span>event.target</h2>
+    <h3><em>V1.0</em>概述</h3>
+    <div class="desc">
+      <p>最初触发事件的DOM元素。</p>
+      <div class="longdesc">
+        <p>这是注册事件时的对象，或者它的子元素。通常用于比较 event.target 和 this 来确定事件是不是由于冒泡而触发的。经常用于事件冒泡时处理事件委托。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>Example: 显示点击元素的标签名。</p>
+      <h5> 代码: </h5>
+      <pre>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;  span, strong, p {     padding: 8px; display: block; border: 1px solid #999;  }      &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+ &lt;body&gt;
+      &lt;div id=&quot;log&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt; 
+     &lt;strong&gt;&lt;span&gt;click&lt;/span&gt;&lt;/strong&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;script&gt;$(&quot;body&quot;).click(function(event) {
+    $(&quot;#log&quot;).html(&quot;clicked: &quot; + event.target.nodeName);  });
+  &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre>
+      <h4>描述:</h4>
+      <p>举例： 实现一个简单的事件委托：给无序列表增加一个点击事件处理函数，然后它的子元素li的子元素都隐藏起来。当点击这个ul其中一个子元素li的时候，来回切换显示（参见 toggle()）li的子元素。 </p>
+      <pre>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt;item 1
+      &lt;ul&gt;
+        &lt;li&gt;sub item 1-a&lt;/li&gt;
+        &lt;li&gt;sub item 1-b&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;item 2
+      &lt;ul&gt;
+        &lt;li&gt;sub item 2-a&lt;/li&gt;
+        &lt;li&gt;sub item 2-b&lt;/li&gt;
+      &lt;/ul&gt; 
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;script&gt;function handler(event) {
+    var $target = $(event.target);
+    if( $target.is(&quot;li&quot;) ) {
+      $target.children().toggle();
+    }
+  }
+  $(&quot;ul&quot;).click(handler).find(&quot;ul&quot;).hide();
+  &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+  </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

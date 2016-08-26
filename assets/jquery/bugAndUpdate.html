@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提交bug及获取更新</title>
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body id="split">
+<div id="content" class="a2">
+<div class="return"><div class="retLeft"><a title="" class="pc" href="cheatsheet.html">首页</a>&nbsp;&gt;&nbsp;关于&nbsp;&gt;&nbsp;提交bug及获取更新</div><div class="retRight"><a href="cheatsheet.html">返回首页</a></div></div>
+  <div rel="bugandUpdate">
+    <h2> 提交bug及获取更新</h2>
+    <div class="desc">
+      <div class="longdesc">
+        <h3> 概述</h3>
+        <p>如果大家使用过程中发现了什么错误或有哪些不足，可以给我Email：<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=-svOysjMzcfPvo_P0J2Rkw" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png"/ style=" vertical-align:top"></a>，我会争取在下一个版本中更正。</p>
+        <p>这些是通过各种方式对 jquery中文手册 提出建议、错误、以及支持的人(排名不分先后)。</p>
+        <ul id="J_buglist" class="buglist">
+        </ul>
+        <script type="text/javascript" src="http://hemin.cn/jq/js/buglist.js"></script>
+        <h3>捐赠</h3>
+        <p>jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
+          若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-)</p>
+        <div class="juanzeng"><img src="img/zfb.png" width="164" height="164" />支付宝捐赠二维码<br />账户名：min***@qq.com</div>
+        <div id="show_donate_list"></div>
+        <script type="text/javascript" src="http://hemin.cn/jq/js/donateData.js"></script>
+        <h3>版本信息： </h3>
+        $Rev: 1.11.3 $ <br />
+        $Author: hemin $ <br />
+        $Date: 2015-06-18  12:42:01 +0800  (周四)<br />
+        $changelog: <a href="http://hemin.cn/jq/downloads/changelog.txt">changelog.txt</a>
+        <h3>检查更新： </h3>
+        
+        <div id="update">
+          <button id= "checkUpdate" onclick="window.curVer='20150618';$('<script src=\'http://hemin.cn/jq/js/newUpdate.js?'+(+new Date)+'\' type=\'text/javascript\' charset=\'utf-8\'></script>').appendTo('head');" style='padding:2px 5px'>检查更新</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 style="text-align:center;">hemin制作【hm@hemin.cn】</h3>
+  <div class="navigation"><div class="alignleft">上一篇：<a href="about.html">关于jQuery API 文档</a></div><div class="alignright">下一篇：<a href="regexp.html">正则表达式</a></div></div>
+</div>
+</body>
+</html>

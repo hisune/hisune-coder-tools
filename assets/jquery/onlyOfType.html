@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:only-of-type</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="onlyOfType">
+    <h2><span>返回值:jQuery</span>:only-of-type</h2>
+    <h3><em>V1.9</em>概述</h3>
+    <div class="desc">
+      <p>选择所有没有兄弟元素，且具有相同的元素名称的元素。</p>
+      <div class="longdesc">
+        <p>如果父元素有相同的元素名称的其他子元素，那么没有元素会被匹配。</p>
+      </div>
+    </div>
+<!--	<h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>n</strong><span></span><em>V1.9</em></h4>
+      <p>The index of each child to match.<br />
+        <br />
+      Must be a number. The first element has the index number 1.</p>
+      <h4><strong>even</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each even child element</p>
+      <h4><strong>odd</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each odd child element</p>
+      <h4><strong>formula</strong><span></span><em>V1.9</em></h4>
+      <p>Specifies which child element(s) to be selected with a formula (<em>an</em> + <em>b</em>). Example: p:nth-last-child(3n+2) selects each 3rd paragraph, starting at the last 2nd child</p>-->
+  </div>
+  <div class="example">
+    <h3>示例</h3>
+    <p>改变每一个按钮的文字，并且加一个边框，这些按钮的父元素只有这个按钮子元素。</p>
+    <pre>
+&lt;div&gt;<br />  &lt;button&gt;Sibling!&lt;/button&gt;<br />  &lt;button&gt;Sibling!&lt;/button&gt;<br />&lt;/div&gt;<br /> <br />&lt;div&gt;<br />  &lt;button&gt;Sibling!&lt;/button&gt;<br />&lt;/div&gt;<br />&lt;div&gt;<br />  None<br />&lt;/div&gt;<br /> <br />&lt;div&gt;<br />  &lt;button&gt;Sibling!&lt;/button&gt;<br />  &lt;span&gt;Sibling!&lt;/span&gt;<br />  &lt;span&gt;Sibling!&lt;/span&gt;<br /> <br />&lt;/div&gt;<br />&lt;div&gt;<br />  &lt;button&gt;Sibling!&lt;/button&gt;<br />&lt;/div&gt;
+
+$(&quot;button:only-of-type&quot;).text(&quot;Alone&quot;).css(&quot;border&quot;, &quot;2px blue solid&quot;);</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

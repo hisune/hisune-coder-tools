@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.parseXML(data)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.parseXML">
+    <h2><span>返回值: XMLDocumen</span>jQuery.parseXML(data)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>解析一个字符串到一个XML文件。</p>
+      <div class="longdesc">
+        <p>jQuery.parseXML使用原生解析函数浏览器创建一个有效的XML文档。这文档可以被传递给jQuery创建一个典型的jQuery对象，可以查询及操作。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>data</strong><span></span><em>V1.5</em></h4>
+      <p>用来解析的格式良好的XML字符串。 </p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>创建一个jQuery对象使用一个XML字符串并得到标题节点的值。:</p>
+      <pre>var xml = '&lt;rss version=&quot;2.0&quot;&gt;&lt;channel&gt;&lt;title&gt;RSS Title&lt;/title&gt;&lt;/channel&gt;&lt;/rss&gt;',
+      xmlDoc = $.parseXML( xml ),
+      $xml = $( xmlDoc ),
+      $title = $xml.find( 'title' );	        // append &quot;RSS Title&quot; to #someElement
+  $( '#someElement' ).append( $title.text() );	    // change the title to &quot;XML Title&quot;
+  $title.text( 'XML Title' );    // append &quot;XML Title&quot; to #anotherElement
+  $( '#anotherElement' ).append( $title.text() );</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

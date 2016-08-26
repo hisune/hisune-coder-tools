@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>load(url, [data], [callback])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="load">
+    <h2><span>返回值:jQuery</span>load(url, <em class="optional">[data]</em>, <em class="optional">[callback]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>载入远程 HTML 文件代码并插入至 DOM 中。</p>
+      <div class="longdesc">
+        <p>默认使用 GET 方式 - 传递附加参数时自动转换为 POST 方式。jQuery 1.2 中，可以指定选择符，来筛选载入的 HTML 文档，DOM 中将仅插入筛选出的 HTML 代码。语法形如 "url #some &gt; selector"。请查看示例。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>url,[data,[callback]]</strong><span>String,Map/String,Callback</span><em>V1.0</em></h4>
+      <p><strong>url</strong>:待装入 HTML 网页网址。</p>
+      <p><strong>data</strong>:发送至服务器的 key/value 数据。在jQuery 1.3中也可以接受一个字符串了。</p>
+      <p><strong>callback</strong>:载入成功时回调函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>加载文章侧边栏导航部分至一个无序列表。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;b&gt;jQuery Links:&lt;/b&gt;
+&lt;ul id="links"&gt;&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#links").load("/Main_Page #p-Getting-Started li");</code></pre>
+      <h4>描述:</h4>
+      <p>加载 feeds.html 文件内容。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#feeds").load("feeds.html");</code></pre>
+      <h4>描述:</h4>
+      <p>同上，但是以 POST 形式发送附加参数并在成功时显示信息。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code> $("#feeds").load("feeds.php", {limit: 25}, function(){
+   alert("The last 25 entries in the feed have been loaded");
+ });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

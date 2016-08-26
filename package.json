@@ -1,0 +1,31 @@
+{
+  "name": "HCT",
+  "productName": "Hisune Coder Tools",
+  "version": "0.0.1",
+  "description": "Hisune Coder Tools",
+  "private": true,
+  "main": "main.js",
+  "keywords": [
+    "Hisune",
+    "Coder",
+    "Tools"
+  ],
+  "author": "Hisune",
+  "license": "MIT",
+  "homepage": "https://hisune.com",
+  "dependencies": {
+    "nodemailer": "2.5.0",
+    "shadowsocks": "1.5.3",
+    "request": "2.74.0",
+    "uglify-js": "2.7.3",
+    "html-minifier": "3.0.2",
+    "geoip-lite": "1.1.6",
+    "electron-json-storage": "^2.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^6.0.4",
+    "highlight.js": "^9.3.0"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.6"
+  }
+}

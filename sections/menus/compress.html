@@ -1,0 +1,145 @@
+<template class="task-template">
+  <section id="compress-section" class="section js-section u-category-menu">
+
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="compress-json" class="js-container-target demo-toggle-button">JSON
+            <div class="demo-meta u-avoid-clicks">支持JSON的压缩和美化，代码高亮显示</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <textarea id="compress-json-content" rows="10" class="demo-input"></textarea>
+          </div>
+          <div class="demo-controls demo-1em">
+            <button class="demo-button compress-action" data-acton="beautify" data-format="json" id="compress-json-beautify">Beautify</button>
+            <button class="demo-button compress-action" data-acton="minify" data-format="json" id="compress-json-minify">Minify</button>
+            <select class="demo-select demo-left-input" id="compress-json-indent">
+              <option value="4">4空格缩进</option>
+              <option value="">制表符缩进</option>
+            </select>
+          </div>
+          <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-json hljs javascript postman-code" id="compress-json-result"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="compress-sql" class="js-container-target demo-toggle-button">SQL
+            <div class="demo-meta u-avoid-clicks">支持关系型数据库SQL的压缩和美化，代码高亮显示</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <textarea id="compress-sql-content" rows="10" class="demo-input"></textarea>
+          </div>
+          <div class="demo-controls demo-1em">
+            <button class="demo-button compress-action" data-acton="beautify" data-format="sql" id="compress-sql-beautify">Beautify</button>
+            <button class="demo-button compress-action" data-acton="minify" data-format="sql" id="compress-sql-minify">Minify</button>
+            <select class="demo-select demo-left-input" id="compress-sql-indent">
+              <option value="4">4空格缩进</option>
+              <option value="">制表符缩进</option>
+            </select>
+          </div>
+          <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-sql hljs javascript postman-code" id="compress-sql-result"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="compress-js" class="js-container-target demo-toggle-button">JS
+            <div class="demo-meta u-avoid-clicks">支持前端JS压缩、混淆和美化，代码高亮显示</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <textarea id="compress-js-content" rows="10" class="demo-input"></textarea>
+          </div>
+          <div class="demo-controls demo-1em">
+            <button class="demo-button compress-action" data-acton="beautify" data-format="js" id="compress-js-beautify">Beautify</button>
+            <button class="demo-button compress-action" data-acton="minify" data-format="js" id="compress-js-minify">Minify</button>
+            <select class="demo-select demo-left-input" id="compress-js-indent">
+              <option value="4">4空格缩进</option>
+              <option value="">制表符缩进</option>
+            </select>
+              <label><input type="checkbox" id="compress-js-mangle" name="mangle" value="1"> 是否混淆</label>
+          </div>
+          <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-js hljs javascript postman-code" id="compress-js-result"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="compress-css" class="js-container-target demo-toggle-button">CSS
+            <div class="demo-meta u-avoid-clicks">支持CSS压缩和美化，代码高亮显示</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <textarea id="compress-css-content" rows="10" class="demo-input"></textarea>
+          </div>
+          <div class="demo-controls demo-1em">
+            <button class="demo-button compress-action" data-acton="beautify" data-format="css" id="compress-css-beautify">Beautify</button>
+            <button class="demo-button compress-action" data-acton="minify" data-format="css" id="compress-css-minify">Minify</button>
+            <select class="demo-select demo-left-input" id="compress-css-indent">
+              <option value="4">4空格缩进</option>
+              <option value="">制表符缩进</option>
+            </select>
+          </div>
+          <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-css hljs javascript postman-code" id="compress-css-result"></code></pre>
+        </div>
+      </div>
+    </div>
+
+      <div class="demo">
+          <div class="demo-wrapper">
+              <button id="compress-html" class="js-container-target demo-toggle-button">html
+                  <div class="demo-meta u-avoid-clicks">支持HTML压缩和美化，代码高亮显示</div>
+              </button>
+              <div class="demo-box">
+                  <div class="demo-controls">
+                      <textarea id="compress-html-content" rows="10" class="demo-input"></textarea>
+                  </div>
+                  <div class="demo-controls demo-1em">
+                      <button class="demo-button compress-action" data-acton="beautify" data-format="html" id="compress-html-beautify">Beautify</button>
+                      <button class="demo-button compress-action" data-acton="minify" data-format="html" id="compress-html-minify">Minify</button>
+                      <select class="demo-select demo-left-input" id="compress-html-indent">
+                          <option value="4">4空格缩进</option>
+                          <option value="">制表符缩进</option>
+                      </select>
+                  </div>
+                  <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-html hljs javascript postman-code" id="compress-html-result"></code></pre>
+              </div>
+          </div>
+      </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="compress-xml" class="js-container-target demo-toggle-button">XML
+            <div class="demo-meta u-avoid-clicks">支持XML压缩和美化，代码高亮显示</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <textarea id="compress-xml-content" rows="10" class="demo-input"></textarea>
+          </div>
+          <div class="demo-controls demo-1em">
+            <button class="demo-button compress-action" data-acton="beautify" data-format="xml" id="compress-xml-beautify">Beautify</button>
+            <button class="demo-button compress-action" data-acton="minify" data-format="xml" id="compress-xml-minify">Minify</button>
+            <select class="demo-select demo-left-input" id="compress-xml-indent">
+              <option value="4">4空格缩进</option>
+              <option value="">制表符缩进</option>
+            </select>
+          </div>
+          <pre style="display:none;position: relative;"><span class="demo-close" onclick="$(this).parent().hide();">X</span><code class="language-xml hljs javascript postman-code" id="compress-xml-result"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/menus/compress')
+      require('./assets/plugins/vkbeautify')
+      require('./assets/plugins/compress/js')
+      require('./assets/plugins/compress/html')
+    </script>
+  </section>
+</template>

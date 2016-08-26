@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.reject(args)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.reject">
+    <h2><span>返回值:Deferred Object</span>deferred.reject(args)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>拒绝延迟对象，并根据给定的参数调用任何失败的回调函数。</p>
+      <div class="longdesc">
+        <p>当延迟被拒绝，任何failCallbacks添加的<a href="deferred.then.html">deferred.then</a>或<a href="deferred.fail.html">deferred.fail</a>被调用。回调按他们添加的顺序执行。每个回调传递的args在deferred.reject()中调用。之后添加任何failCallbacks递延被拒绝进入状态时，立即执行添加，使用的参数被传递给.reject()调用。有关详细信息，请参阅文件<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>args</strong><em>V1.5</em></h4>
+      <p>传递给failCallbacks的可选参数。 </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

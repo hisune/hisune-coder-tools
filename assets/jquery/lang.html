@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:lang(language)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="lang">
+    <h2><span>返回值:jQuery</span>:lang(language)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>选择指定语言的所有元素。</p>
+      <div class="longdesc">
+        <p>:lang选择器,匹配有一个语言值等于所提供的语言代码，或以提供的语言代码开始，后面马上跟一个&ldquo; - &rdquo;的元素。例如，选择器$(&quot;div:lang(en)&quot;)将匹配&lt;div lang=&quot;en&quot;&gt; and &lt;div lang=&quot;en-us&quot;&gt;（和他们的后代&lt;div&gt;），但不包括&lt;div lang=&quot;fr&quot;&gt;</p>
+        <p>对于HTML元素，语言值由lang属性决定，也可能由来自meta元素或HTTP头信息决定。</p>
+        <p>这种用法的进一步讨论可以在 <a href="http://www.w3.org/TR/css3-selectors/#lang-pseudo">W3C CSS规范</a>中找到。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>language</strong><span></span><em>V1.9</em></h4>
+      <p>语言代码</p>
+
+    </div>
+    <div class="example">
+      <h3>示例      </h3>
+      <p>选择所有&lt;P&gt; 的语言属性:      </p>
+      <pre>$(&quot;p:lang(it)&quot;)</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>after(content|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="after">
+    <h2><span>返回值:jQuery</span>after(content|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>在每个匹配的元素之后插入内容。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>content</strong><span>String, Element, jQuery</span><em>V1.0</em></h4>
+      <p>插入到每个目标后的内容</p>
+      <h4><strong>function</strong><span>Function</span><em>V1.4</em></h4>
+      <p>函数必须返回一个html字符串。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>在所有段落之后插入一些HTML标记代码。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;I would like to say: &lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").after("&lt;b&gt;Hello&lt;/b&gt;");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code></pre>
+      <h4>描述:</h4>
+      <p>在所有段落之后插入一个DOM元素。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;b id="foo"&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").after( $("#foo")[0] );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;</code></pre>
+      <h4>描述:</h4>
+      <p>在所有段落中后插入一个jQuery对象(类似于一个DOM元素数组)。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").after( $("b") );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

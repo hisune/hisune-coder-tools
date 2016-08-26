@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.holdReady(hold)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.holdReady">
+    <h2><span>返回值:Boolean</span>jQuery.holdReady(hold) </h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p> 暂停或恢复.ready() 事件的执行。 </p>
+      <div class="longdesc">
+        <p>在$.holdReady()方法允许调用者延迟jQuery的ready事件。这种先进的功能，通常是使用动态脚本加载器，要加载的JavaScript比如 jQuery插件，如额外的ready事件才让事件发生，即使在DOM可能准备。此方法必须早在文件调用，在这样&lt;head&gt;&nbsp;jQuery脚本后，立即标记。ready事件之后调用此方法即使已经发射也将没有任何效果。</p>
+        <p>要延迟ready事件，第一次调用的$.holdReady(true)。当ready事件应该执行时，调用$.holdReady(false)&nbsp;。请注意，多个holds可以放在ready事件上，每个$.holdReady(true)逐一调用。ready事件将不会执行，直到所有已发布了相应的一个$.holdReady(false)&nbsp;<em>和</em>正常的文件准备好条件得到满足。（见<a href="http://api.jquery.com/ready/">ready</a>的更多信息。）</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>hold</strong><em>V1.6</em></h4>
+      <p>指示是否暂停或恢复被请求的ready事件</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>延迟就绪事件，直到已加载的插件。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.holdReady(true);
+$.getScript("myplugin.js", function() {
+     $.holdReady(false);
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

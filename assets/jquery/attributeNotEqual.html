@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[attribute!=value]</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="attributeNotEqual">
+    <h2><span>返回值:Array&lt;Element(s)&gt;</span>[attribute!=value]</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>匹配所有不含有指定的属性，或者属性不等于特定值的元素。</p>
+      <div class="longdesc">
+        <p>此选择器等价于:not([attr=value])&lt;br&gt;要匹配含有特定属性但不等于特定值的元素，请使用[attr]:not([attr=value])</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>attribute</strong><span>String</span><em>V1.0</em></h4>
+      <p>属性名</p>
+      <h4><strong>value<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>属性值。引号在大多数情况下是可选的。但在遇到诸如属性值包含"]"时，用以避免冲突。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查找所有 name 属性不是 newsletter 的 input 元素</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;input type="checkbox" name="newsletter" value="Hot Fuzz" /&gt;
+&lt;input type="checkbox" name="newsletter" value="Cold Fusion" /&gt;
+&lt;input type="checkbox" name="accept" value="Evil Plans" /&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[name!='newsletter']").attr("checked", true);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;input type="checkbox" name="accept" value="Evil Plans" checked="true" /&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

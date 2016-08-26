@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>delegate(selector,[type],[data],fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="delegate">
+    <h2><span>返回值:jQuery</span> delegate(selector,[type],[data],fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。</p>
+      <div class="longdesc">
+        <p>使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>selector,[type],fn</strong><span>String,String,Function</span><em>V1.4.2</em></h4>
+      <p><strong>selector:</strong>选择器字符串，用于过滤器触发事件的元素。</p>
+      <p><strong>type:</strong>附加到元素的一个或多个事件。
+        由空格分隔多个事件值。必须是有效的事件。</p>
+      <p><strong>fn:</strong>当事件发生时运行的函数</p>
+      <h4><strong>selector,[type],[data],fn</strong><span>String,String,Object,Function</span><em>V1.4.2</em></h4>
+      <p><strong>selector:</strong>选择器字符串，用于过滤器触发事件的元素。</p>
+      <p><strong>type:</strong>附加到元素的一个或多个事件。由空格分隔多个事件值。必须是有效的事件。</p>
+      <p><strong>data:</strong>传递到函数的额外数据</p>
+      <p><strong>fn:</strong>当事件发生时运行的函数</p>
+      <h4><strong>selector,events</strong><span>String,String</span><em>V1.4.3</em></h4>
+      <p><strong>selector:</strong>选择器字符串，用于过滤器触发事件的元素。</p>
+      <p><strong>events:</strong>一个或多个事件类型的字符串和函数的数据映射来执行他们。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述: </h4>
+      <p>当点击鼠标时，隐藏或显示 p 元素：</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div style="background-color:red"&gt;
+&lt;p&gt;这是一个段落。&lt;/p&gt;
+&lt;button&gt;请点击这里&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").delegate("button","click",function(){
+  $("p").slideToggle();
+});</code></pre>
+      <h4>描述: </h4>
+      <p>delegate这个方法可作为live()方法的替代，使得每次事件绑定到特定的DOM元素。 </p>
+      <p>以下两段代码是等同的:</p>
+      <pre><code>$("table").delegate("td", "hover", function(){<BR>    $(this).toggleClass("hover");
+});</code></pre>
+      <pre><code>$("table").each(function(){<BR>&nbsp;   $("td", this).live("hover", function(){<BR>&nbsp;&nbsp;        $(this).toggleClass("hover");<BR>&nbsp;   });<BR>    
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

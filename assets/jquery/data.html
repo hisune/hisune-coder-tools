@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>data([key],[value])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  
+  <div rel="data">
+    <h2><span>返回值:jQuery</span>data([key],[value])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>在元素上存放数据,返回jQuery对象。</p>
+      <div class="longdesc">
+        <p>如果jQuery集合指向多个元素，那将在所有元素上设置对应数据。
+
+这个函数不用建立一个新的expando，就能在一个元素上存放任何格式的数据，而不仅仅是字符串。</p>
+        <p>V1.4.3 新增用法<sup>NEW</sup>
+
+data(obj)
+
+可传入key-value形式的数据。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+          <h4><strong>key</strong><span>String</span><em>V1.23</em></h4>
+      <p>存储的数据名.</p>
+      <h4><strong>key,value</strong><span>String,Any</span><em>V1.2.3</em></h4>
+      <p><strong>key</strong>:存储的数据名</p>
+      <p><strong>value</strong>:将要存储的任意数据</p>
+      <h4><strong>obj</strong><span>object</span><em>V1.4.3</em></h4>
+      <p>一个用于设置数据的键/值对</p>
+            <h4><strong>data()</strong><em>V1.4.3</em></h4>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>在一个div上存取数据</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").data("blah");  // undefined
+$("div").data("blah", "hello");  // blah设置为hello
+$("div").data("blah");  // hello
+$("div").data("blah", 86);  // 设置为86
+$("div").data("blah");  //  86
+$("div").removeData("blah");  //移除blah
+$("div").data("blah");  // undefined</code></pre>
+      <h4>描述:</h4>
+      <p>在一个div上存取名/值对数据</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").data("test", { first: 16, last: "pizza!" });
+$("div").data("test").first  //16;
+$("div").data("test").last  //pizza!;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

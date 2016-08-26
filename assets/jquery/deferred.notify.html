@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.notify(args)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.notify">
+    <h2><span>返回值:Deferred Object</span>deferred.notify(args)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>调用一个给定args的递延对象上的进行中的回调 （progressCallbacks）</p>
+      <div class="longdesc">
+        <p>通常情况下，只有一个递延的创建者，应调用此方法;你可以防止其他代码改变Deferred的状态或者通过deferred.promise()返回一个受限制的承诺对象报告状态</p>
+        <p>当&nbsp;deferred.notify&nbsp;被访问， 任何progressCallbacks 可以通过访问<a href="http://api.jquery.com/deferred.then/">deferred.then</a>&nbsp;好或者&nbsp;<a href="http://api.jquery.com/deferred.progress/">deferred.progress</a>来添加。回调是在它们被添加的顺序执行。每次通过来自.notify()的args回调。任何为.notify()后递延是解决或拒绝（或之后添加任何progressCallbacks ）被忽略。欲了解更多信息，请参阅文档&nbsp;<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a>.</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>args</strong><em>V1.7</em></h4>
+      <p>可选参数传递到进行中的回调（progressCallbacks）</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.when(deferreds)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.when">
+    <h2><span>返回值:Deferred</span>jQuery.when(deferreds)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p> 提供一种方法来执行一个或多个对象的回调函数，延迟对象通常表示异步事件。 </p>
+      <div class="longdesc">
+        <p> 如果单一延迟传递给jQuery.when&nbsp;，它是通过这个方法和延迟对象附加的其他方法可访问绑定的回调函数返回的，如<a href="http://api.jquery.com/deferred.then/">defered.then</a>&nbsp;。当延迟得到解决或者拒绝，通常的代码创建了原来的延迟，适当的回调将被调用。例如，jqXHR对象返回jQuery.ajax是一个延期，可以用这种方式： </p>
+        <pre><code>$.when( $.ajax("test.aspx") ).then(function(ajaxArgs){ 
+     alert(ajaxArgs[1]); /* ajaxArgs is [ "success", statusText, jqXHR ] */
+});</code></pre>
+        <p>如果一个参数被传递给jQuery.when ，这不是延迟，这将被视为延迟解决，并立即将执行附加任何doneCallbacks。该doneCallbacks传递原始的参数。在这种情况下，任何failCallbacks您可能会设置是永远不会被调用，因为延迟从不拒绝。</p>
+        <p>例如：</p>
+        <pre><code>$.when( { testing: 123 } ).done(
+   function(x){ alert(x.testing); } /* alerts "123" */
+);</code></pre>
+        <p>在案例中有多个延迟对象传递jQuery.when ，该方法返回一个新的“宿主”延迟对象，跟踪所有已通过Deferreds聚集状态。该方法能够解决它的“宿主”延迟尽快解决所有延迟，或拒绝尽快将被拒绝的延迟。如果“宿主”延迟得到解决，它是通过传递给解析值，所有的延迟 jQuery.when 。例如，当延迟是jQuery.ajax()请求，参数将是jqXHR对象的要求，以便他们在名单内的说法。</p>
+        <p> 在多延迟情况下，如果延迟一被拒绝，jQuery.when火灾立即掌握其推迟failCallbacks。请注意，延迟一些可能仍然在这一点没有得到解决。如果您需要执行额外的处理对于这种情况，如取消任何未完成的Ajax请求，你可以保持基本jqXHR引用对象在封闭和检查/取消在failCallback他们。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>deferreds</strong><span></span><em>V1.5</em></h4>
+      <p>一个或多个延迟对象，或者普通的JavaScript对象。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p> 执行Ajax请求后两个函数是成功的。（见jQuery.ajax()对于一个成功的和错误的案件为AJAX请求的完整描述文档）。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.when($.ajax("/page1.php"), $.ajax("/page2.php")).done(function(a1,  a2){
+    /* a1 and a2 are arguments resolved for the 
+        page1 and page2 ajax requests, respectively */
+   var jqXHR = a1[2]; /* arguments are [ "success", statusText, jqXHR ] */
+   if ( /Whip It/.test(jqXHR.responseText) ) {
+      alert("First page has 'Whip It' somewhere.");
+   }
+});</code></pre>
+      <p> 执行函数myfunc当两个Ajax请求是成功的，如果任一或myFailure有一个错误。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.when($.ajax("/page1.php"), $.ajax("/page2.php"))
+  .then(myFunc, myFailure);</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

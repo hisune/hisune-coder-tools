@@ -1,0 +1,26 @@
+<template class="task-template">
+    <section id="ip-search-section" class="section js-section u-category-windows">
+        <div class="demo">
+            <div class="demo-wrapper is-open">
+                <div class="demo-controls">
+                    <textarea rows="6" class="demo-input" id="ip-to-search" placeholder="一行一个或英文逗号分割"></textarea>
+                </div>
+                <div class="demo-box">
+                    <div class="demo-controls">
+                        <button class="demo-button" id="ip-where">Location</button>
+                        <button class="demo-button" id="ip-ping">Ping</button>
+                        <button class="demo-button" id="ip-trace">Trace</button>
+                        <button class="demo-button" id="ip-port">IP:Port</button>
+                    </div>
+                    <h5>Processed Result</h5>
+                    <pre id="ip-result">Location支持多个IP或域名，其他功能建议一次查询一个。</pre>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            require('./renderer-process/windows/ip')
+        </script>
+
+    </section>
+</template>

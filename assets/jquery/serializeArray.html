@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>serializeArray()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="serializeArray">
+    <h2><span>返回值:Array&lt;Object&gt;</span>serializeArray()</h2>
+    <h3><em>V1.2</em>概述</h3>
+    <div class="desc">
+      <p>序列化表格元素 (类似 '.serialize()' 方法) 返回 JSON 数据结构数据。</p>
+      <div class="longdesc">
+        <p>'''注意'''，此方法返回的是JSON对象而非JSON字符串。需要使用插件或者第三方库进行字符串化操作。
+        <p>
+        <p>返回的JSON对象是由一个对象数组组成的，其中每个对象包含一个或两个名值对&#8212;&#8212;name参数和value参数（如果value不为空的话）。举例来说：
+        <p>
+        <pre><code> [ 
+     {name: 'firstname', value: 'Hello'}, 
+     {name: 'lastname', value: 'World'},
+     {name: 'alias'}, // this one was empty
+  ]
+</code></pre>
+        </p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>取得表单内容并插入到网页中。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p id="results"&gt;&lt;b&gt;Results:&lt;/b&gt; &lt;/p&gt;
+&lt;form&gt;
+  &lt;select name="single"&gt;
+    &lt;option&gt;Single&lt;/option&gt;
+    &lt;option&gt;Single2&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select name="multiple" multiple="multiple"&gt;
+    &lt;option selected="selected"&gt;Multiple&lt;/option&gt;
+    &lt;option&gt;Multiple2&lt;/option&gt;
+    &lt;option selected="selected"&gt;Multiple3&lt;/option&gt;
+  &lt;/select&gt;&lt;br/&gt;
+  &lt;input type="checkbox" name="check" value="check1"/&gt; check1
+  &lt;input type="checkbox" name="check" value="check2" checked="checked"/&gt; check2
+  &lt;input type="radio" name="radio" value="radio1" checked="checked"/&gt; radio1
+  &lt;input type="radio" name="radio" value="radio2"/&gt; radio2
+&lt;/form&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var fields = $("select, :radio").serializeArray();
+jQuery.each( fields, function(i, field){
+  $("#results").append(field.value + " ");
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

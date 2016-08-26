@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>toggle([speed],[easing],[fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="toggle">
+    <h2><span>返回值:jQuery</span>toggle([speed],[easing],[fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。</p>
+      <div class="longdesc">
+        <p>如果元素是可见的，切换为隐藏的；如果元素是隐藏的，切换为可见的。</p>
+        <p style="color:#F00">1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>fn,fn2,[fn3,fn4,...]</strong><span>Function,....</span><em>V1.0</em></h4>
+      <p>fn:第一数次点击时要执行的函数。</p>
+      <p>fn2:第二数次点击时要执行的函数。</p>
+      <p>fn3,fn4,...:更多次点击时要执行的函数。</p>
+      <h4><strong>[speed] [,fn]</strong><span>String,Function</span><em>V1.0</em></h4>
+      <p>speed: 隐藏/显示 效果的速度。默认是 &quot;0&quot;毫秒。可能的值：slow，normal，fast。&quot;</p>
+      <p>fn:在动画完成时执行的函数，每个元素执行一次。</p>
+      <h4><strong>[speed], [easing ], [fn ] </strong><span>String,String,Function</span><em>V1.4.3</em></h4>
+      <p>speed: 隐藏/显示 效果的速度。默认是 &quot;0&quot;毫秒。可能的值：slow，normal，fast。&quot;</p>
+      <p>easing:(Optional) 用来指定切换效果，默认是&quot;swing&quot;，可用参数&quot;linear&quot;</p>
+      <p>fn:在动画完成时执行的函数，每个元素执行一次。</p>
+      <h4><strong><em>switch</em><em> </em></strong><span>Boolean</span><em>V1.3</em></h4>
+      <p>用于确定显示/隐藏的开关。如：true - 显示元素，false - 隐藏元素</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数描述:</h4>
+      <p>对表格切换显示/隐藏</p>
+      <h5>jQuery 代码:</h5>
+      <pre>$('td).toggle();</pre>
+      <h4>fn,fn2描述:</h4>
+      <p>对表格的切换一个类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("td").toggle(
+  function () {
+    $(this).addClass("selected");
+  },
+  function () {
+    $(this).removeClass("selected");
+  }
+);</code></pre>
+      <h4>speed 描述:</h4>
+      <p>用600毫秒的时间将段落缓慢的切换显示状态</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").toggle("slow");</code></pre>
+      <h4>speed,fn 描述:</h4>
+      <p>用200毫秒将段落迅速切换显示状态，之后弹出一个对话框。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").toggle("fast",function(){
+   alert("Animation Done.");
+ });</code></pre>
+      <h4>switch参数描述:</h4>
+      <p>如果这个参数为true ，那么匹配的元素将显示;如果false ，元素是隐藏的</p>
+      <h5>jQuery 代码:</h5>
+      <pre>$('#foo').toggle(showOrHide);
+
+//相当于
+if (showOrHide) {
+  $('#foo').show();
+} else {
+  $('#foo').hide();
+}      </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

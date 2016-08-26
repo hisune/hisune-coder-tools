@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>clearQueue([queueName])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  
+  <div rel="clearQueue">
+    <h2><span>返回值:jQuery</span>clearQueue(<em class="optional">[queueName]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>清空对象上尚未执行的所有队列</p>
+      <div class="longdesc">
+        <p>如果不带参数，则默认清空的是动画队列。这跟stop(true)类似，但stop()只能清空动画队列，而这个可以清空所有通过 .queue() 创建的队列。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>queueName<em> </em></strong><span>Boolean</span><em>V1.4</em></h4>
+      <p>含有队列名的字符串。默认是"Fx"，动画队列。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+            <h4>描述:</h4>
+      <p>停止当前正在运行的动画：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#stop").click(function(){
+  $("#box").clearQueue();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

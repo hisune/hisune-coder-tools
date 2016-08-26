@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>triggerHandler(type, [data])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="triggerHandler">
+    <h2><span>返回值:jQuery</span>triggerHandler(type, <em class="optional">[data]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>这个特别的方法将会触发指定的事件类型上所有绑定的处理函数。但不会执行浏览器默认动作，也不会产生事件冒泡。</p>
+      <div class="longdesc">
+        <p>这个方法的行为表现与trigger类似，但有以下三个主要区别： </p>
+        <p>* 第一，他不会触发浏览器默认事件。</p>
+        <p>* 第二，只触发jQuery对象集合中第一个元素的事件处理函数。</p>
+        <p>* 第三，这个方法的返回的是事件处理函数的返回值，而不是据有可链性的jQuery对象。此外，如果最开始的jQuery对象集合为空，则这个方法返回 undefined 。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type,[data]</strong><span>String,Array</span><em>V1.2</em></h4>
+      <p><strong>type:</strong>要触发的事件类型</p>
+      <p><strong>data:</strong>传递给事件处理函数的附加参数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>如果你对一个focus事件执行了 .triggerHandler() ，浏览器默认动作将不会被触发，只会触发你绑定的动作。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button id="old"&gt;.trigger("focus")&lt;/button&gt;
+&lt;button id="new"&gt;.triggerHandler("focus")&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;input type="text" value="To Be Focused"/&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("#old").click(function(){
+  $("input").trigger("focus");
+});
+$("#new").click(function(){
+  $("input").triggerHandler("focus");
+});
+$("input").focus(function(){
+  $("&lt;span&gt;Focused!&lt;/span&gt;").appendTo("body").fadeOut(1000);
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

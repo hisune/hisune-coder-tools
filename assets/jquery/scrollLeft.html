@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>scrollLeft([val])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="scrollLeft">
+    <h2><span>返回值:Integer</span>scrollLeft([val])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>获取匹配元素相对滚动条左侧的偏移。</p>
+      <div class="longdesc">
+        <p>此方法对可见和隐藏元素均有效。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>val</strong><span>String, Number</span><em>V1.2.6</em></h4>
+      <p>设定水平滚动条值</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数描述:</h4>
+      <p>获取第一段相对滚动条左侧的偏移</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;2nd Paragraph&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var p = $("p:first");
+$("p:last").text( "scrollLeft:" + p.scrollLeft() );</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;scrollLeft: 0&lt;/p&gt;</code></pre>
+      <h4>参数val 描述:</h4>
+      <p>设置相对滚动条左侧的偏移</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div.demo").scrollLeft(300);</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

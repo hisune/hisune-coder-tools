@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>change([[data],fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="change">
+    <h2><span>返回值:jQuery</span>change([[data],fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>当元素的值发生改变时，会发生 change 事件。</p>
+      <div class="longdesc">
+        <p>该事件仅适用于文本域（text field），以及 textarea 和 select 元素。当用于 select 元素时，change 事件会在选择某个选项时发生。当用于 text field 或 text area 时，该事件会在元素失去焦点时发生。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>fn</strong><span>Function</span><em>V1.0</em></h4>
+      <p>在每一个匹配元素的change事件中绑定的处理函数。</p>
+      <h4><strong>[data],fn</strong><span>String,Function</span><em>V1.4.3</em></h4>
+      <p><strong>data</strong>:change([Data], fn) 可传入data供函数fn处理。</p>
+      <p><strong>fn</strong>:在每一个匹配元素的change事件中绑定的处理函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>触发被选元素的 change 事件。</p>
+      <h5>jQuery 代码:</h5>
+      <pre>$(<em>selector</em>).change();</pre>
+    </div>
+    <h4>描述:</h4>
+    <p>给所有的文本框增加输入验证</p>
+    <h5>jQuery 代码:</h5>
+    <pre><code>$("input[type='text']").change( function() {
+  // 这里可以写些验证代码
+});</code></pre>
+  </div>
+</div>
+</div>
+</body>
+</html>

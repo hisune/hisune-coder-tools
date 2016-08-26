@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.proxy(function,context)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.proxy">
+    <h2><span>返回值:Boolean</span>jQuery.proxy(function,context)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>jQuery 1.4 新增。返回一个新函数，并且这个函数始终保持了特定的作用域。</p>
+      <div class="longdesc">
+        <p>当有事件处理函数要附加到元素上，但他们的作用域实际是指向另一个对象时，这个方法最有用了。此外，最妙的是，jQuery能够确保即便你绑定的函数是经过jQuery.proxy()处理过的函数，你依然可以传递原先的函数来准确无误地取消绑定。请参考下面的例子。</p>
+        <p>这个函数还有另一种用法，jQuery.proxy( scope, name )。第一个参数是要设定的作用域对象。第二个参数是将要设置作用域的函数名（必须是第一个作用域对象的一个属性）。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>function,context</strong><span>Function,Object</span><em>V1.4</em></h4>
+      <p><strong>function</strong>:将要被改变作用域的函数</p>
+      <p><strong>context</strong>:一个object，那个函数的作用域会被设置到这个object上来。</p>
+      <h4><strong>context,name</strong><span>Object,Object</span><em>V1.4</em></h4>
+      <p><strong>context</strong>:一个object，那个函数的作用域会被设置到这个object上来。</p>
+      <p><strong>name</strong>：改变上下文中的函数名(这个函数必须是前一个参数 'context' 对象的属性)</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>强制设置函数的作用域，让this指向obj而不是#test对象。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div id="test"&gt;Click Here!&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var obj = {
+  name: "John",
+  test: function() {
+    alert( this.name );
+    $("#test").unbind("click", obj.test);
+  }
+};
+
+$("#test").click( jQuery.proxy( obj, "test" ) );
+
+// 以下代码跟上面那句是等价的:
+// $("#test").click( jQuery.proxy( obj.test, obj ) );
+
+// 可以与单独执行下面这句做个比较。
+// $("#test").click( obj.test );
+</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

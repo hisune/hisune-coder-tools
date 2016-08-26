@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>callbacks.has(callback)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="callbacks.has">
+    <h2><span>返回值:Boolean</span>callbacks.has(callback)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p> 确定是否提供的回调列表 </p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>callback</strong><em>V1.7</em></h4>
+      <p> 用来搜索的回调。 </p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p> 用&nbsp;callbacks.has()&nbsp;检查是否回调列表中包含一个特定的回调: </p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>// a sample logging function to be added to a callbacks list
+var foo = function( value1, value2 ){
+    console.log( 'Received:' + value1 + ',' + value2 );
+}
+
+// a second function which will not be added to the list
+var bar = function( value1, value2 ){
+    console.log( 'foobar');
+}
+
+var callbacks = $.Callbacks();
+
+// add the log method to the callbacks list
+callbacks.add( foo );
+
+// determine which callbacks are in the list
+
+console.log( callbacks.has( foo ) ); // true
+console.log( callbacks.has( bar ) ); // false</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

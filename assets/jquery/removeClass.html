@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>removeClass([class|fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="removeClass">
+    <h2><span>返回值:jQuery</span>removeClass([class|fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>从所有匹配的元素中删除全部或者指定的类。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>class<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>一个或多个要删除的CSS类名，请用空格分开</p>
+      <h4><strong>function(index, class)<em> </em></strong><span>Function</span><em>V1.4</em></h4>
+      <p>此函数必须返回一个或多个空格分隔的class名。接受两个参数，index参数为对象在这个集合中的索引值，class参数为这个对象原先的class属性值。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>参数class 描述:</h4>
+      <p>从匹配的元素中删除 'selected' 类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").removeClass("selected");</code></pre>
+      <h4>参数class 描述:</h4>
+      <p>删除匹配元素的所有类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").removeClass();</code></pre>
+      <h4>回调函数描述:</h4>
+      <p>删除最后一个元素上与前面重复的class</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('li:last').removeClass(function() {
+    return $(this).prev().attr('class');
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

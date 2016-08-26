@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>attr(name|properties|key,value|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="attr">
+    <h2><span>返回值:String</span>attr(name|properties|key,value|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>获取匹配的元素集合中的第一个元素的属性的值 或 设置每一个匹配元素的一个或多个属性。</p>
+      <div class="longdesc">
+        <p>在jQuery 1.6中,当属性没有被设置时候，.attr()方法将返回undefined。若要检索和更改DOM属性,比如元素的checked, selected, 或 disabled状态，请使用<a href="prop.html">.prop()</a>方法。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>name</strong><span>String</span><em>V1.0</em></h4>
+      <p>属性名称</p>
+      <h4><strong>properties<em> </em></strong><span>Map</span><em>V1.0</em></h4>
+      <p>作为属性的“名/值对”对象</p>
+      <h4><strong>key,value<em> </em></strong><span>String,Object</span><em>V1.0</em></h4>
+      <p>属性名称，属性值</p>
+      <h4><strong>key,function(index, attr)<em> </em></strong><span>String,Function</span><em>V1.1</em></h4>
+      <p>1:属性名称。</p>
+      <p>2:返回属性值的函数,第一个参数为当前元素的索引值，第二个参数为原先的属性值。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <h4>参数name 描述:</h4>
+      <p>返回文档中所有图像的src属性值。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").attr("src");</code></pre>
+      <h4>参数properties 描述:</h4>
+      <p>为所有图像设置src和alt属性。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").attr({ src: "test.jpg", alt: "Test Image" });</code></pre>
+      <h4>参数key,value 描述:</h4>
+      <p>为所有图像设置src属性。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").attr("src","test.jpg");</code></pre>
+      <h4>参数key,回调函数 描述:</h4>
+      <p>把src属性的值设置为title属性的值。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").attr("title", function() { return this.src });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>replaceAll(selector)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="replaceAll">
+    <h2><span>返回值:jQuery</span>replaceAll(selector)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>用匹配的元素替换掉所有 selector匹配到的元素。</p>
+      <div class="longdesc">
+        <p>在jQuery 1.3.2中，appendTo, prependTo, insertBefore, insertAfter, 和 replaceAll这个几个方法成为一个破坏性操作，要选择先前选中的元素，需要使用end()方法，参见 appendTo 方法的例二。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>selector</strong><span>选择器</span><em>V1.2</em></h4>
+      <p>用于查找所要被替换的元素</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>把所有的段落标记替换成加粗标记</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;cruel&lt;/p&gt;&lt;p&gt;World&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("&lt;b&gt;Paragraph. &lt;/b&gt;").replaceAll("p");</code></pre>
+      <h5>结果:</h5>
+      <pre><code>&lt;b&gt;Paragraph. &lt;/b&gt;&lt;b&gt;Paragraph. &lt;/b&gt;&lt;b&gt;Paragraph. &lt;/b&gt;</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

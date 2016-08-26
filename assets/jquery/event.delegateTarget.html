@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.delegateTarget</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.delegateTarget">
+    <h2><span>返回值: Element</span>event.delegateTarget</h2>
+    <h3><em>V1.7</em>概述</h3>
+    <div class="desc">
+      <p> 当currently-called的jQuery事件处理程序附加元素。 </p>
+      <div class="longdesc">
+        <p>此属性是最经常有用是通过过<a href="delegate.html">.delegate()</a>&nbsp;或<a href="on.html">.on()</a>附加委派的事件，事件处理程序附加在正在处理的元素的祖先上。它可用于，例如，指明委派识别和删除事件处理程序。 This property is most often useful in delegated events attached by&nbsp;<a href="delegate.html">.delegate()</a>&nbsp;or&nbsp;<a href="on.html">.on()</a>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
+        <p>对于非授权的事件处理程序，直接连接到一个元素，event.delegateTarget&nbsp;总是等价于event.currentTarget.</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>When a button in any box class is clicked, change the box's background color to red.</p>
+      <h5>jQuery 代码: </h5>
+      <pre>$(&quot;.box&quot;).on(&quot;click&quot;, &quot;button&quot;, function(event) {<br />&nbsp; $(event.delegateTarget).css(&quot;background-color&quot;, &quot;red&quot;);<br />}); </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

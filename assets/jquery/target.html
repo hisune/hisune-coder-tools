@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:target</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="target">
+    <h2><span>返回值:jQuery</span>:target</h2>
+    <h3><em>V1.9</em>概述</h3>
+    <div class="desc">
+      <p>选择由文档URI的格式化识别码表示的目标元素。</p>
+      <div class="longdesc">
+        <p>如果文档的URI包含一个格式化的标识符，或hash（哈希）， 然后:target选择器将匹配ID和标识符相匹配的元素。  例如，给定的URI http://example.com/#foo， $( &quot;p:target&quot; )，将选择&lt;p id=&quot;foo&quot;&gt;元素。</p>
+        <p>这个不寻常的用法，可进一步讨论中找到 <a href="http://www.w3.org/TR/css3-selectors/#nth-child-pseudo">W3C CSS specification</a>.</p>
+      </div>
+    </div>
+   <!-- <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>language</strong><span></span><em>V1.9</em></h4>
+      <p>语言代码</p>
+    </div>-->
+    <div class="example">
+      <h3>示例      </h3>
+      <p>Return which DOM element triggered the event      </p>
+      <pre>$(&quot;p, button, h1, h2&quot;).click(function(event){<br />  $(&quot;div&quot;).html(&quot;Triggered by a &quot; + event.target.nodeName + &quot; element.&quot;);<br />});</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

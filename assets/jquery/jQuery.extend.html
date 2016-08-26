@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.extend([deep], target, object1, [objectN])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.extend">
+    <h2><span>返回值:Object</span>jQuery.extend(<em class="optional">[deep]</em>, target, object1, <em class="optional">[objectN]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>用一个或多个其他对象来扩展一个对象，返回被扩展的对象。</p>
+      <div class="longdesc">
+        <p>如果不指定target，则给jQuery命名空间本身进行扩展。这有助于插件作者为jQuery增加新方法。
+          
+          如果第一个参数设置为true，则jQuery返回一个深层次的副本，递归地复制找到的任何对象。否则的话，副本会与原对象共享结构。
+          
+          未定义的属性将不会被复制，然而从对象的原型继承的属性将会被复制。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>target,[object1],[objectN]</strong><span>Object,Object,Object </span><em>V1.0</em></h4>
+      <p><strong>target</strong>:一个对象，如果附加的对象被传递给这个方法将那么它将接收新的属性，如果它是唯一的参数将扩展jQuery的命名空间。</p>
+      <p><strong>object1</strong>:待合并到第一个对象的对象。</p>
+      <p><strong>objectN</strong>:待合并到第一个对象的对象。</p>
+      <h4><strong>[deep],target,object1,[objectN]</strong><span>Object,Object,Object,Object</span><em>V1.1.4</em></h4>
+      <p><strong>deep</strong>:如果设为true，则递归合并。</p>
+      <p><strong>target</strong>:待修改对象。</p>
+      <p><strong>object1</strong>:待合并到第一个对象的对象。</p>
+      <p><strong>objectN</strong>:待合并到第一个对象的对象。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>合并 settings 和 options，修改并返回 settings。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var settings = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+jQuery.extend(settings, options);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>settings == { validate: true, limit: 5, name: "bar" }</code></pre>
+      <h4>描述:</h4>
+      <p>合并 defaults 和 options, 不修改 defaults。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var empty = {};
+var defaults = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+var settings = jQuery.extend(empty, defaults, options);</code></pre>
+      <h5>结果:</h5>
+      <pre><code>settings == { validate: true, limit: 5, name: "bar" }
+empty == { validate: true, limit: 5, name: "bar" }</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

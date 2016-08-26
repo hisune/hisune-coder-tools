@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>on(events,[selector],[data],fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="on">
+    <h2><span>返回值:jQuery</span>on(events,[selector],[data],fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>在选择元素上绑定一个或多个事件的事件处理函数。</p>
+      <div class="longdesc">
+        <p>on()方法绑定事件处理程序到当前选定的jQuery对象中的元素。在jQuery 1.7中，.on()方法 提供绑定事件处理程序所需的所有功能。帮助从旧的jQuery事件方法转换，see&nbsp;<a href="http://api.jquery.com/bind/">.bind()</a>,&nbsp;<a href="http://api.jquery.com/delegate/">.delegate()</a>, 和&nbsp;<a href="http://api.jquery.com/live/">.live()</a>. 要删除的.on()绑定的事件，请参阅<a href="http://api.jquery.com/off/">.off()</a>。要附加一个事件，只运行一次，然后删除自己， 请参阅<a href="http://api.jquery.com/one/">.one()</a></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>events,[selector],[data],fn</strong><em>V1.7</em></h4>
+      <p><strong>events</strong>:一个或多个用空格分隔的事件类型和可选的命名空间，如"click"或"keydown.myPlugin" 。</p>
+      <p><strong>selector</strong>:一个选择器字符串用于过滤器的触发事件的选择器元素的后代。如果选择的< null或省略，当它到达选定的元素，事件总是触发。</p>
+      <p><strong>data</strong>:当一个事件被触发时要传递event.data给事件处理函数。</p>
+      <p><strong>fn</strong>:该事件被触发时执行的函数。 false 值也可以做一个函数的简写，返回false。</p>
+      <h4><strong>events-map,[selector],[data]</strong><em>V1.7</em></h4>
+      <p><strong>events-map</strong>:个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示事件绑定的处理函数。</p>
+      <p><strong>selector</strong>:一个选择器字符串过滤选定的元素，该选择器的后裔元素将调用处理程序。如果选择是空或被忽略，当它到达选定的元素，事件总是触发。</p>
+      <p><strong>data</strong>:当一个事件被触发时要传递event.data给事件处理函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>Display a paragraph's text in an alert when it is clicked: </p>
+      <pre><code>$("p").on("click", function(){
+alert( $(this).text() );
+});</code></pre>
+      <p>Pass data to the event handler, which is specified here by name: </p>
+      <pre><code>function myHandler(event) {
+alert(event.data.foo);
+}
+$("p").on("click", {foo: "bar"}, myHandler)</code></pre>
+      <p>Cancel a form submit action and prevent the event from bubbling up by returning false: </p>
+      <pre><code>$("form").on("submit", false)</code></pre>
+      <p>Cancel only the default action by using .preventDefault(). </p>
+      <pre><code>$("form").on("submit", function(event) {
+  event.preventDefault();
+});</code></pre>
+      <p>Stop submit events from bubbling without preventing form submit, using .stopPropagation(). </p>
+      <pre><code>$("form").on("submit", function(event) {
+  event.stopPropagation();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

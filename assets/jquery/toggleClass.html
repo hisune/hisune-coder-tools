@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>toggleClass(class|fn[,sw])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="toggleClass">
+    <h2><span>返回值:jQuery</span>toggleClass(class|fn[,sw])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>如果存在（不存在）就删除（添加）一个类。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>class</strong><span>String</span><em>V1.0</em></h4>
+      <p>CSS类名</p>
+      <h4><strong>class,switch</strong><span>String,Boolean</span><em>V1.3</em></h4>
+      <p>1:要切换的CSS类名. </p>
+      <p>2:用于决定元素是否包含class的布尔值。</p>
+      <h4><strong>switch</strong><span>Boolean</span><em>V1.4</em></h4>
+      <p>用于决定元素是否包含class的布尔值。</p>
+      <h4><strong>function(index, class,switch)[, switch] </strong><span>Function,Boolean</span><em>V1.4</em></h4>
+      <p>1:用来返回在匹配的元素集合中的每个元素上用来切换的样式类名的一个函数。接收元素的索引位置和元素旧的样式类作为参数。</p>
+      <p> 2:  一个用来判断样式类添加还是移除的 boolean 值。 </p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>参数class 描述:</h4>
+      <p>为匹配的元素切换 'selected' 类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").toggleClass("selected");</code></pre>
+      <h4>参数class,switch 描述:</h4>
+      <p>每点击三下加上一次 'highlight' 类</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;strong&gt;jQuery 代码:&lt;/strong&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>  var count = 0;
+  $("p").click(function(){
+      $(this).toggleClass("highlight", count++ % 3 == 0);
+  });</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>根据父元素来设置class属性</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('div.foo').toggleClass(function() {
+  if ($(this).parent().is('.bar') {
+    return 'happy';
+  } else {
+    return 'sad';
+  }
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

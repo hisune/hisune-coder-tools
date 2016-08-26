@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.sub()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.sub">
+    <h2><span>返回值:jQuery</span>jQuery.sub() </h2>
+    <h3><em>V1.5</em>概述</h3>
+    <div class="desc">
+      <p>可创建一个新的jQuery副本，不影响原有的jQuery对像。</p>
+      <div class="longdesc">
+        <p>有两个具体使用jQuery.sub（）创建案例。首先是提供完全没有破坏jQuery原有一切的方法，另一个用于帮助做jQuery插件封装和基本命名空间。</p>
+        <p>请注意，jQuery.sub（）不会做任何特殊的隔离 - 这不是它的意图。所有关于jQuery的sub'd版本的方法将仍然指向原来的jQuery。（绑定和触发仍将通过主jQuery的事件，数据将通过主绑定的元素的jQuery，Ajax的查询和活动将通过主jQuery的运行，等等）。</p>
+        <p>请注意，如果你正在寻找使用这个开发插件，应首先<em>认真</em>考虑使用一些类似jQuery UI widget工厂，这两个状态和插件管理子方法。&nbsp;<a href="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">使用jQuery UI widget的一些例子</a>建立一个插件。</p>
+        <p>这种方法的具体使用情况下可以通过一些例子最好的描述。</p>
+        <p class="outmoded">该方法是在jQuery 1.5中引入的，但是被证明不是很有用，将被移到jQuery 1.9兼容性插件中。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>添加一个jQuery的方法，以便它不会受到外部分：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>(function(){
+    var sub$ = jQuery.sub();
+
+    sub$.fn.myCustomMethod = function(){
+      return 'just for me';
+    };
+
+    sub$(document).ready(function() {
+      sub$('body').myCustomMethod() // 'just for me'
+    });
+  })();
+  
+  typeof jQuery('body').myCustomMethod // undefined</code></pre>
+      <h4>描述:</h4>
+      <p>改写一些jQuery的方法，以提供新的功能。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>(function() {
+  var myjQuery = jQuery.sub();
+
+  myjQuery.fn.remove = function() {
+    // New functionality: Trigger a remove event
+    this.trigger("remove");
+
+    // Be sure to call the original jQuery remove method
+    return jQuery.fn.remove.apply( this, arguments );
+  };
+
+  myjQuery(function($) {
+    $(".menu").click(function() {
+      $(this).find(".submenu").remove();
+    });
+
+    // A new remove event is now triggered from this copy of jQuery
+    $(document).bind("remove", function(e) {
+      $(e.target).parent().hide();
+    });
+  });
+})();
+
+// Regular jQuery doesn't trigger a remove event when removing an element
+// This functionality is only contained within the modified 'myjQuery'.</code></pre>
+      <h4>描述:</h4>
+      <p>创建一个插件，它返回插件的具体办法。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>(function() {
+  // Create a new copy of jQuery using sub()
+  var plugin = jQuery.sub();
+
+  // Extend that copy with the new plugin methods
+  plugin.fn.extend({
+    open: function() {
+      return this.show();
+    },
+    close: function() {
+      return this.hide();
+    }
+  });
+
+  // Add our plugin to the original jQuery
+  jQuery.fn.myplugin = function() {
+    this.addClass("plugin");
+
+    // Make sure our plugin returns our special plugin version of jQuery
+    return plugin( this );
+  };
+})();
+
+$(document).ready(function() {
+  // Call the plugin, open method now exists
+  $('#main').myplugin().open();
+
+  // Note: Calling just $("#main").open() won't work as open doesn't exist!
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

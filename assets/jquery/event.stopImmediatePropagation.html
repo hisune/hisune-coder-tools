@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.stopImmediatePropagation()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.stopImmediatePropagation">
+    <h2><span>返回值:Object</span>event.stopImmediatePropagation()</h2>
+    <h3><em>V1.3</em>概述</h3>
+    <div class="desc">
+      <p>阻止剩余的事件处理函数执行并且防止事件冒泡到DOM树上。</p>
+      <div class="longdesc">
+        <div>
+          <p>除了阻止元素上其它的事件处理函数的执行，这个方法还会通过在内部调用&nbsp;event.stopPropagation()&nbsp;来停止事件冒泡。如果仅仅想要停止事件冒泡到前辈元素上，而让这个元素上的其它事件处理函数继续执行，我们可以使用<a href="event.stopPropagation.html">event.stopPropagation()</a>&nbsp;来代替。</p>
+          <p>使用&nbsp;<a href="event.stopPropagation.html">event.isImmediatePropagationStopped()</a>&nbsp;来确定这个方法是否(在那个事件对象上)调用过了。</p>
+        </div>
+        <h1>注意:</h1>
+        <p>自从<a href="http://api.jquery.com/live">.live()</a>方法处理事件一旦传播到文档的顶部，live事件是不可能停止传播的。同样地，<a href="http://api.jquery.com/delegate">.delegate()</a>&nbsp;事件将始终传播给其中包含的被委托元素；元素上的事件将在被委托事件被调用的时候执行。 </p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>阻止调用其它事件处理函数。</p>
+      <h5> 代码:<code></code></h5>
+      <pre>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;  p { height: 30px; width: 150px; background-color: #ccf; }
+  div {height: 30px; width: 150px; background-color: #cfc; }  &lt;/style&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;paragraph&lt;/p&gt;
+  &lt;div&gt;division&lt;/div&gt;
+  &lt;script&gt;
+  $(&quot;p&quot;).click(function(event){
+    event.stopImmediatePropagation();
+  });  $(&quot;p&quot;).click(function(event){
+    // This function won't be executed
+    $(this).css(&quot;background-color&quot;, &quot;#f00&quot;);  });
+    $(&quot;div&quot;).click(function(event) {
+    // This function will be executed
+      $(this).css(&quot;background-color&quot;, &quot;#f00&quot;);
+  });&lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

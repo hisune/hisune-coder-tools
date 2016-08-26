@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>off(events,[selector],[fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="off">
+    <h2><span>返回值:jQuery</span>off(events,[selector],[fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>在选择元素上移除一个或多个事件的事件处理函数。</p>
+      <div class="longdesc">
+        <p> off()&nbsp;方法移除用<a href="http://api.jquery.com/on">.on()</a>绑定的事件处理程序。有关详细信息，请参阅该网页上delegated和directly绑定事件。特定的事件处理程序可以被移除元素上提供事件的名称，命名空间，选择器，或处理函数名称的组合。<strong>当有多个过滤参数，所提供的参数都必须匹配的事件处理程序被删除。</strong></p>
+        <p>如果一个简单的事件名称，比如提供&quot;click&quot;，<em>所有</em>&nbsp;这种类型的事件（包括直接和委派）从jQuery设置的元素上删除。当编写代码，将作为一个插件使用，或者干脆当一个大的代码基础工作，最好的做法是安装和取下使用命名空间的事件，从而使代码不会无意中删除其他代码附加事件处理程序。在一个特定的命名空间中的所有类型的所有事件，可以从一个元素中删除，只是提供了一个命名空间，比如&nbsp;&quot;.myPlugin&quot;。至少，无论是命名空间或事件名称必须提供。</p>
+        <p>要删除特定的委派事件处理程序，提供一个selector&nbsp;的参数。选择器字符串必须是完全匹配递到.on()事件处理程序附加的选择器。要删除非委托元素上的所有事件，使用特殊值&nbsp;&quot;**&quot;&nbsp;。</p>
+        <p>处理程序也可以删除handler参数指定名称的函数。当jQuery的绑定一个事件处理程序，它分配一个唯一的ID给处理函数。函数用<a href="http://api.jquery.com/jQuery.proxy">jQuery.proxy()</a>代理或类似有相同的唯一ID机制（代理函数），因此，通过代理处理程序.off&nbsp;可能会删除比预期更多的处理程序。在这些情况下，最好是附加和移除事件处理程序，使用命名空间。</p>
+        <p>和.on()一样，你可以传递一个&nbsp;events-map&gt;参数明确的指定而不是用events&nbsp;和&nbsp;handler作为单独参数。键事件和/或命名空间;值是处理函数或为false的特殊价值。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>events,[selector],[fn]</strong><em>V1.7</em></h4>
+      <p><strong>events</strong>:一个或多个空格分隔的事件类型和可选的命名空间，或仅仅是命名空间，比如"click", "keydown.myPlugin", 或者 ".myPlugin".</p>
+      <p><strong>selector</strong>:一个最初传递到.on()事件处理程序附加的选择器。</p>
+      <p><strong>fn</strong>:事件处理程序函数以前附加事件上，或特殊值false.</p>
+      <h4><strong>events-map,[selector]</strong><em>V1.7</em></h4>
+      <p><strong>events-map</strong>:一个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示先前事件绑定的处理函数。</p>
+      <p><strong>selector</strong>:一个最初传递到.on()事件处理程序附加的选择器。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>Remove all event handlers from all paragraphs:</p>
+      <pre><code>$("p").off()</code></pre>
+      <p>Remove all delegated click handlers from all paragraphs:</p>
+      <pre><code>$("p").off( "click", "**" )</code></pre>
+      <p>Remove just one previously bound handler by passing it as the third argument:</p>
+      <pre><code>var foo = function () {
+  // code to handle some kind of event
+};
+
+// ... now foo will be called when paragraphs are clicked ...
+$("body").on("click", "p", foo);
+
+
+// ... foo will no longer be called.
+$("body").off("click", "p", foo); </code></pre>
+      <p>Unbind all delegated event handlers by their namespace:</p>
+      <pre><code>var validate = function () {
+  // code to validate form entries
+};
+
+// delegate events under the ".validator" namespace
+$("form").on("click.validator", "button", validate);
+
+$("form").on("keypress.validator", "input[type='text']", validate); 
+
+// remove event handlers in the ".validator" namespace
+
+$("form").off(".validator");</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.namespace</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.namespace">
+    <h2><span>返回值: String</span>event.namespace</h2>
+    <h3><em>V1.4.3</em>概述</h3>
+    <div class="desc">
+      <p>当事件被触发时此属性包含指定的命名空间。</p>
+      <div class="longdesc"></div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>确定事件在命名空间中使用。</p>
+      <h5> 代码:<code></code></h5>
+      <pre>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;button&gt;display event.namespace&lt;/button&gt;
+  &lt;p&gt;&lt;/p&gt;
+    &lt;script&gt;
+  $(&quot;p&quot;).bind(&quot;test.something&quot;, function(event) {
+    alert( event.namespace );  });
+  $(&quot;button&quot;).click(function(event) {
+    $(&quot;p&quot;).trigger(&quot;test.something&quot;);
+  });
+    &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>closest(expr|obj|ele)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="closest">
+    <h2><span>返回值:jQuery</span>closest(expr|object|element)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>jQuery 1.3新增。从元素本身开始，逐级向上级元素匹配，并返回最先匹配的元素。。</p>
+      <div class="longdesc">
+        <p>closest会首先检查当前元素是否匹配，如果匹配则直接返回元素本身。如果不匹配则向上查找父元素，一层一层往上，直到找到匹配选择器的元素。如果什么都没找到则返回一个空的jQuery对象。</p>
+        <p>closest和parents的主要区别是：1，前者从当前元素开始匹配寻找，后者从父元素开始匹配寻找；2，前者逐级向上查找，直到发现匹配的元素后就停止了，后者一直向上查找直到根元素，然后把这些元素放进一个临时集合中，再用给定的选择器表达式去过滤；3，前者返回0或1个元素，后者可能包含0个，1个，或者多个元素。 </p>
+        <p>closest对于处理事件委托非常有用。 </p>
+        <p><strong>.closest( selectors [, context ] )方法从 jQuery 1.7 开始，不再建议使用该方法，但是 jQuery 1.7 之前仍然可以使用。</strong>该方法将主要用于 jQuery 内部或插件作者使用。 </p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr<em> </em></strong><span>String,Array</span><em>V1.3</em></h4>
+      <p>用以过滤元素的表达式。jQuery 1.4开始，也可以传递一个字符串数组，用于查找多个元素。</p>
+      <del><h4><strong>expr,[context]<em> </em></strong><span>String</span><em>V1.4</em></h4>
+      <p>expr：用以过滤子元素的表达式</p>
+      <p>context：DOM元素在其中一个匹配的元素可以被发现。如果没有上下文在当时的情况下通过了jQuery设置将被使用。</p></del>
+      <h4><strong>jQuery object <em> </em></strong><span>object</span><em>V1.6</em></h4>
+      <p>一个用于匹配元素的jQuery对象</p>
+      <h4><strong>element<em> </em></strong><span>DOMElement</span><em>V1.6</em></h4>
+      <p>一个用于匹配元素的DOM元素。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4 xmlns="">描述:</h4>
+      <p xmlns="">展示如何使用clostest查找多个元素</p>
+      <h5 xmlns="">HTML 代码:</h5>
+      <pre xmlns=""><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></pre>
+      <h5 xmlns="">jQuery 代码:</h5>
+      <pre xmlns=""><code>$("li:first").closest(["ul", "body"]);</code></pre>
+      <h5 xmlns="">结果:</h5>
+      <pre xmlns=""><code>[ul, body]</code></pre>
+      <h4 xmlns="">描述:</h4>
+      <p xmlns="">展示如何使用clostest来完成事件委托。</p>
+      <h5 xmlns="">HTML 代码:</h5>
+      <pre xmlns=""><code>&lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Click me!&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;You can also &lt;b&gt;Click me!&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5 xmlns="">jQuery 代码:</h5>
+      <pre xmlns=""><code>$(document).bind("click", function (e) {
+    $(e.target).closest("li").toggleClass("hilight");
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

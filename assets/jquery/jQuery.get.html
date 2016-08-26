@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.get(url,[data],[callback],[type])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.get">
+    <h2><span>返回值:XMLHttpRequest</span>jQuery.get(url, <em class="optional">[data]</em>, <em class="optional">[callback]</em>, <em class="optional">[type]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>通过远程 HTTP GET 请求载入信息。</p>
+      <div class="longdesc">
+        <p>这是一个简单的 GET 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>url,[data],[callback],[type]</strong><span>String,Map,Function,String</span><em>V1.0</em></h4>
+      <p><strong>url</strong>:待载入页面的URL地址</p>
+      <p><strong>data</strong>:待发送 Key/value 参数。</p>
+      <p><strong>callback</strong>:载入成功时回调函数。</p>
+      <p><strong>type</strong>:返回内容格式，xml, html, script, json, text, _default。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>请求 test.php 网页，忽略返回值。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php");</code></pre>
+      <h4>描述:</h4>
+      <p>请求 test.php 网页，传送2个参数，忽略返回值。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php", { name: "John", time: "2pm" } );</code></pre>
+      <h4>描述:</h4>
+      <p>显示 test.php 返回值(HTML 或 XML，取决于返回值)。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php", function(data){
+  alert("Data Loaded: " + data);
+});</code></pre>
+      <h4>描述:</h4>
+      <p>显示 test.cgi 返回值(HTML 或 XML，取决于返回值)，添加一组请求参数。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.cgi", { name: "John", time: "2pm" },
+  function(data){
+    alert("Data Loaded: " + data);
+  });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.stopPropagation()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.stopPropagation">
+    <h2><span>返回值:Object</span>event.stopPropagation()</h2>
+    <h3><em>V1.0</em>概述</h3>
+    <div class="desc">
+      <p>防止事件冒泡到DOM树上，也就是不触发的任何前辈元素上的事件处理函数。</p>
+      <div class="longdesc">
+        <div>
+          <p>我们可以用&nbsp;<a href="event.isPropagationStopped.html">event.isPropagationStopped()</a>&nbsp;来确定这个方法是否(在那个事件对象上)调用过了。</p>
+          <p>这个方法对&nbsp;<a href="trigger.html">trigger()</a>&nbsp;来自定义的事件同样有效。</p>
+          <p>注意，这不会阻止<em>同一个元素上</em>的其它事件处理函数的运行。</p>
+        </div>
+        <h1 id="notes-0">Additional Notes:</h1>
+        <p>自从<a href="live.html">.live()</a>方法处理事件一旦传播到文档的顶部，live事件是不可能停止传播的。同样地，<a href="delegate.html">.delegate()</a>&nbsp;事件将始终传播给其中包含的被委托元素；元素上的事件将在被委托事件被调用的时候执行。 </p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>灭掉click事件的冒泡。</p>
+      <h5>jQuery 代码: </h5>
+      <pre>$(&quot;p&quot;).click(function(event){
+    event.stopPropagation();    // do something
+  });  </pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

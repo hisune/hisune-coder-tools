@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.inArray(value,array,[fromIndex])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.inArray">
+    <h2><span>返回值:Number</span>jQuery.inArray(value,array,[fromIndex])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>确定第一个参数在数组中的位置，从0开始计数(如果没有找到则返回 -1 )。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>value,array,[fromIndex]</strong><span>Any,Array,Number</span><em>V1.2</em></h4>
+      <p><strong>value</strong>:用于在数组中查找是否存在</p>
+      <p><strong>array</strong>:待处理数组。</p>
+      <p><strong>fromIndex</strong>:用来搜索数组队列，默认值为0。</p>
+      <h4><strong>array</strong><span>Array</span></h4>
+      <p>待处理数组。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查看对应元素的位置</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var arr = [ 4, "Pete", 8, "John" ];
+jQuery.inArray("John", arr);  //3
+jQuery.inArray(4, arr);  //0
+jQuery.inArray("David", arr);  //-1
+jQuery.inArray("Pete", arr, 2);  //-1</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

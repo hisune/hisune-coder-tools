@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>deferred.fail(failCallbacks[,failCallbacks])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="deferred.fail">
+    <h2><span>返回值:Deferred Object</span>deferred.fail(failCallbacks[,failCallbacks])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>当延迟失败时调用一个函数或者数组函数.。</p>
+      <div class="longdesc">
+        <p>该参数可以是一个函数或一个函数的数组。当延迟失败时，doneCallbacks被调用。回调执行是依照他们添加的顺序。一旦deferred.fail()返回延迟对象，延迟对象的其它方法也可以链接到了这里，包括增加.done()方法。当延迟解决，doneCallbacks执行使用参数提供给<a href="deferred.reject.html">resolve</a>或<a href="deferred.rejectWith.html">resolveWith</a>方法依照添加的顺序调用。有关详细信息，请参阅<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>failCallbacks</strong><span>Function/Array</span><em>V1.5</em></h4>
+      <p>一个函数或者数组函数，延迟失败时调用</p>
+      <h4><strong>failCallbacks</strong><span>Function/Array</span><em>V1.5</em></h4>
+      <p>附加可选的函数或数组函数，延迟失败时调用</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>一旦jQuery.get方法返回一个jqXHR对象，这是从一个递延所得，可以附加的成功和失败回调使用deferrred.done()和deferred.fail()方法。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.get("test.php")
+  .done(function(){ alert("$.get succeeded"); })//延迟成功
+  .fail(function(){ alert("$.get failed!"); });//延迟失败</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>find(expr|obj|ele)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="find">
+    <h2><span>返回值:jQuery</span>find(expr|obj|ele)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。</p>
+      <div class="longdesc">
+        <p>所有搜索都依靠jQuery表达式来完成。这个表达式可以使用CSS1-3的选择器语法来写。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr</strong><span>String</span><em>V1.0</em></h4>
+      <p>用于查找的表达式</p>
+      <h4><strong>jQuery object <em> </em></strong><span>object</span><em>V1.6</em></h4>
+      <p>一个用于匹配元素的jQuery对象</p>
+      <h4><strong>element</strong><span>DOMElement</span><em>V1.6</em></h4>
+      <p>一个DOM元素</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>从所有的段落开始，进一步搜索下面的span元素。与$("p span")相同。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;, how are you?&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").find("span")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;span&gt;Hello&lt;/span&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

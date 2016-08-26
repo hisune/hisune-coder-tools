@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body, html{
+            height: 100%;
+        }
+        .CodeMirror{
+            position: absolute !important;
+            width: 100%;
+            height: auto !important;
+            top: 48px;
+            bottom: 31px;
+        }
+        .editor-statusbar{
+            position: fixed !important;
+            bottom: 0;
+            width: 100%;
+            right: 90px;
+        }
+    </style>
+</head>
+<body>
+<link rel="stylesheet" href="./editor.css" />
+<script type="text/javascript" src="./editor.js"></script>
+<script type="text/javascript" src="./marked.js"></script>
+<textarea></textarea>
+<script>
+    var editor = new Editor();
+    editor.render();
+</script>
+</body>
+</html>

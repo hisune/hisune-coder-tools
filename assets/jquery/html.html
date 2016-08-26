@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>html([val|fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="html">
+    <h2><span>返回值:String</span>html([val|fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>取得第一个匹配元素的html内容。这个函数不能用于XML文档。但可以用于XHTML文档。</p>
+      <div class="longdesc">
+        <p>在一个 HTML 文档中, 我们可以使用 .html() 方法来获取任意一个元素的内容。 如果选择器匹配多于一个的元素，那么只有第一个匹配元素的 HTML 内容会被获取。</p>
+      </div>
+      <h3>参数</h3>
+      <div class="parameter">
+        <h4><strong>val</strong><span>String</span><em>V1.0</em></h4>
+        <p>用于设定HTML内容的值</p>
+        <h4><strong>function(index, html)</strong><span>Function</span><em>V1.4</em></h4>
+        <p>此函数返回一个HTML字符串。接受两个参数，index为元素在集合中的索引位置，html为原先的HTML值。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>无参数 描述:</h4>
+      <p>返回p元素的内容。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('p').html();</code></pre>
+      <h4>参数val 描述:</h4>
+      <p>设置所有 p 元素的内容</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").html("Hello &lt;b&gt;world&lt;/b&gt;!");</code></pre>
+      <h4>回调函数描述:</h4>
+      <p>使用函数来设置所有匹配元素的内容。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").html(function(n){
+    return "这个 p 元素的 index 是：" + n;
+    });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

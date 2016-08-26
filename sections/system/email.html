@@ -1,0 +1,54 @@
+<template class="task-template">
+  <section id="email-section" class="section js-section u-category-system">
+    <header class="section-header">
+      <div class="section-wrapper" style="padding-top: 1em">
+        <p><strong>%week1% => 周一的年月日，例如：2016-08-22。数字支持从0到6，表示周日到周六。</strong></p>
+        <p><strong>Email Service支持：</strong></p>
+        <p style="-webkit-user-select: auto;word-break:break-all;">'QQ''QQex''Gmail''iCloud''Hotmail''Yahoo''Zoho''Godaddy''GodaddyAsia''GodaddyEurope''1und1''AOL''DebugMail.io''DynectEmail''FastMail''GandiMail''hot.ee''mail.ee''Mail.ru''Mailgun''Mailjet''Mandrill''Naver''OpenMailBox''Postmark''SendCloud''SendGrid''SES''SES-US-EAST-1''SES-US-WEST-2''SES-EU-WEST-1''Sparkpost''Yandex'</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper bs-glyphicons is-open">
+        <div class="demo-controls demo-1em">
+          <label class="ss-label" style="text-align: left">Email Service</label>
+          <input class="demo-input" placeholder="Email Service" id="email-service" value="QQex">
+        </div>
+
+        <div class="demo-controls demo-1em">
+          <label class="ss-label" style="text-align: left">发送人</label>
+          <input class="demo-input" placeholder="发送人，邮箱账号" id="email-user">
+        </div>
+
+        <div class="demo-controls demo-1em">
+          <label class="ss-label" style="text-align: left">密码</label>
+          <input type="password" class="demo-input" placeholder="邮箱密码" id="email-password">
+        </div>
+
+        <div class="demo-controls demo-1em">
+          <label class="ss-label" style="text-align: left">收件人</label>
+          <input class="demo-input" placeholder="收件人" id="email-send_to">
+        </div>
+
+        <div class="demo-controls demo-1em">
+          <label class="ss-label" style="text-align: left">标题</label>
+          <input class="demo-input" placeholder="标题" id="email-title" value="XX部门-隔壁老王- %week1% ~ %week5% 工作周报">
+        </div>
+
+        <textarea id="email-content" class="demo-input" placeholder="邮件内容" id="email-content"></textarea>
+
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="email-send">Send</button>
+          </div>
+          <div style="margin-top: 1em;" id="email-result"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      require('./renderer-process/system/email')
+    </script>
+
+  </section>
+</template>

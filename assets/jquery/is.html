@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>is(expr|obj|ele|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="is">
+    <h2><span>返回值:Boolean</span>is(expr|obj|ele|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>根据选择器、DOM元素或 jQuery 对象来检测匹配元素集合，如果其中至少有一个元素符合这个给定的表达式就返回true。</p>
+      <div class="longdesc">
+        <p>如果没有元素符合，或者表达式无效，都返回'false'。
+          
+          '''注意：'''在jQuery 1.3中才对所有表达式提供了支持。在先前版本中，如果提供了复杂的表达式，比如层级选择器（比如 + , ~ 和 &gt; ），始终会返回true</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr</strong><span>String</span><em>V1.0</em></h4>
+      <p>字符串值，包含供匹配当前元素集合的选择器表达式。</p>
+      <h4><strong>jQuery object</strong><span>object</span><em>V1.6</em></h4>
+      <p> 现有的jQuery对象，以匹配当前的元素。 </p>
+      <h4><strong>element </strong><span>Expression</span><em>V1.6</em></h4>
+      <p> 一个用于匹配元素的DOM元素。 </p>
+      <h4><strong>function(index) </strong><span>Function</span><em>V1.6</em></h4>
+      <p>一个函数用来作为测试元素的集合。它接受一个参数index，这是元素在jQuery集合的索引。在函数， this指的是当前的DOM元素。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>参数expr 描述:</h4>
+      <p>由于input元素的父元素是一个表单元素，所以返回true。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;form&gt;&lt;input type="checkbox" /&gt;&lt;/form&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("input[type='checkbox']").parent().is("form")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>true</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>判断点击li标签增加背景色为红色，如果点击的是第2个strong,当前的li增加背景色为绿色，</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul>
+  &lt;li>&lt;strong>list&lt;/strong> item 1 - one strong tag&lt;/li&gt;
+  &lt;li>&lt;strong&gt;list&lt;/strong&gt; item &lt;strong&gt;2&lt;/strong&gt; - two &lt;span&gt;strong tags&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("li").click(function() {
+  var $li = $(this),
+    isWithTwo = $li.is(function() {
+      return $('strong', this).length === 2;
+    });
+  if ( isWithTwo ) {
+    $li.css("background-color", "green");
+  } else {
+    $li.css("background-color", "red");
+  }
+});</code></pre>
+      <h5>结果:</h5>
+      <pre><code><ul>
+      <li style="background-color: red;"><strong>list</strong> item 1 - one strong tag</li>
+      <li style="background-color: green;"><strong>list</strong> item <strong>2</strong> - two <span>strong tags</span></li>
+      <li style="background-color: red;">list item 3</li>
+      <li style="background-color: red;">list item 4</li>
+      <li style="background-color: red;">list item 5</li>
+      </ul></code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

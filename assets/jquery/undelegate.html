@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>undelegate([selector,[type],fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="undelegate">
+    <h2><span>返回值:jQuery</span> undelegate([selector,[type],fn])</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>删除由 delegate() 方法添加的一个或多个事件处理程序。</p>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>selector,[type]</strong><span>String,String</span><em>1.4.2</em></h4>
+      <p><strong>selector:</strong>需要删除事件处理程序的选择器。</p>
+      <p><strong>type:</strong>需要删除处理函数的一个或多个事件类型。
+        由空格分隔多个事件值。必须是有效的事件。</p>
+      <h4><strong>selector,[type],fn</strong><span>String,String,Function</span><em>V1.4.2</em></h4>
+      <p><strong>selector:</strong>需要删除事件处理程序的选择器。</p>
+      <p><strong>type:</strong>需要删除处理函数的一个或多个事件类型。
+        由空格分隔多个事件值。必须是有效的事件。</p>
+      <p><strong>fn:</strong>要删除的具体事件处理函数。</p>
+      <h4><strong>selector,events</strong><span>String,String</span><em>V1.4.3</em></h4>
+      <p><strong>selector:</strong>需要删除事件处理程序的选择器。</p>
+      <p><strong>events:</strong>一个或多个事件类型的字符串和函数的数据映射来执行他们。</p>
+      <h4><strong>namespace</strong><span>String</span><em>1.6</em></h4>
+      <p><strong>namespace:</strong>一个字符串，其中包含一个命名空间取消绑定的所有事件。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>从p元素删除由 delegate() 方法添加的所有事件处理器：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").undelegate();</code></pre>
+      <p>从p元素删除由 delegate() 方法添加的所有click事件处理器：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").undelegate( "click" )</code></pre>
+      <p>从form元素删除由 delegate() 方法添加的".whatever"命名空间：</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>var foo = function () {
+  //.....
+};
+//用delegate() 方法给click事件增加".whatever"命名空间
+$("form").delegate(":button", "click.whatever", foo);
+$("form").delegate("input[type='text']", "keypress.whatever", foo); 
+
+// 用undelegate()方法删除delegate()方法增加的&quot;.whatever&quot;命名空间
+$("form").undelegate(".whatever");</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

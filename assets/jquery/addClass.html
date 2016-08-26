@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>addClass(class|fn)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="addClass">
+    <h2><span>返回值:jQuery</span>addClass(class|fn)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>为每个匹配的元素添加指定的类名。</p>
+      <div class="longdesc">
+        <p></p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>class</strong><span>String</span><em>V1.0</em></h4>
+      <p>一个或多个要添加到元素中的CSS类名，请用空格分开</p>
+      <h4><strong>function(index, class)</strong><span>Function</span><em>V1.4</em></h4>
+      <p>此函数必须返回一个或多个空格分隔的class名。接受两个参数，index参数为对象在这个集合中的索引值，class参数为这个对象原先的class属性值。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>参数class 描述:</h4>
+      <p>为匹配的元素加上 'selected' 类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("p").addClass("selected");
+$("p").addClass("selected1 selected2");</code></pre>
+      <h4>回调函数 描述:</h4>
+      <p>给li加上不同的class</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;ul&gt;
+      &lt;li&gt;Hello&lt;/li&gt;
+      &lt;li&gt;Hello&lt;/li&gt;
+      &lt;li&gt;Hello&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$('ul li:last').addClass(function() {
+  return 'item-' + $(this).index();
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

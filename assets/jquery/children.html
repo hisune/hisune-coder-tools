@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>children([expr])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  
+  <div rel="children">
+    <h2><span>返回值:jQuery</span>children(<em class="optional">[expr]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>取得一个包含匹配的元素集合中每一个元素的所有子元素的元素集合。</p>
+      <div class="longdesc">
+        <p>可以通过可选的表达式来过滤所匹配的子元素。注意：parents()将查找所有祖辈元素，而children()只考虑子元素而不考虑所有后代元素。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>expr<em> </em></strong><span>String</span><em>V1.0</em></h4>
+      <p>用以过滤子元素的表达式</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>查找DIV中的每个子元素。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;p&gt;Hello&lt;/p&gt;&lt;div&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;p&gt;And Again&lt;/p&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").children()</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;span&gt;Hello Again&lt;/span&gt; ]</code></pre>
+      <h4>描述:</h4>
+      <p>在每个div中查找 .selected 的类。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;p&gt;And Again&lt;/p&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("div").children(".selected")</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;p class="selected"&gt;Hello Again&lt;/p&gt; ]</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

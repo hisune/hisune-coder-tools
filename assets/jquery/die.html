@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>die(type,[fn])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="die">
+    <h2><span>返回值:jQuery</span>die(type, <em class="optional">[fn]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>从元素中删除先前用.live()绑定的所有事件.(此方法与live正好完全相反。)</p>
+      <div class="longdesc">
+        <p>如果不带参数，则所有绑定的live事件都会被移除。</p>
+        <p>你可以解除用live注册的自定义事件。</p>
+        <p>如果提供了type参数，那么会移除对应的live事件。</p>
+        <p>如果也指定了第二个参数function,则只移出指定的事件处理函数。</p>
+        <p class="optional"> <strong>从 jQuery 1.7 开始</strong>，不再建议使用 .die() (以及它的互补方法 .live())。请使用 <a href="off.html"> .off()</a> 来代替，用于移除通过 <a href="on.html"> .on()</a> 绑定的事件处理。 </p>
+        <p> <strong>注意:</strong> 为了保证 .die() 能正确工作，所使用的选择器必须与初始化 .live() 时所使用的选择器保持一致。 </p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>type[,fn]<em> </em></strong><span>String,Function</span><em>V1.3</em></h4>
+      <p><strong>type:</strong>要移除的一个或多个事件处理程序。由空格分隔多个事件值。必须是有效的事件。</p>
+      <p><strong>fn:</strong>要移除的函数。。</p>
+      <h4><strong>type<em> </em></strong><span>String</span><em>V1.4.3</em></h4>
+      <p>要移除的一个或多个事件处理程序。
+        由空格分隔多个事件值。必须是有效的事件。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>给按钮解除click事件</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>function aClick() {
+      $("div").show().fadeOut("slow");
+  }
+  $("#unbind").click(function () {
+      $("#theone").die("click", aClick)
+  });</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

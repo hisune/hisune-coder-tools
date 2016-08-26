@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>each(callback)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="each">
+    <h2><span>返回值:jQuery</span>each(callback)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>以每一个匹配的元素作为上下文来执行一个函数。</p>
+      <div class="longdesc">
+        <p>意味着，每次执行传递进来的函数时，函数中的this关键字都指向一个不同的DOM元素（每次都是一个不同的匹配元素）。而且，在每次执行函数时，都会给函数传递一个表示作为执行环境的元素在匹配的元素集合中所处位置的数字值作为参数（从零开始的整型）。 返回 'false' 将停止循环 (就像在普通的循环中使用 'break')。返回 'true' 跳至下一个循环(就像在普通的循环中使用'continue')。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>callback</strong><span>Function</span><em>V1.0</em></h4>
+      <p>对于每个匹配的元素所要执行的函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>迭代两个图像，并设置它们的 src 属性。注意:此处 this 指代的是 DOM 对象而非 jQuery 对象。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;img/&gt;&lt;img/&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").each(function(i){
+   this.src = "test" + i + ".jpg";
+ });</code></pre>
+      <h5>结果:</h5>
+      <pre><code>[ &lt;img src="test0.jpg" /&gt;, &lt;img src="test1.jpg" /&gt; ]</code></pre>
+      <h4>描述:</h4>
+      <p>如果你想得到 jQuery对象，可以使用 $(this) 函数。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button&gt;Change colors&lt;/button&gt;
+&lt;span&gt;&lt;/span&gt; 
+&lt;div&gt;&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+&lt;div id="stop"&gt;Stop here&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("img").each(function(){
+  $(this).toggleClass("example");
+});</code></pre>
+      <h4>描述:</h4>
+      <p>你可以使用 'return' 来提前跳出 each() 循环。</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;button&gt;Change colors&lt;/button&gt;
+&lt;span&gt;&lt;/span&gt; 
+&lt;div&gt;&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+&lt;div id="stop"&gt;Stop here&lt;/div&gt; 
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("button").click(function () { 
+$("div").each(function (index, domEle) { 
+  // domEle == this 
+  $(domEle).css("backgroundColor", "yellow");  
+  if ($(this).is("#stop")) { 
+  $("span").text("Stopped at div index #" + index); 
+  return false; 
+  } 
+});
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

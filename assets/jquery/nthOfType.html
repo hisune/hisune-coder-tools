@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:nth-of-type()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="nthOfType">
+    <h2><span>返回值:jQuery</span>:nth-of-type(n|even|odd|formula)</h2>
+    <h3><em>V1.9</em>概述</h3>
+    <div class="desc">
+      <p>选择同属于一个父元素之下，并且标签名相同的子元素中的第n个。</p>
+      <div class="longdesc">
+        <p>因为jQuery的实现:nth-是严格来自CSS规范，n值是&ldquo;1-indexed&rdquo;，也就是说，从1开始计数。对于所有其他选择器表达式比如:eq() 或 :even ，jQuery遵循JavaScript的&ldquo;0索引&rdquo;的计数。</p>
+        <p>这个不寻常的用法，可进一步讨论中找到<a href="http://www.w3.org/TR/css3-selectors/#nth-child-pseudo">W3C CSS specification</a>.</p>
+      </div>
+    </div>
+	<h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>n</strong><span></span><em>V1.9</em></h4>
+      <p>The index of each child to match.<br />
+        <br />
+      Must be a number. The first element has the index number 1.</p>
+      <h4><strong>even</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each even child element</p>
+      <h4><strong>odd</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each odd child element</p>
+      <h4><strong>formula</strong><span></span><em>V1.9</em></h4>
+      <p>Specifies which child element(s) to be selected with a formula (<em>an</em> + <em>b</em>). Example: p:nth-last-child(3n+2) selects each 3rd paragraph, starting at the last 2nd child</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <p>查找每个span，这个 span 是 其所有兄弟span元素中的第二个元素。</p>
+      <pre>
+&lt;div&gt;<br />  &lt;span&gt;John&lt;/span&gt;<br />  &lt;b&gt;Kim&lt;/b&gt;<br />  &lt;span&gt;Adam&lt;/span&gt;<br />  &lt;b&gt;Rafael&lt;/b&gt;<br />  &lt;span&gt;Oleg&lt;/span&gt;<br />&lt;/div&gt;<br />&lt;div&gt;<br />  &lt;b&gt;Dave&lt;/b&gt;<br />  &lt;span&gt;Ann&lt;/span&gt;<br />&lt;/div&gt;<br />&lt;div&gt;<br />  &lt;i&gt;&lt;span&gt;Maurice&lt;/span&gt;&lt;/i&gt;<br />  &lt;span&gt;Richard&lt;/span&gt;<br />  &lt;span&gt;Ralph&lt;/span&gt;<br />  &lt;span&gt;Jason&lt;/span&gt;<br />&lt;/div&gt;
+
+$(&quot;span:nth-of-type(2)&quot;);</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<template class="task-template">
+    <section id="postman-section" class="section js-section u-category-windows">
+        <div class="demo">
+            <div class="demo-wrapper is-open">
+                <div class="demo-controls demo-1em">
+                    <select class="demo-select demo-left-input" id="postman-url-type">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+                    <input class="demo-input" id="postman-url" placeholder="eg. https://hisune.com">
+                </div>
+                <div class="demo-controls demo-1em">
+                    <textarea class="demo-input" id="postman-headers"
+                              placeholder="Headers, JSON字符串或'key:value'一行一个"></textarea>
+                </div>
+                <div class="demo-controls demo-1em">
+                    <select class="demo-select demo-left-input" id="postman-request-type">
+                        <option value="form">form</option>
+                        <option value="body">body</option>
+                    </select>
+                    <textarea class="demo-input" id="postman-request"
+                              placeholder="Request, JSON字符串或'key:value'一行一个"></textarea>
+                </div>
+
+                <div class="demo-box">
+                    <div class="demo-controls">
+                        <button class="demo-button" id="make-a-request">Make a Request</button>
+                    </div>
+                    <div style="margin-top: 1em;" id="postman-result"></div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            require('./renderer-process/windows/postman')
+        </script>
+    </section>
+</template>

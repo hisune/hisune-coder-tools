@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.each(object,[callback])</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="jQuery.each">
+    <h2><span>返回值:Object</span>jQuery.each(object, <em class="optional">[callback]</em>)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>通用例遍方法，可用于例遍对象和数组。</p>
+      <div class="longdesc">
+        <p>不同于例遍 jQuery 对象的 $().each() 方法，此方法可用于例遍任何对象。回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。如果需要退出 each 循环可使回调函数返回 false，其它返回值将被忽略。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>object,[callback]</strong><span>Object,Function</span><em>V1.0</em></h4>
+      <p><strong>object</strong>:需要例遍的对象或数组。</p>
+      <p><strong>callback</strong>:每个成员/元素执行的回调函数。</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>例遍数组，同时使用元素索引和内容。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.each( [0,1,2], function(i, n){
+  alert( "Item #" + i + ": " + n );
+});</code></pre>
+      <h4>描述:</h4>
+      <p>例遍对象，同时使用成员名称和变量内容。</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$.each( { name: "John", lang: "JS" }, function(i, n){
+  alert( "Name: " + i + ", Value: " + n );
+});</code></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

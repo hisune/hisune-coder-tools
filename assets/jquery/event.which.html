@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>event.which</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="event.which">
+    <h2><span>返回值:String</span>event.which</h2>
+    <h3><em>V1.1.3</em>概述</h3>
+    <div class="desc">
+      <p>针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键或按钮。</p>
+      <div class="longdesc">
+        <p> event.which&nbsp;将&nbsp;event.keyCode&nbsp;和&nbsp;event.charCode&nbsp;标准化了。推荐用&nbsp;event.which&nbsp;来监视键盘输入。更多细节请参阅：&nbsp;<a href="https://developer.mozilla.org/en/DOM/event.charCode#Notes">event.charCode on the MDC</a>. </p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>记录按键。</p>
+      <h5> 代码: </h5>
+      <pre>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;input id=&quot;whichkey&quot; value=&quot;type something&quot;&gt;
+      &lt;div id=&quot;log&quot;&gt;&lt;/div&gt;
+      &lt;script&gt;
+        $('#whichkey').bind('keydown',function(e){
+        $('#log').html(e.type + ': ' +  e.which );  });
+      &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

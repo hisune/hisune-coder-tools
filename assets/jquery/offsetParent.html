@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>offsetParent()</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="offsetParent">
+    <h2><span>返回值:jQuery</span>offsetParent()</h2>
+    <h3><em>V1.2.6</em>概述</h3>
+    <div class="desc">
+      <p>返回第一个匹配元素用于定位的父节点。</p>
+      <div class="longdesc">
+        <p>这返回父元素中第一个其position设为relative或者absolute的元素。此方法仅对可见元素有效。</p>
+      </div>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>描述:</h4>
+      <p>设置最近的祖先定位元素的背景颜色</p>
+      <h5>HTML 代码:</h5>
+      <pre><code>&lt;div style="width:70%;position:absolute;left:100px;top:100px"&gt;
+  &lt;div style="margin:50px;background-color:yellow"&gt;
+     &lt;p>点击下面的按钮可以设置本段落的最近的父（祖先）元素的背景色。&lt;/p&gt;
+   &lt;div&gt;
+&lt;/div&gt;
+&lt;button&gt;点击这里&lt;/button&gt;</code></pre>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("button").click(function(){
+    $("p").offsetParent().css("background-color","red");
+});</code>
+</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

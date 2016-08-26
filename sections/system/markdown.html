@@ -1,0 +1,11 @@
+<template class="task-template">
+  <section id="markdown-section" class="section js-section u-category-system" style="padding: 1em;">
+
+    <textarea id="markdown-render"></textarea>
+    <script>
+      var editor = new Editor();
+      editor.render($('#markdown-render')[0]);
+    </script>
+
+  </section>
+</template>

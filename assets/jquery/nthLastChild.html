@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:nth-last-child(n|e|o|f)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="nthLastChild">
+    <h2><span>返回值:jQuery</span>:nth-last-child(n|even|odd|formula)</h2>
+    <h3><em>V1.9</em>概述</h3>
+    <div class="desc">
+      <p>选择所有他们父元素的第n个子元素。计数从最后一个元素开始到第一个。</p>
+      <div class="longdesc">
+        <p>因为jQuery的实现:nth-child(n)是严格来自CSS规范，所以n值是&ldquo;1索引&rdquo;，也就是说，从1开始计数。对于所有其他选择器表达式，jQuery遵循JavaScript的&ldquo;0索引&rdquo;的计数。因此，给定一个单一&lt;ul&gt;包含两个&lt;li&gt;， $('li:nth-child(1)')选择第一个&lt;li&gt;，而$('li:eq(1)')选择第二个。</p>
+        <p>这个不寻常的用法，可进一步讨论中找到<a href="http://www.w3.org/TR/css3-selectors/#nth-child-pseudo">W3C CSS specification</a>.</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>n</strong><span></span><em>V1.9</em></h4>
+      <p>The index of each child to match.<br />
+        <br />
+      Must be a number. The first element has the index number 1.</p>
+      <h4><strong>even</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each even child element</p>
+      <h4><strong>odd</strong><span></span><em>V1.9</em></h4>
+      <p>Selects each odd child element</p>
+      <h4><strong>formula</strong><span></span><em>V1.9</em></h4>
+      <p>Specifies which child element(s) to be selected with a formula (<em>an</em> + <em>b</em>). Example: p:nth-last-child(3n+2) selects each 3rd paragraph, starting at the last 2nd child</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <p>在每个匹配的ul中查找倒数第二个li</p>
+      <pre>
+&lt;ul&gt;
+	&lt;li&gt;1&lt;/li&gt;
+	&lt;li&gt;2&lt;/li&gt;
+	&lt;li&gt;3&lt;/li&gt;
+	&lt;li&gt;4&lt;/li&gt;
+&lt;/ul&gt;
+
+$(&quot;ul li:nth-last-child(2)&quot;);</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>hover([over,]out)</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+<body id="split">
+<div id="content" class="a2">
+  <div rel="hover">
+    <h2><span>返回值:jQuery</span>hover([over,]out)</h2>
+    <h3>概述</h3>
+    <div class="desc">
+      <p>一个模仿悬停事件（鼠标移动到一个对象上面及移出这个对象）的方法。这是一个自定义的方法，它为频繁使用的任务提供了一种“保持在其中”的状态。</p>
+      <div class="longdesc">
+        <p>当鼠标移动到一个匹配的元素上面时，会触发指定的第一个函数。当鼠标移出这个元素时，会触发指定的第二个函数。而且，会伴随着对鼠标是否仍然处在特定元素中的检测（例如，处在div中的图像），如果是，则会继续保持“悬停”状态，而不触发移出事件（修正了使用mouseout事件的一个常见错误）。</p>
+      </div>
+    </div>
+    <h3>参数</h3>
+    <div class="parameter">
+      <h4><strong>over,out</strong><span>Function,Function</span><em>V1.0</em></h4>
+      <p>over:鼠标移到元素上要触发的函数</p>
+      <p>out:鼠标移出元素要触发的函数</p>
+      <h4><strong>out</strong><span>Object</span><em>V1.4</em></h4>
+      <p>当鼠标移到元素上或移出元素时触发执行的事件函数</p>
+    </div>
+    <div class="example">
+      <h3>示例</h3>
+      <span id="f_ad2"></span>
+      <h4>over,out 描述:</h4>
+      <p>鼠标悬停的表格加上特定的类</p>
+      <h5>jQuery 代码:</h5>
+      <pre><code>$("td").hover(
+  function () {
+    $(this).addClass("hover");
+  },
+  function () {
+    $(this).removeClass("hover");
+  }
+);</code></pre>
+      <h4>out 描述:</h4>
+      <p>hover()方法通过绑定变量&quot;handlerInOut&quot;来切换方法。</p>
+      <h5>jQuery 代码:</h5>
+      <pre>$(&quot;<code>td</code>&quot;).bind(&quot;mouseenter mouseleave&quot;,handlerInOut);
+$(&quot;<code>td</code>&quot;).hover(handlerInOut);</pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
