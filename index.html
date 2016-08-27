@@ -92,7 +92,14 @@
     <footer class="nav-footer">
       <div>
         <i id="window-search-btn" class="nav-footer-button">Search</i>
-        <input placeholder="输入关键词回车搜索" class="nav-footer-button" id="window-search"/>
+        <div class="demo-controls" id="window-search-group">
+          <input class="nav-footer-button" id="window-search"/>
+          <div class="window-search-icon">
+            <i class="fa fa-chevron-down search-ctrl" id="window-search-next"></i>
+            <i class="fa fa-chevron-up search-ctrl" id="window-search-prev"></i>
+            <i class="fa fa-close search-ctrl" id="window-search-close"></i>
+          </div>
+        </div>
       </div>
       <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
     </footer>

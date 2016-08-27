@@ -235,17 +235,22 @@ table tr td{
   margin: 0 15px;
   display: inline-block;
 }
-#window-search-btn{
-  cursor: pointer;
+.window-search-icon{
+  overflow: auto;
+  clear: both;
+  text-align: center;
+}
+#window-search-group{
+  display: none;
 }
 #window-search{
-  background-color: #fff;
+  margin-bottom: 0;
   font-size: 12px;
-  padding: 1px;
-  border: 1px solid var(--color-border);
+  padding: 1px 5px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid var(--color-subtle);
   color:#000;
-  width: 100%;
-  display: none;
+  float: left;
   text-align: left;
 }
 .bs-glyphicons-list{
@@ -527,4 +532,8 @@ table tr td{
   .col-md-offset-0{
     margin-left:0
   }
+}
+.search-ctrl{
+  cursor: pointer;
+  margin: 0 0 .75rem .1rem;
 }

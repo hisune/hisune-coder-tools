@@ -23,8 +23,11 @@ const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
   }
 })
 
-ipc.on('search-action', (event, arg) => {
+ipc.on('search-forward', (event, arg) => {
   mainWindow.webContents.findInPage(arg);
+});
+ipc.on('search-backward', (event, arg) => {
+  mainWindow.webContents.findInPage(arg, {forward: false});
 });
 ipc.on('search-done', (event) => {
   mainWindow.webContents.stopFindInPage('clearSelection');
@@ -42,7 +45,7 @@ function initialize () {
     var windowOptions = {
       width: 1280,
       minWidth: 680,
-      height: 890,
+      height: 915,
       title: app.getName(),
       show: false
     }

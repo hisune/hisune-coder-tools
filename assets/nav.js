@@ -15,25 +15,31 @@ $('.open-item').click(function(){
   }
 });
 
-let ws = $('#window-search');
-ws.on('change', function(){
-  if($(this).val() == ''){
-    ipc.send('search-done', '');
-    ws.hide();
-  }
+let ws = $('#window-search'),
+    wsn = $('#window-search-next'),
+    wsp = $('#window-search-prev'),
+    wsc = $('#window-search-close'),
+    wsb = $("#window-search-btn"),
+    wsg = $('#window-search-group');
+wsn.click(function(){
+  let val = ws.val();
+  if(val)
+    ipc.send('search-forward', val);
 });
-$("#window-search-btn").click(function(){
-  if(ws.is(':visible')){
-    let val = ws.val();
-    if(val)
-      ipc.send('search-action', val);
-    else{
-      ipc.send('search-done', '');
-      ws.hide();
-    }
-  }else{
+wsp.click(function(){
+  let val = ws.val();
+  if(val)
+    ipc.send('search-backward', val);
+});
+wsc.click(function(){
+  wsb.show();
+  wsg.hide();
+  ipc.send('search-done', '');
+});
+wsb.click(function(){
+    $(this).hide();
+  wsg.show();
     ws.show().focus();
-  }
 });
 
 // Default to the view that was active the last time the app was open
