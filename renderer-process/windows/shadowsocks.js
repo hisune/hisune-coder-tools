@@ -105,9 +105,7 @@ var initSs = function()
                     window.shadowsocks.close();
                 }
                 util.log('starting shadowscks');
-                setTimeout(function(){
-                    window.shadowsocks = shadowsocks.createServer(ss.ss[ss.default].ip, ss.ss[ss.default].port, ss.ss[ss.default].local_port, ss.ss[ss.default].password, ss.ss[ss.default].encryption, 1000 * (ss.ss[ss.default].timeout || 600), '127.0.0.1');
-                }, 1000);
+                window.shadowsocks = shadowsocks.createServer(ss.ss[ss.default].ip, ss.ss[ss.default].port, ss.ss[ss.default].local_port, ss.ss[ss.default].password, ss.ss[ss.default].encryption, 1000 * (ss.ss[ss.default].timeout || 600), '127.0.0.1');
             }catch (e){
                 console.log(e);
             }
