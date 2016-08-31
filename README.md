@@ -3,6 +3,10 @@
 * 工具离线化，不联网也能用
 * 跨平台工具，支持mac和windows
 
+## 获取最新版本
+* [darwin-x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
+* [win32-x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
+
 ## 包含以下工具
 ###网络工具
 * Shadowsocks
