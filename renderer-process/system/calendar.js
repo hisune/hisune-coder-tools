@@ -32,7 +32,7 @@ let calendarEvent = [],
                         calendar.fullCalendar('renderEvent', eventData, true); // stick? = true
                         calendarEvent.push(eventData);
                         storage.set('calendar', calendarEvent);
-                        calendarEventObj.text(JSON.stringify(calendarEvent, null, 3));
+                        calendarEventObj.val(JSON.stringify(calendarEvent, null, 3));
                     }
                     calendar.fullCalendar('unselect');
                 });
