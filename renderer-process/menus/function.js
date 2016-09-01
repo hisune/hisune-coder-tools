@@ -111,6 +111,7 @@ $('#function').find('.demo-button').click(function(){
                                     html = '无效的key';
                                     break;
                                 case 0:
+                                    html += '<p>' + detail.translation.join('<br>') + '</p>';
                                     html += '<p>';
                                     if(detail.hasOwnProperty("basic") && detail.basic.hasOwnProperty("explains")){
                                         for(var i in detail.basic.explains){
@@ -127,7 +128,7 @@ $('#function').find('.demo-button').click(function(){
                                     html += '</p>';
                                     break;
                                 default:
-                                    html = '未知错误';
+                                    html = '未知错误, code ' + detail.errorCode;
                             }
                             appendResult(result, html);
                         }catch (e){
