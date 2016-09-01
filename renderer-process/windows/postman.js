@@ -25,6 +25,10 @@ let jsonOrText = function(obj)
             let line = array[i].split(':');
             if(line.length == 2)
                 json[line[0].trim()] = line[1].trim();
+            else if(line.length > 2){
+                let shift = line.shift();
+                json[shift.trim()] = line.join(':');
+            }
         }
     }
 
