@@ -115,3 +115,36 @@ $('#email-send').click(function(){
         _t.attr('disabled', false);
     }
 });
+
+let getMonday = function() {
+    let d = new Date();
+    let day = d.getDay(),
+        diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+    let _d = new Date(d.setDate(diff));
+    _d.setHours(0,0,0,0);
+    return _d.getTime();
+};
+
+$('#email-calendar').click(function(){
+    storage.get('calendar', (err, data) => {
+        let offset = $('#email-calendar-offset').val();
+        if(!offset) offset = 0;
+        let start = getMonday() + offset * 86400000 * 7,
+            end = start + 86400000 * 7,
+            string = '';
+        for(let i in data){
+            if(data[i].start && data[i].start.indexOf(':') <= 0)
+                data[i].start = new Date(data[i].start + ' 00:00').getTime();
+            else
+                data[i].start = new Date(data[i].start).getTime();
+            if(data[i].end && data[i].end.indexOf(':') <= 0)
+                data[i].end = new Date(data[i].end + ' 00:00').getTime();
+            else
+                data[i].end = new Date(data[i].end).getTime();
+
+            if((data[i].start >= start && data[i].start < end) || (data[i].end >= start && data[i].end < end))
+                string += data[i].title + '\n';
+        }
+        $('#email-calendar-content').show().text(string);
+    });
+});

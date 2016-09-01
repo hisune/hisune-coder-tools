@@ -45,7 +45,7 @@ function initialize () {
     var windowOptions = {
       width: 1280,
       minWidth: 680,
-      height: 915,
+      height: 925,
       title: app.getName(),
       show: false
     }

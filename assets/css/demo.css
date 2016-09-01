@@ -268,7 +268,7 @@ table tr td{
   background-color:#f9f9f9;
   border:1px solid #fff
 }
-.bs-glyphicons li:hover{
+.bs-glyphicons li:hover, .bs-glyphicons li:hover input{
   color:#fff;
   background-color:#563d7c
 }
@@ -536,4 +536,26 @@ table tr td{
 .search-ctrl{
   cursor: pointer;
   margin: 0 0 .75rem .1rem;
+}
+.startup-input{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-subtle);
+  background-color: #f9f9f9;
+  padding: 0 2px;
+}
+.startup-label{
+  margin: 4px 0;
+}
+.startup-span{
+  width: 50px;
+  text-align: left;
+}
+.dialog-widget:before{
+  content: initial !important;
+}
+.dialog-widget .title{
+  word-break: break-all;
+  text-align: left !important;
+  -webkit-user-select: auto;
 }

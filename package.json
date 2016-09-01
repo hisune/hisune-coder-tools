@@ -23,7 +23,8 @@
     "electron-json-storage": "^2.0.0",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^6.0.4",
-    "highlight.js": "^9.3.0"
+    "highlight.js": "^9.3.0",
+    "dialogs": "1.1.15"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.2.6"

@@ -1,0 +1,21 @@
+<template class="task-template">
+  <section id="calendar-section" class="section js-section u-category-system" style="padding: 1em;">
+
+    <div id='calendar'></div>
+
+    <button id="open-reg-text" style="margin-top: 10px;" class="js-container-target demo-toggle-button">所有Calendar Event
+      <div class="demo-meta u-avoid-clicks">编辑或修改你的Calendar Event</div>
+    </button>
+
+    <div class="demo-box">
+      <div class="demo-controls demo-1em">
+        <button class="demo-button" id="calendar-event-save">save</button>
+        <textarea rows="10" class="demo-input" id="calendar-event" placeholder=""></textarea>
+      </div>
+    </div>
+
+    <script>
+      require('./renderer-process/system/calendar')
+    </script>
+  </section>
+</template>

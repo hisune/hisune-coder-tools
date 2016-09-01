@@ -13,9 +13,8 @@
   <link rel="stylesheet" href="assets/css/github.css">
   <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/markdown/editor.css" />
-
-  <script type="text/javascript" src="assets/markdown/editor.js"></script>
-  <script type="text/javascript" src="assets/markdown/marked.js"></script>
+  <link rel="stylesheet" href="assets/plugins/calendar/fullcalendar.min.css" />
+  <link rel="stylesheet" href="assets/plugins/calendar/fullcalendar.print.css" media='print'/>
 
   <link rel="import" href="sections/about.html">
   <link rel="import" href="sections/windows/shadowsocks.html">
@@ -32,9 +31,18 @@
   <link rel="import" href="sections/native-ui/content.html">
   <link rel="import" href="sections/native-ui/html.html">
   <link rel="import" href="sections/native-ui/code.html">
+  <link rel="import" href="sections/system/calendar.html">
   <link rel="import" href="sections/system/markdown.html">
   <link rel="import" href="sections/system/startup.html">
   <link rel="import" href="sections/system/email.html">
+
+  <script>
+    window.$ = window.jQuery = require('./assets/plugins/jquery-3.1.0.min')
+  </script>
+  <script type="text/javascript" src="assets/plugins/moment.min.js"></script>
+  <script type="text/javascript" src="assets/markdown/editor.js"></script>
+  <script type="text/javascript" src="assets/markdown/marked.js"></script>
+  <script type="text/javascript" src="assets/plugins/calendar/fullcalendar.min.js"></script>
 </head>
 <body>
 
@@ -82,6 +90,7 @@
         <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
         其他工具
       </h5>
+      <button type="button" id="button-calendar" data-section="calendar" class="nav-button">Calendar</button>
       <button type="button" id="button-markdown" data-section="markdown" class="nav-button">Markdown</button>
       <button type="button" id="button-startup" data-section="startup" class="nav-button">程序启动器</button>
       <button type="button" id="button-email" data-section="email" class="nav-button">发周报</button>
@@ -108,7 +117,6 @@
   <main class="content js-content"></main>
 
   <script>
-    window.$ = window.jQuery = require('./assets/plugins/jquery-3.1.0.min')
     require('./assets/plugins/qrcode.min')
     require('./assets/imports')
     require('./assets/ex-links')
