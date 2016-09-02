@@ -1,7 +1,17 @@
 const storage = require('electron-json-storage'),
     os = require('os'),
     shell = require('electron').shell,
-    ipc = require('electron').ipcRenderer;
+    ipc = require('electron').ipcRenderer,
+    wsc = $('#window-search-close'),
+    wsb = $('#window-search-btn');
+
+ipc.on('window-find', () => {
+  if(wsb.is(':visible')){
+    wsb.click();
+  }else{
+    wsc.click();
+  }
+});
 
 $(document).ready(function(){
   ipc.send('document-is-ready');
@@ -18,8 +28,6 @@ $('.open-item').click(function(){
 let ws = $('#window-search'),
     wsn = $('#window-search-next'),
     wsp = $('#window-search-prev'),
-    wsc = $('#window-search-close'),
-    wsb = $("#window-search-btn"),
     wsg = $('#window-search-group');
 wsn.click(function(){
   let val = ws.val();

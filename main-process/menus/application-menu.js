@@ -2,10 +2,62 @@ const electron = require('electron')
 const BrowserWindow = electron.BrowserWindow
 const Menu = electron.Menu
 const app = electron.app
+const dialog = electron.dialog
+const storage = require('electron-json-storage')
+const fs = require('fs');
+
+let doExport = function(key)
+    {
+        return new Promise((resolve, reject) => {
+            storage.get(key, (error, data) => {
+                if(error)
+                    reject(error);
+                else {
+                    let res = {};
+                    res[key] = data;
+                    resolve(res);
+                }
+            });
+        });
+    },
+    doImport = function(key, value)
+    {
+        return new Promise((resolve, reject) => {
+            storage.set(key, value, (error) => {
+                if(error)
+                    reject(error);
+                else
+                    resolve();
+            });
+        });
+    },
+    reloadWindow = function(focusedWindow)
+    {
+        if (focusedWindow) {
+            // on reload, start fresh and close any old
+            // open secondary windows
+            if (focusedWindow.id === 1) {
+                BrowserWindow.getAllWindows().forEach(function (win) {
+                    if (win.id > 1) {
+                        win.close()
+                    }
+                })
+            }
+            focusedWindow.reload()
+        }
+    }
 
 let template = [{
   label: 'Edit',
   submenu: [{
+      label: 'Find',
+      accelerator: 'CmdOrCtrl+F',
+      click: () => {
+          BrowserWindow.getAllWindows().forEach(function (win) {
+              win.send("window-find");
+          })
+      }
+  },{
     label: 'Undo',
     accelerator: 'CmdOrCtrl+Z',
     role: 'undo'
@@ -31,6 +83,55 @@ let template = [{
     label: 'Select All',
     accelerator: 'CmdOrCtrl+A',
     role: 'selectall'
+  },{
+    type: 'separator'
+  }, {
+    label: 'Export',
+    accelerator: 'CmdOrCtrl+E',
+    click: () => {
+      dialog.showOpenDialog({properties: ['openDirectory']}, (filenames) => {
+        if(filenames && filenames[0]){
+          storage.keys((error, keys) => {
+            if (error) throw error;
+            let chain = [];
+            for (let key of keys) {
+                chain.push(doExport(key));
+            }
+            Promise.all(chain).then((values) => {
+                fs.writeFile(filenames[0] + '/back.' + new Date().getTime() + '.hctb', JSON.stringify(values));
+            });
+          });
+        }
+      })
+    }
+  }, {
+    label: 'Import',
+    accelerator: 'CmdOrCtrl+I',
+    click: (item, focusedWindow) => {
+        dialog.showOpenDialog({filters: [{name: 'HCT back File Type', extensions: ['hctb']}],properties: ['openFile']}, (filenames) => {
+            if(filenames && filenames[0] && fs.existsSync(filenames[0])){
+                fs.readFile(filenames[0], (err, data) => {
+                    try{
+                        let json = JSON.parse(data);
+
+                        storage.clear((err) => {
+                            if(!err){
+                                let chain = [];
+                                for(let i in json){
+                                    for(let j in json[i]){
+                                        chain.push(doImport(j, json[i][j]));
+                                    }
+                                }
+                                Promise.all(chain).then((value) => {
+                                    reloadWindow(focusedWindow);
+                                });
+                            }
+                        });
+                    }catch(e){}
+                });
+            }
+        });
+    }
   }]
 }, {
   label: 'View',
@@ -38,18 +139,7 @@ let template = [{
     label: 'Reload',
     accelerator: 'CmdOrCtrl+R',
     click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        // on reload, start fresh and close any old
-        // open secondary windows
-        if (focusedWindow.id === 1) {
-          BrowserWindow.getAllWindows().forEach(function (win) {
-            if (win.id > 1) {
-              win.close()
-            }
-          })
-        }
-        focusedWindow.reload()
-      }
+        reloadWindow(focusedWindow);
     }
   }, {
     label: 'Toggle Full Screen',
