@@ -559,3 +559,7 @@ table tr td{
   text-align: left !important;
   -webkit-user-select: auto;
 }
+#calendar{
+  max-width: 1250px;
+  margin: 0 auto;
+}
