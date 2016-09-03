@@ -4,6 +4,7 @@
 * 跨平台工具，支持mac和windows
 
 ## 获取最新版本
+* 为了100%获取最新版本，请手动打包
 * [darwin-x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
 * [win32-x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
 
