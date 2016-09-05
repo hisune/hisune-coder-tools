@@ -78,7 +78,11 @@ $('#function').find('.demo-button').click(function(){
                     appendResult(result, encodeURIComponent(string));
                 break;
             case 'unix2str':
-                appendResult(result, string + ': <code>' + dateFormat('yyyy-MM-dd hh:mm:ss', new Date(parseInt(string) * 1000)) + '</code>');
+                let newString = string;
+                while (newString.length < 13)
+                    newString = newString + '0';
+                newString = newString.substr(0, 13);
+                appendResult(result, string + ': <code>' + dateFormat('yyyy-MM-dd hh:mm:ss', new Date(parseInt(newString))) + '</code>');
                 break;
             case 'str2unix':
                 if(string.indexOf(':') <= 0)

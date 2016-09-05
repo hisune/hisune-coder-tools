@@ -64,16 +64,18 @@ $('#email-send').click(function(){
         let now = new Date(),
             date = new Date(now.getFullYear(), now.getMonth(), now.getDate()),
             week = date.getDay() || 7,
-            today = date.getTime(),
-            array = {
-                '%week0%': customDate(new Date(today - (week - 7) * 86400000)).date,
-                '%week1%': customDate(new Date(today - (week - 1) * 86400000)).date,
-                '%week2%': customDate(new Date(today - (week - 2) * 86400000)).date,
-                '%week3%': customDate(new Date(today - (week - 3) * 86400000)).date,
-                '%week4%': customDate(new Date(today - (week - 4) * 86400000)).date,
-                '%week5%': customDate(new Date(today - (week - 5) * 86400000)).date,
-                '%week6%': customDate(new Date(today - (week - 6) * 86400000)).date
-            };
+            today = date.getTime();
+        if(week < 5) // 如果当前星期数小于周五，向前推一周的时间
+            week += 7;
+        let array = {
+            '%week0%': customDate(new Date(today - (week - 7) * 86400000)).date,
+            '%week1%': customDate(new Date(today - (week - 1) * 86400000)).date,
+            '%week2%': customDate(new Date(today - (week - 2) * 86400000)).date,
+            '%week3%': customDate(new Date(today - (week - 3) * 86400000)).date,
+            '%week4%': customDate(new Date(today - (week - 4) * 86400000)).date,
+            '%week5%': customDate(new Date(today - (week - 5) * 86400000)).date,
+            '%week6%': customDate(new Date(today - (week - 6) * 86400000)).date
+        };
         title = title.replace(/%week0%/g, array['%week0%'])
             .replace(/%week1%/g, array['%week1%'])
             .replace(/%week2%/g, array['%week2%'])
