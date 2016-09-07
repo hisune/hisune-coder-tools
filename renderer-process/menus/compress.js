@@ -35,11 +35,11 @@ $('.compress-action').click(function(){
                         line -= 3;
                     line += total;
 
-                    let height = contentObj.height(),
-                        rows = contentObj[0].rows;
+                    // let height = contentObj.height(),
+                    //     rows = contentObj[0].rows;
                     contentObj.val(content.replace(/\r?\n|\r/g, '\n'));
                     contentObj[0].setSelectionRange(line, line + 5);
-                    contentObj[0].scrollTop = Math.floor(total / rows) * height;
+                    // contentObj[0].scrollTop = Math.floor(total / rows) * height;
                 }
                 result = e.message + '\nnot a valid json format:\n' + content;
                 resultObj.text('not a valid json format:\n' + e.message);
