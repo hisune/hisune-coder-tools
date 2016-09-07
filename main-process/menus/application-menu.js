@@ -58,6 +58,22 @@ let template = [{
           })
       }
   },{
+      label: 'Find Next',
+      accelerator: 'Enter',
+      click: () => {
+          BrowserWindow.getAllWindows().forEach(function (win) {
+              win.send("window-find-next");
+          })
+      }
+  },{
+      label: 'Unfind',
+      accelerator: 'esc',
+      click: () => {
+          BrowserWindow.getAllWindows().forEach(function (win) {
+              win.send("window-find-esc");
+          })
+      }
+  },{
     label: 'Undo',
     accelerator: 'CmdOrCtrl+Z',
     role: 'undo'
