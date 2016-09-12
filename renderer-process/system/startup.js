@@ -7,10 +7,10 @@
 const storage = require('electron-json-storage'),
      clipboard = require('electron').clipboard;
 
-$('#add-startup').click(() => {
+$('#add-startup,#add-startup-path').click(() => {
     const {dialog} = require('electron').remote,
         path = require('path');
-    dialog.showOpenDialog({properties: ['openFile']}, (filter) => {
+    dialog.showOpenDialog({defaultPath: $('#add-startup-action').attr('data-path'), properties: ['openFile']}, (filter) => {
         if(filter){
             $('#add-startup-action').attr('data-path', filter[0]).show();
             $('#add-startup').hide();
