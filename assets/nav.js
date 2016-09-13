@@ -56,8 +56,8 @@ wsc.click(function(){
 });
 wsb.click(function(){
     $(this).hide();
-  wsg.show();
-    ws.show().focus();
+    wsg.show();
+    ws.show().focus().select();
 });
 
 // Default to the view that was active the last time the app was open
