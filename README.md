@@ -52,3 +52,6 @@
 
 ## About Author
 Code by Hisune(http://hisune.com)
+
+## License
+MIT
