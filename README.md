@@ -1,4 +1,4 @@
-# Hisune Coder Tool
+# HCT
 * 集成N种web开发人员常用工具
 * 工具离线化，不联网也能用
 * 跨平台工具，支持mac和windows
