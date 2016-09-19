@@ -92,9 +92,11 @@ ipPort.click(function(){
         });
         client.on('error', (err) => {
             console.log('get error ' + err.message + '<br>');
+            ipResult.append('get error ' + err.message + '<br>');
         });
         client.on('timeout', () => {
             console.log('connect timeout<br>');
+            ipResult.append('connect timeout<br>');
         });
     });
 });
