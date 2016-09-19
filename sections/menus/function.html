@@ -68,6 +68,34 @@
 
                 <div>
                     <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-html">html</button>
+                        <select class="demo-select demo-left-input" id="func-html-type">
+                            <option value="encode">encode</option>
+                            <option value="decode">decode</option>
+                        </select>
+                        <input class="demo-input" id="func-html-string" placeholder="">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-hex">hex</button>
+                        <select class="demo-select demo-left-input" id="func-hex-type">
+                            <option value="str2hex">str2hex</option>
+                            <option value="hex2str">hex2str</option>
+                        </select>
+                        <input class="demo-input" id="func-hex-string" placeholder="">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
                         <button class="demo-button demo-left-bottom" id="func-unix2str">unix2str</button>
                         <input class="demo-input" id="func-unix2str-string" placeholder="eg. 1471363200">
                     </div>

@@ -50,6 +50,11 @@ var dateFormat = function (fmt, d)
         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 };
+
+var htmlEncode = function(string)
+{
+    return $('<div/>').text(string).html();
+};
  
 $('#function').find('.demo-button').click(function(){
     let action = $(this).text(),
@@ -76,6 +81,30 @@ $('#function').find('.demo-button').click(function(){
                     appendResult(result, decodeURIComponent(string));
                 else
                     appendResult(result, encodeURIComponent(string));
+                break;
+            case 'html':
+                if(type == 'encode')
+                    appendResult(result, htmlEncode(string) + ': <code>' + htmlEncode(htmlEncode(string)) + '</code>');
+                else
+                    appendResult(result, htmlEncode(string) + ': <code>' + htmlEncode($('<div/>').html(string).text()) + '</code>');
+                break;
+            case 'hex':
+                if(type == 'str2hex'){
+                    let hex = (new Buffer(string)).toString('hex'),
+                        hexNew = '';
+                    for(let i = 0; i < hex.length; i++){
+                        hexNew += hex[i];
+                        if(i % 2 != 0){
+                            hexNew += '&nbsp;';
+                        }
+                    }
+                    appendResult(result, htmlEncode(string) + ': <code>' + hexNew + '</code>');
+                }else{
+                    string = string.replace(/\s/gi, '');
+                    let buffer = new Buffer(string, 'hex');
+                    appendResult(result, htmlEncode(string) + ': <code>' + buffer.toString() + '</code>');
+                }
+
                 break;
             case 'unix2str':
                 let newString = string;
