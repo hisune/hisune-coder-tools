@@ -63,7 +63,7 @@ makeARequest.click(function(){
         method: postmanUrlType.val(),
         headers: jsonOrText(postmanHeaders)
     };
-    if(['PATCH', 'POST', 'PUT'].indexOf(postmanUrlType.val()) > -1){
+    if(postmanUrlType.val() != 'GET'){
         if(postmanRequestType.val() == 'form'){
             options.form = jsonOrText(postmanRequest);
         }else{
