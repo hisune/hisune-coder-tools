@@ -66,7 +66,7 @@ makeARequest.click(function(){
         method: postmanUrlType.val(),
         headers: jsonOrText(postmanHeaders)
     };
-    if(postmanUrlType.val() != 'GET'){
+    if(['GET', 'DELETE'].indexOf(postmanUrlType.val()) == -1){
         if(postmanRequestType.val() == 'form'){
             options.form = jsonOrText(postmanRequest);
         }else{
@@ -86,7 +86,9 @@ makeARequest.click(function(){
             postmanResult.append('Response Body: <a onclick="$(\'#p-r-b-h\').hide();$(\'#p-r-b-j\').show();">json</a> | <a onclick="$(\'#p-r-b-h\').show();$(\'#p-r-b-j\').hide();">html</a> <br>');
             try{
                 postmanResult.append(responseCode(escapeHtml(JSON.stringify(JSON.parse(body), null, 4)), 'json', 'p-r-b-j'));
-            }catch(e){}
+            }catch(e){
+                postmanResult.append(responseCode('Not a valid json: ' + e.message + "\r\n" + escapeHtml(body), 'json', 'p-r-b-j'));
+            }
             postmanResult.append(responseCode(escapeHtml(body), 'html', 'p-r-b-h'));
             postmanResult.append('Response Headers: <br>');
             postmanResult.append(responseCode(JSON.stringify(response.headers, null, 4), 'json'));
