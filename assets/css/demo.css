@@ -131,7 +131,7 @@ button{
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
 }
-#p-r-b-h{
+#p-r-b-h, #p-r-b-v{
   display: none;
 }
 

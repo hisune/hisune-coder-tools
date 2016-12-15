@@ -83,13 +83,17 @@ makeARequest.click(function(){
             postmanResult.append('Response Error: ' + error);
         }else{
             postmanResult.append('Code: <b>' + response.statusCode + '</b> in <b>' + (end - start) + 'ms</b>, ');
-            postmanResult.append('Response Body: <a onclick="$(\'#p-r-b-h\').hide();$(\'#p-r-b-j\').show();">json</a> | <a onclick="$(\'#p-r-b-h\').show();$(\'#p-r-b-j\').hide();">html</a> <br>');
+            postmanResult.append('Response Body: <a onclick="$(\'.postman-result\').parent().hide();$(\'#p-r-b-j\').show();">json</a> | ' +
+                '<a onclick="$(\'.postman-result\').parent().hide();$(\'#p-r-b-v\').show();">view</a> | ' +
+                '<a onclick="$(\'.postman-result\').parent().hide();$(\'#p-r-b-h\').show();">html</a> <br>');
             try{
-                postmanResult.append(responseCode(escapeHtml(JSON.stringify(JSON.parse(body), null, 4)), 'json', 'p-r-b-j'));
+                postmanResult.append(responseCode(escapeHtml(JSON.stringify(JSON.parse(body), null, 4)), 'json postman-result', 'p-r-b-j'));
             }catch(e){
-                postmanResult.append(responseCode('Not a valid json: ' + e.message + "\r\n" + escapeHtml(body), 'json', 'p-r-b-j'));
+                postmanResult.append(responseCode('Not a valid json: ' + e.message + "\r\n" + escapeHtml(body), 'json postman-result', 'p-r-b-j'));
             }
-            postmanResult.append(responseCode(escapeHtml(body), 'html', 'p-r-b-h'));
+            console.log(body);
+            $('<iframe class="postman-result" frameborder="0" style="width: 100%; min-height: 300px;"/>').appendTo($('<pre id="p-r-b-v"/>').appendTo(postmanResult)).contents().find('body').append(body);
+            postmanResult.append(responseCode(escapeHtml(body), 'html postman-result', 'p-r-b-h'));
             postmanResult.append('Response Headers: <br>');
             postmanResult.append(responseCode(JSON.stringify(response.headers, null, 4), 'json'));
         }
