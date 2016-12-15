@@ -13,7 +13,7 @@
                     <input class="demo-input" id="postman-url" placeholder="eg. https://hisune.com">
                 </div>
                 <div class="demo-controls demo-1em">
-                    <textarea class="demo-input" id="postman-headers"
+                    <textarea class="demo-input" rows="4" id="postman-headers"
                               placeholder="Headers, JSON字符串或'key:value'一行一个"></textarea>
                 </div>
                 <div class="demo-controls demo-1em">
@@ -21,13 +21,17 @@
                         <option value="form">form</option>
                         <option value="body">body</option>
                     </select>
-                    <textarea class="demo-input" id="postman-request"
+                    <textarea class="demo-input" rows="4" id="postman-request"
                               placeholder="Request, JSON字符串或'key:value'一行一个"></textarea>
                 </div>
 
                 <div class="demo-box">
                     <div class="demo-controls">
                         <button class="demo-button" id="make-a-request">Make a Request</button>
+                        <input class="demo-input demo-left-input" id="save-name" placeholder="Save Name">
+                        <button class="demo-button" id="save-a-request">Save</button>
+                        <button class="demo-button" id="delete-a-request">Delete</button>
+                        <select class="demo-select demo-left-input" id="postman-saved"><option>None Selected</option></select>
                     </div>
                     <div style="margin-top: 1em;" id="postman-result"></div>
                 </div>

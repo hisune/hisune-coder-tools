@@ -12,7 +12,10 @@ const request = require('request'),
     postmanRequestType = $('#postman-request-type'),
     postmanRequest = $('#postman-request'),
     postmanResult = $('#postman-result'),
-    highlight = require('highlight.js');
+    postmanSaved = $('#postman-saved'),
+    highlight = require('highlight.js'),
+    dialogs = new (require('dialogs')),
+    storage = require('electron-json-storage');
 
 let jsonOrText = function(obj)
 {
@@ -79,19 +82,85 @@ makeARequest.click(function(){
         if(error){
             postmanResult.append('Response Error: ' + error);
         }else{
-            postmanResult.append(responseCode('Response Status Code: ' + response.statusCode +
-                '<br>Http Version: ' + response.httpVersion +
-                '<br>Response Time: ' + (end - start) + 'ms', 'js'));
+            postmanResult.append('Code: <b>' + response.statusCode + '</b> in <b>' + (end - start) + 'ms</b>, ');
+            postmanResult.append('Response Body: <a onclick="$(\'#p-r-b-h\').hide();$(\'#p-r-b-j\').show();">json</a> | <a onclick="$(\'#p-r-b-h\').show();$(\'#p-r-b-j\').hide();">html</a> <br>');
+            try{
+                postmanResult.append(responseCode(escapeHtml(JSON.stringify(JSON.parse(body), null, 4)), 'json', 'p-r-b-j'));
+            }catch(e){}
+            postmanResult.append(responseCode(escapeHtml(body), 'html', 'p-r-b-h'));
             postmanResult.append('Response Headers: <br>');
             postmanResult.append(responseCode(JSON.stringify(response.headers, null, 4), 'json'));
-            postmanResult.append('Response Body: <a onclick="$(\'#p-r-b-h\').show();$(\'#p-r-b-j\').hide();">html</a> | <a onclick="$(\'#p-r-b-h\').hide();$(\'#p-r-b-j\').show();">json</a><br>');
-            postmanResult.append(responseCode(escapeHtml(body), 'html', 'p-r-b-h'));
-            try{
-                body = JSON.stringify(JSON.parse(body), null, 4);
-            }catch(e){}
-            postmanResult.append(responseCode(escapeHtml(body), 'json', 'p-r-b-j'));
         }
         that.text('Make a Request');
         highlightCode();
     });
 });
+
+let initSaved = function()
+{
+    storage.get('postman', (error, data) => {
+        if (error) throw error;
+
+        postmanSaved.html('<option>None Selected</option>');
+        for(let i in data){
+            if(data.hasOwnProperty(i)){
+                postmanSaved.append('<option value="' + i + '">' + i + '</option>');
+            }
+        }
+    });
+};
+
+$('#save-a-request').click(function(){
+    let saveName = $('#save-name').val();
+    if(saveName == ''){
+        dialogs.alert('Plz input a save name.');
+    }else{
+        storage.get('postman', (error, data) => {
+            if (error) throw error;
+
+            data[saveName] = {
+                type: $('#postman-url-type').val(),
+                url: $('#postman-url').val(),
+                headers: $('#postman-headers').val(),
+                request_type: $('#postman-request-type').val(),
+                request: $('#postman-request').val(),
+            };
+            storage.set('postman', data, () => {
+                initSaved();
+            });
+        });
+    }
+});
+
+$('#delete-a-request').click(function(){
+    let value = postmanSaved.val();
+    storage.get('postman', (error, data) => {
+        if (error) throw error;
+
+        if(data.hasOwnProperty(value)){
+            delete data[value];
+            storage.set('postman', data, () => {
+                initSaved();
+            });
+        }
+    });
+});
+
+postmanSaved.change(function(){
+    let value = $(this).val();
+    storage.get('postman', (error, data) => {
+        if (error) throw error;
+
+        if(data.hasOwnProperty(value)){
+            $('#save-name').val(value);
+            $('#postman-url-type').val(data[value]['type']);
+            $('#postman-url').val(data[value]['url']);
+            $('#postman-headers').val(data[value]['headers']);
+            $('#postman-request-type').val(data[value]['request_type']);
+            $('#postman-request').val(data[value]['request']);
+        }
+    });
+});
+
+initSaved();
+
