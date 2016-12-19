@@ -6,6 +6,16 @@
 
 ## 获取最新版本
 * 为了100%获取最新版本，建议手动打包
+```sh
+npm install electron-packager -g
+git clone https://github.com/hisune/hisune-coder-tools.git
+cd hisune-coder-tools
+npm install
+#for Mac OS
+electron-packager ./ hct --platform=darwin --arch=x64 --asar=true
+#for Windows
+electron-packager ./ hct --platform=win32 --arch=x64 --asar=true
+```
 * [darwin-x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
 * [win32-x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
 
