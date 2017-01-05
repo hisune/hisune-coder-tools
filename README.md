@@ -1,7 +1,7 @@
 # HCT
 * 集成N种web开发人员常用工具
 * 工具离线化，不联网也能用
-* 跨平台工具，支持mac和windows
+* 跨平台工具，支持mac、linux和windows
 * 支持配置导入导出
 
 ## 获取最新版本
@@ -15,6 +15,8 @@ npm install
 electron-packager ./ hct --platform=darwin --arch=x64 --asar=true
 #for Windows
 electron-packager ./ hct --platform=win32 --arch=x64 --asar=true
+#for Linux
+electron-packager ./ hct --platform=linux --arch=x64 --asar=true
 ```
 * [darwin-x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
 * [win32-x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
