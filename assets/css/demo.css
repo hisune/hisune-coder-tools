@@ -566,3 +566,23 @@ table tr td{
 .pointer{
   cursor: pointer;
 }
+.not-holiday-span{
+  margin-left:5px;
+  padding:1px 2px;
+  background-color:darkred;
+  color:#fff;
+  font-size: 12px;
+}
+.not-holiday{
+  background-color: #F5F5F5;
+}
+.yes-holiday-span{
+  margin-left:5px;
+  padding:1px 2px;
+  background-color:darkgreen;
+  color:#fff;
+  font-size: 12px;
+}
+.yes-holiday{
+  background-color: #FFF0F0;
+}

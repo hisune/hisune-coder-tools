@@ -1,7 +1,7 @@
 {
   "name": "HCT",
   "productName": "Hisune Coder Tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hisune Coder Tools",
   "private": true,
   "main": "main.js",
@@ -24,7 +24,7 @@
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^6.0.4",
     "highlight.js": "^9.3.0",
-    "dialogs": "1.1.15"
+    "dialogs": "git://github.com/hisune/dialogs.git"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.2.6"
