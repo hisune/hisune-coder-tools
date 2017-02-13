@@ -67,8 +67,9 @@ let calendarEvent = [],
                 todayLunar.gzDay + '日 ',
             events: calendarEvent,
             dayRender: function( date, cell ) {
-                let key = (date.utcOffset(new Date().getTimezoneOffset()).toDate().valueOf() / 1000 | 0) + offset,
-                    holidayHtml = '';
+                let key = (date.valueOf() / 1000 | 0) + offset,
+                    holidayHtml = '',
+                    newDate = new Date(key * 1000);
                 if(holiday.hasOwnProperty(key)){
                     if(holiday[key] == 0){
                         cell.addClass("not-holiday");
@@ -80,7 +81,7 @@ let calendarEvent = [],
                 }
                 cell.html(
                     '<span style="color:#aaa;font-size: 12px;">' +
-                    calendar.solar2lunar(date.year(), date.month() + 1, date.date()) . IDayCn +
+                    calendar.solar2lunar(newDate.getFullYear(), newDate.getMonth() + 1, newDate.getDate()).IDayCn +
                     (solar.hasOwnProperty(key) ? ' - ' + solar[key] : '') +
                     '</span>' + holidayHtml
                 );
