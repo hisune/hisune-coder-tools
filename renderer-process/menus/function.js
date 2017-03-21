@@ -5,7 +5,8 @@
 'use strict';
 
 const crypto = require('crypto'),
-    request = require('request');
+    request = require('request'),
+    fs = require('fs');
 
 var randomString = function(length, string)
 {
@@ -55,7 +56,7 @@ var htmlEncode = function(string)
 {
     return $('<div/>').text(string).html();
 };
- 
+
 $('#function').find('.demo-button').click(function(){
     let action = $(this).text(),
         result = $(this).parent().next(),
@@ -110,7 +111,8 @@ $('#function').find('.demo-button').click(function(){
                 let newString = string;
                 while (newString.length < 13)
                     newString = newString + '0';
-                newString = newString.substr(0, 13);
+                newString = newString.substr(0
+                    , 13);
                 appendResult(result, string + ': <code>' + dateFormat('yyyy-MM-dd hh:mm:ss', new Date(parseInt(newString))) + '</code>');
                 break;
             case 'str2unix':
@@ -119,7 +121,11 @@ $('#function').find('.demo-button').click(function(){
                 appendResult(result, string + ': <code>' + (new Date(string).getTime() / 1000 | 0) + '</code>');
                 break;
             case 'qrcode':
-                $('#qrcode-result').qrcode(string);
+                new QRCode("qrcode-result", {
+                    text: string,
+                    width: $('#func-qrcode-width').val(),
+                    height: $('#func-qrcode-height').val()
+                });
                 break;
             case 'en-cn':
                 result.children('.demo-close').nextAll().remove();
@@ -201,3 +207,13 @@ $('#function').find('.demo-button').click(function(){
 
 $('#func-unix2str-string').val(new Date().getTime() / 1000 | 0);
 $('#func-str2unix-string').val(dateFormat('yyyy-MM-dd hh:mm:ss'));
+
+$("#qrcode-result").delegate("img","click",function(){
+    let src = $(this).attr('src').replace(/^data:image\/png;base64,/, "");
+    const {dialog} = require('electron').remote;
+    dialog.showOpenDialog({properties: ['openDirectory']}, (filenames) => {
+        if(filenames && filenames[0]){
+            fs.writeFile(filenames[0] + '/qrcode_' + (new Date().getTime() / 1000 | 0) + '.png', src, 'base64');
+        }
+    })
+});
