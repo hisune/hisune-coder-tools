@@ -121,10 +121,11 @@ $('#function').find('.demo-button').click(function(){
                 appendResult(result, string + ': <code>' + (new Date(string).getTime() / 1000 | 0) + '</code>');
                 break;
             case 'qrcode':
-                new QRCode("qrcode-result", {
+                $('#qrcode-result').qrcode({
                     text: string,
                     width: $('#func-qrcode-width').val(),
-                    height: $('#func-qrcode-height').val()
+                    height: $('#func-qrcode-height').val(),
+                    src: $('#qrcode-icon').val()
                 });
                 break;
             case 'en-cn':
@@ -208,12 +209,28 @@ $('#function').find('.demo-button').click(function(){
 $('#func-unix2str-string').val(new Date().getTime() / 1000 | 0);
 $('#func-str2unix-string').val(dateFormat('yyyy-MM-dd hh:mm:ss'));
 
-$("#qrcode-result").delegate("img","click",function(){
-    let src = $(this).attr('src').replace(/^data:image\/png;base64,/, "");
+$("#qrcode-result").delegate("canvas","click",function(){
+    let src = $(this)[0].toDataURL("image/png").replace(/^data:image\/png;base64,/, "");
     const {dialog} = require('electron').remote;
     dialog.showOpenDialog({properties: ['openDirectory']}, (filenames) => {
         if(filenames && filenames[0]){
             fs.writeFile(filenames[0] + '/qrcode_' + (new Date().getTime() / 1000 | 0) + '.png', src, 'base64');
         }
     })
+});
+
+$('#func-qrcode-icon').click(function(){
+    let self = $(this),
+        filename = $('#qrcode-icon');
+
+    self.html('ICON');
+    filename.val('');
+
+    const {dialog} = require('electron').remote;
+    dialog.showOpenDialog({filters: [{name: 'Select a QRcode image file', extensions: ['png', 'jpg', 'gif']}],properties: ['openFile']}, (filenames) => {
+        if(filenames && filenames[0] && fs.existsSync(filenames[0])){
+            filename.val(filenames[0]);
+            self.html(filenames[0].replace(/\\/g, '/').split('/').reverse()[0]);
+        }
+    });
 });
