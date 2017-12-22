@@ -59,10 +59,10 @@ let highlightCode = function(obj)
 };
 
 makeARequest.click(function(){
-    let that = $(this), start = new Date().getTime();
+    let that = $(this), start = new Date().getTime(), uri = postmanUrl.val();
     that.text('Processing');
     let options = {
-        uri: postmanUrl.val(),
+        uri: uri.indexOf('http') < 0 ? 'http://' + uri : uri,
         method: postmanUrlType.val(),
         headers: jsonOrText(postmanHeaders)
     };

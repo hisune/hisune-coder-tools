@@ -9,12 +9,15 @@ const ipToSearch = $('#ip-to-search'),
     ipPing = $('#ip-ping'),
     ipTrace = $('#ip-trace'),
     ipPort = $('#ip-port'),
+    ipLocal = $('#ip-local'),
     ipResult = $('#ip-result'),
     geoip = require('geoip-lite'),
     dns = require('dns'),
     childProcess = require('child_process'),
     util = require('util'),
-    net = require('net');
+    net = require('net'),
+    os = require('os'),
+    http = require('http');
 
 var initClick = function(call)
 {
@@ -97,6 +100,19 @@ ipPort.click(function(){
         client.on('timeout', () => {
             console.log('connect timeout<br>');
             ipResult.append('connect timeout<br>');
+        });
+    });
+});
+
+ipLocal.click(function(){
+    http.get('http://bot.whatismyipaddress.com', function(res){
+        res.setEncoding('utf8');
+        res.on('data', function(chunk){
+            let interfaces = os.networkInterfaces(), result = Object.keys(interfaces)
+                .map(x => interfaces[x].filter(x => x.family === 'IPv4' && !x.internal)[0])
+                .filter(x => x)[0].address;
+            ipResult.empty().append('Local IP: <br>' + result + '<br><br>').append('External IP: <br>');
+            geoResolve(chunk);
         });
     });
 });
