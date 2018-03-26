@@ -14,17 +14,18 @@
   "license": "MIT",
   "homepage": "https://hisune.com",
   "dependencies": {
-    "nodemailer": "2.5.0",
-    "shadowsocks": "1.5.3",
-    "request": "2.74.0",
-    "uglify-js": "2.7.3",
-    "html-minifier": "3.0.2",
-    "geoip-lite": "1.1.6",
+    "dialogs": "git://github.com/hisune/dialogs.git",
     "electron-json-storage": "^2.0.0",
     "electron-shortcut-normalizer": "^1.0.0",
+    "geoip-lite": "1.1.6",
     "glob": "^6.0.4",
     "highlight.js": "^9.3.0",
-    "dialogs": "git://github.com/hisune/dialogs.git"
+    "html-minifier": "3.0.2",
+    "nodemailer": "2.5.0",
+    "pinyin": "^2.8.3",
+    "request": "2.74.0",
+    "shadowsocks": "1.5.3",
+    "uglify-js": "2.7.3"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.2.6"

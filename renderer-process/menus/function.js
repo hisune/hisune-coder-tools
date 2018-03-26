@@ -6,7 +6,8 @@
 
 const crypto = require('crypto'),
     request = require('request'),
-    fs = require('fs');
+    fs = require('fs'),
+    pinyin = require('pinyin');
 
 var randomString = function(length, string)
 {
@@ -201,6 +202,13 @@ $('#function').find('.demo-button').click(function(){
                         }
                     }
                 });
+                break;
+            case 'pinyin':
+                let style = $('#func-pinyin-type').val(),
+                    join = $('#func-pinyin-join').is(':checked');
+                appendResult(result, pinyin(string, {
+                    style: pinyin[style]
+                }).join(join?" ":''));
                 break;
         }
     }

@@ -130,6 +130,26 @@
 
                 <div>
                     <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-pinyin">pinyin</button>
+                        <select class="demo-select demo-left-input" id="func-pinyin-type">
+                            <option value="STYLE_NORMAL">普通风格</option>
+                            <option value="STYLE_TONE">声调风格</option>
+                            <option value="STYLE_TONE2">音标风格</option>
+                            <option value="STYLE_INITIALS">声母风格</option>
+                            <option value="STYLE_FIRST_LETTER">首字母风格</option>
+                        </select>
+                        <label>
+                            <input type="checkbox" value="1" id="func-pinyin-join" />空格
+                        </label>
+                        <input class="demo-input" id="func-pinyin-string" placeholder="eg. 汉字">
+                    </div>
+                    <div class="demo-box is-selectable" id="pinyin-result">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
                         <button class="demo-button demo-left-bottom" id="func-en-cn">en-cn</button>
                         <textarea rows="3" class="demo-input" id="func-en-cn-string" placeholder="中英文翻译"></textarea>
                     </div>
