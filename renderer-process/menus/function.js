@@ -29,9 +29,10 @@ var hash = function (str, type)
     return str;
 };
 
-var appendResult = function(obj, content)
+var appendResult = function(obj, content, pre)
 {
-    obj.append('<span class="output-result">' + content + '</span>');
+    pre = pre || '';
+    obj.append('<span class="output-result"><label>'+ pre + '</label><pre><code>' + content + '</code></pre></span>');
 };
 
 // yyyy-MM-dd hh:mm:ss
@@ -70,7 +71,7 @@ $('#function').find('.demo-button').click(function(){
                 appendResult(result, randomString($('#func-random-length').val(), $('#func-random-string').val()));
                 break;
             case 'hash':
-                appendResult(result, string + ': <code>' + hash(string, type) + '</code>');
+                appendResult(result, hash(string, type), string);
                 break;
             case 'base64':
                 if(type == 'decode')
@@ -86,9 +87,9 @@ $('#function').find('.demo-button').click(function(){
                 break;
             case 'html':
                 if(type == 'encode')
-                    appendResult(result, htmlEncode(string) + ': <code>' + htmlEncode(htmlEncode(string)) + '</code>');
+                    appendResult(result, htmlEncode(htmlEncode(string)));
                 else
-                    appendResult(result, htmlEncode(string) + ': <code>' + htmlEncode($('<div/>').html(string).text()) + '</code>');
+                    appendResult(result, htmlEncode($('<div/>').html(string).text()));
                 break;
             case 'hex':
                 if(type == 'str2hex'){
@@ -100,11 +101,11 @@ $('#function').find('.demo-button').click(function(){
                             hexNew += '&nbsp;';
                         }
                     }
-                    appendResult(result, htmlEncode(string) + ': <code>' + hexNew + '</code>');
+                    appendResult(result, hexNew, string);
                 }else{
                     string = string.replace(/\s/gi, '');
                     let buffer = new Buffer(string, 'hex');
-                    appendResult(result, htmlEncode(string) + ': <code>' + buffer.toString() + '</code>');
+                    appendResult(result, buffer.toString(), string);
                 }
 
                 break;
@@ -114,12 +115,12 @@ $('#function').find('.demo-button').click(function(){
                     newString = newString + '0';
                 newString = newString.substr(0
                     , 13);
-                appendResult(result, string + ': <code>' + dateFormat('yyyy-MM-dd hh:mm:ss', new Date(parseInt(newString))) + '</code>');
+                appendResult(result, dateFormat('yyyy-MM-dd hh:mm:ss', new Date(parseInt(newString))), string);
                 break;
             case 'str2unix':
                 if(string.indexOf(':') <= 0)
                     string = string + ' 00:00';
-                appendResult(result, string + ': <code>' + (new Date(string).getTime() / 1000 | 0) + '</code>');
+                appendResult(result, (new Date(string).getTime() / 1000 | 0), string);
                 break;
             case 'qrcode':
                 $('#qrcode-result').qrcode({
@@ -208,7 +209,7 @@ $('#function').find('.demo-button').click(function(){
                     join = $('#func-pinyin-join').is(':checked');
                 appendResult(result, pinyin(string, {
                     style: pinyin[style]
-                }).join(join?" ":''));
+                }).join(join?" ":''), string);
                 break;
         }
     }

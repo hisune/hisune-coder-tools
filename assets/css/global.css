@@ -159,3 +159,12 @@ kbd {
 .hljs:active {
   outline: 1px solid transparent;
 }
+
+.output-result pre{
+  overflow: visible !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  border-radius: unset !important;
+  display: inline-grid !important;
+}
