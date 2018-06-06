@@ -18,8 +18,10 @@ electron-packager ./ hct --platform=win32 --arch=x64 --asar=true
 #for Linux
 electron-packager ./ hct --platform=linux --arch=x64 --asar=true
 ```
-* [darwin-x64](https://raw.githubusercontent.com/hisune/images/master/hct-darwin-x64.zip)
-* [win32-x64](https://raw.githubusercontent.com/hisune/images/master/hct-win32-x64.zip)
+指定版本 & 国内镜像
+```
+electron-packager ./ hct --platform=win32 --arch=x64 --electron-version=2.0.2 --download.mirror=https://npm.taobao.org/mirrors/electron/
+```
 
 ## 包含以下工具
 ### 网络工具
