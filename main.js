@@ -62,10 +62,10 @@ function initialize () {
       mainWindow.webContents.openDevTools()
       mainWindow.maximize()
     }
-    mainWindow.on('close', function(event){
-      event.preventDefault()
-      mainWindow.hide()
-    });
+    // mainWindow.on('close', function(event){
+    //   event.preventDefault()
+    //   mainWindow.hide()
+    // });
     mainWindow.on('closed', function () {
       mainWindow = null
     })

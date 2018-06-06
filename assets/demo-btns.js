@@ -16,5 +16,8 @@ Array.prototype.forEach.call(demoBtns, function (btn) {
 // Default to the demo that was active the last time the app was open
 storage.get('activeDemoButtonId', function (err, id) {
   if (err) return console.error(err)
-  if (id && id.length) document.getElementById(id).click()
+  if (id && id.length) {
+      var dom = document.getElementById(id);
+      dom && dom.click()
+  }
 })

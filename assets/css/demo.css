@@ -17,7 +17,22 @@
   margin: 0 auto;
   padding: 0 2rem;
 }
-
+.nav-title-ul{
+  padding: 10px 10px 0 10px;
+}
+.nav-title-ul li{
+  list-style: none;
+  display: inline-block;
+}
+.nav-title-ul li.active{
+  font-weight: bold;
+}
+.nav-title-ul a{
+  border-bottom: none;
+}
+#docs-content{
+    height: 100%;
+}
 
 /* Toggle Button ----------------------------- */
 button{

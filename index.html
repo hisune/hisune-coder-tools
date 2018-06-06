@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <script>
+      window.$ = window.jQuery = require('./assets/plugins/jquery-3.1.0.min')
+  </script>
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/nativize.css">
   <link rel="stylesheet" href="assets/css/global.css">
@@ -22,21 +24,18 @@
   <link rel="import" href="sections/windows/ip-search.html">
   <link rel="import" href="sections/menus/function.html">
   <link rel="import" href="sections/menus/compress.html">
-  <link rel="import" href="sections/menus/color.html">
-  <link rel="import" href="sections/native-ui/regular.html">
-  <link rel="import" href="sections/native-ui/jquery.html">
-  <link rel="import" href="sections/native-ui/nodejs.html">
-  <link rel="import" href="sections/native-ui/bootstrap.html">
-  <link rel="import" href="sections/native-ui/ascii.html">
-  <link rel="import" href="sections/native-ui/content.html">
+  <link rel="import" href="sections/menus/docs.html">
+  <!--<link rel="import" href="sections/native-ui/regular.html">-->
+  <!--<link rel="import" href="sections/native-ui/jquery.html">-->
+  <!--<link rel="import" href="sections/native-ui/nodejs.html">-->
+  <!--<link rel="import" href="sections/native-ui/bootstrap.html">-->
+  <!--<link rel="import" href="sections/native-ui/ascii.html">-->
+  <!--<link rel="import" href="sections/native-ui/content.html">-->
   <link rel="import" href="sections/system/calendar.html">
   <link rel="import" href="sections/system/markdown.html">
   <link rel="import" href="sections/system/startup.html">
   <link rel="import" href="sections/system/email.html">
 
-  <script>
-    window.$ = window.jQuery = require('./assets/plugins/jquery-3.1.0.min')
-  </script>
   <script type="text/javascript" src="assets/plugins/moment.min.js"></script>
   <script type="text/javascript" src="assets/markdown/editor.js"></script>
   <script type="text/javascript" src="assets/markdown/marked.js"></script>
@@ -66,20 +65,20 @@
       </h5>
       <button type="button" id="button-function" data-section="function" class="nav-button">常用函数</button>
       <button type="button" id="button-compress" data-section="compress" class="nav-button">压缩美化</button>
-      <button type="button" id="button-color" data-section="color" class="nav-button">颜色选择器</button>
+      <button type="button" id="button-docs" data-section="docs" class="nav-button">文档</button>
     </div>
 
-    <div class="nav-item u-category-native-ui">
-      <h5 class="nav-category">
-        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
-        手册查询</h5>
-      <button type="button" id="button-regular" data-section="regular" class="nav-button">正则表达式</button>
-      <button type="button" id="button-jquery" data-section="jquery" class="nav-button">jQuery手册</button>
-      <button type="button" id="button-nodejs" data-section="nodejs" class="nav-button">Nodejs手册</button>
-      <button type="button" id="button-bootstrap" data-section="bootstrap" class="nav-button">Bootstrap手册</button>
-      <!--<button type="button" id="button-ascii" data-section="ascii" class="nav-button">ASCII</button>-->
-      <button type="button" id="button-content" data-section="content" class="nav-button">HTTP相关</button>
-    </div>
+    <!--<div class="nav-item u-category-native-ui">-->
+      <!--<h5 class="nav-category">-->
+        <!--<svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>-->
+        <!--手册查询</h5>-->
+      <!--<button type="button" id="button-regular" data-section="regular" class="nav-button">正则表达式</button>-->
+      <!--<button type="button" id="button-jquery" data-section="jquery" class="nav-button">jQuery手册</button>-->
+      <!--<button type="button" id="button-nodejs" data-section="nodejs" class="nav-button">Nodejs手册</button>-->
+      <!--<button type="button" id="button-bootstrap" data-section="bootstrap" class="nav-button">Bootstrap手册</button>-->
+      <!--&lt;!&ndash;<button type="button" id="button-ascii" data-section="ascii" class="nav-button">ASCII</button>&ndash;&gt;-->
+      <!--<button type="button" id="button-content" data-section="content" class="nav-button">HTTP相关</button>-->
+    <!--</div>-->
 
     <div class="nav-item u-category-communication">
       <h5 class="nav-category">
@@ -90,8 +89,8 @@
       <button type="button" id="button-markdown" data-section="markdown" class="nav-button">Markdown</button>
       <button type="button" id="button-startup" data-section="startup" class="nav-button">程序启动器</button>
       <button type="button" id="button-email" data-section="email" class="nav-button">发周报</button>
-      <button type="button" class="nav-button open-item" data-win="C:\Windows\System32\calc.exe" data-mac="/Applications/Calculator.app/Contents/MacOS/Calculator">计算器</button>
-      <button type="button" class="nav-button open-item" data-win="C:\Windows\System32\cmd.exe" data-mac="/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal">CMD</button>
+      <!--<button type="button" class="nav-button open-item" data-win="C:\Windows\System32\calc.exe" data-mac="/Applications/Calculator.app/Contents/MacOS/Calculator">计算器</button>-->
+      <!--<button type="button" class="nav-button open-item" data-win="C:\Windows\System32\cmd.exe" data-mac="/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal">CMD</button>-->
     </div>
 
     <footer class="nav-footer">

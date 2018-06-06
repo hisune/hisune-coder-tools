@@ -1,0 +1,20 @@
+<template class="task-template">
+    <section id="docs-section" class="section js-section u-category-system" style="overflow: hidden">
+
+        <ul class="nav-title nav-title-ul">
+            <li class="active"><a href="#" data-url="./assets/jquery/cheatsheet.html">jquery</a> |</li>
+            <li><a href="#" data-url="./assets/regex.html">regex</a> |</li>
+            <a id="add-doc">+</a>
+            <a id="reduce-doc">-</a>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" id="docs-content">
+            <iframe src="./assets/jquery/cheatsheet.html" style="height: 99%;width:100%;padding: 10px;" id="docs-iframe"
+                    frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <script type="text/javascript">
+            require('./renderer-process/menus/docs')
+        </script>
+    </section>
+</template>
