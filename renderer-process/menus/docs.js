@@ -52,7 +52,7 @@ $('#reduce-doc').click(function(){
             delete data[name];
             $('.nav-title-ul li.active').remove();
             storage.set('docs', data, (error) => {
-                initDocsClick();
+                
             });
         }else{
             alert('不可删除');
