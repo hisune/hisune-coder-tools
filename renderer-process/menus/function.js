@@ -59,6 +59,19 @@ var htmlEncode = function(string)
     return $('<div/>').text(string).html();
 };
 
+function queryStringToJSON(queryString) {
+    if(queryString.indexOf('?') > -1){
+        queryString = queryString.split('?')[1];
+    }
+    var pairs = queryString.split('&');
+    var result = {};
+    pairs.forEach(function(pair) {
+        pair = pair.split('=');
+        result[pair[0]] = decodeURIComponent(pair[1] || '');
+    });
+    return result;
+}
+
 $('#function').find('.demo-button').click(function(){
     let action = $(this).text(),
         result = $(this).parent().next(),
@@ -84,6 +97,12 @@ $('#function').find('.demo-button').click(function(){
                     appendResult(result, decodeURIComponent(string));
                 else
                     appendResult(result, encodeURIComponent(string));
+                break;
+            case 'query':
+                if(type == 'build')
+                    appendResult(result, jQuery.param(JSON.parse(string)));
+                else
+                    appendResult(result, JSON.stringify(queryStringToJSON(string)));
                 break;
             case 'html':
                 if(type == 'encode')

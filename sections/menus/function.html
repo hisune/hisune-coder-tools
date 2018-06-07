@@ -68,6 +68,20 @@
 
                 <div>
                     <div class="demo-controls demo-1em">
+                        <button class="demo-button demo-left-bottom" id="func-query">query</button>
+                        <select class="demo-select demo-left-input" id="func-query-type">
+                            <option value="build">build</option>
+                            <option value="parse">parse</option>
+                        </select>
+                        <input class="demo-input" id="func-query-string" placeholder="json <-> url">
+                    </div>
+                    <div class="demo-box is-selectable">
+                        <span class="demo-close" onclick="closeFunction($(this))">X</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="demo-controls demo-1em">
                         <button class="demo-button demo-left-bottom" id="func-html">html</button>
                         <select class="demo-select demo-left-input" id="func-html-type">
                             <option value="encode">encode</option>
