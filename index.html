@@ -40,6 +40,12 @@
   <script type="text/javascript" src="assets/markdown/editor.js"></script>
   <script type="text/javascript" src="assets/markdown/marked.js"></script>
   <script type="text/javascript" src="assets/plugins/calendar/fullcalendar.min.js"></script>
+  <script>
+      if (window.navigator.userAgent.indexOf("Win")!=-1) {
+          /* windows的滚动条css样式 */
+          $( "<style>::-webkit-scrollbar-track {background-color: #ececec;}::-webkit-scrollbar {width: 6px;height:6px;background-color: #ececec;}::-webkit-scrollbar-thumb {background-color: #929292;}</style>" ).appendTo("head");
+      }
+  </script>
 </head>
 <body>
 
