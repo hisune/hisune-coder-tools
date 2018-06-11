@@ -106,9 +106,9 @@ $('#email-send').click(function(){
         };
         transporter.sendMail(mailOptions, function(error, info){
             if(error){
-                result.text(error);
+                result.show().text(error.toString() + ' ' + (new Date).toString());
             }else{
-                result.text(info.response);
+                result.show().text(info.response + ' ' + (new Date).toString());
             }
             _t.attr('disabled', false);
         });
