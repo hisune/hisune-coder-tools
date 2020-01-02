@@ -1,4 +1,9 @@
-# ！！！项目不再维护，所有功能转移到chrome扩展：https://chrome.google.com/webstore/detail/hisune-tab/iecgkpkpceidmiigmodgicdeefcngopk
+# ！！！项目不再维护，所有功能转移到chrome扩展：
+
+https://chrome.google.com/webstore/detail/hisune-tab/iecgkpkpceidmiigmodgicdeefcngopk
+
+https://github.com/hisune/hitab
+
 # HCT
 * 集成N种web开发人员常用工具
 * 工具离线化，不联网也能用
