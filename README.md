@@ -1,8 +1,8 @@
 # ！！！项目不再维护，所有功能转移到chrome扩展：
 
-https://chrome.google.com/webstore/detail/hisune-tab/iecgkpkpceidmiigmodgicdeefcngopk
+https://chrome.google.com/webstore/detail/hitab-cloud/emednmcapifecehdmdpddihhifjejhkb
 
-https://github.com/hisune/hitab
+https://github.com/hisune/HitabCloud_Client
 
 # HCT
 * 集成N种web开发人员常用工具
