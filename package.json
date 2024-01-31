@@ -21,7 +21,7 @@
     "glob": "^6.0.4",
     "highlight.js": "^9.3.0",
     "html-minifier": "3.0.2",
-    "nodemailer": "2.5.0",
+    "nodemailer": "6.9.8",
     "pinyin": "^2.8.3",
     "request": "2.74.0",
     "shadowsocks": "1.5.3",
